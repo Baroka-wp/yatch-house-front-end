@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 // import CircleIcon from "@mui/icons-material/Circle";
-// import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
@@ -56,7 +56,7 @@ const Carousel = () => {
                     ))}
                   </div> */}
                   <p>{item.description}</p>
-                  {/* <div className='social'>
+                  <div className='social'>
                     <FacebookRoundedIcon
                       sx={{
                         fontSize: "1.5rem",
@@ -74,7 +74,7 @@ const Carousel = () => {
                     <TwitterIcon
                       sx={{ fontSize: "1.5rem", color: "rgb(0, 0, 0, 0.26)" }}
                     />
-                  </div> */}
+                  </div>
                 </div>
               </Card>
             </SplideSlide>
