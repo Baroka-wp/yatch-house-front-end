@@ -9,3 +9,19 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+.card {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    word-wrap: break-word;
+}
