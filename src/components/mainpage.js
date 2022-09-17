@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import yatches from "../dummydata/joydata";
 import './mainpage.css';
 
-const Carousel = () => {
+const MainPage = () => {
   return (
     <div>
       <Wrapper>
@@ -124,4 +124,4 @@ const Card = styled.div`
   }
 `;
 
-export default Carousel;
+export default MainPage;
