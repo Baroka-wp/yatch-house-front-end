@@ -1,5 +1,5 @@
 import React from "react";
-// import styled from "styled-components";
+import styled from "styled-components";
 // import CircleIcon from "@mui/icons-material/Circle";
 // import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 // import InstagramIcon from "@mui/icons-material/Instagram";
@@ -85,43 +85,43 @@ const Carousel = () => {
   );
 };
 
-// const Wrapper = styled.div`
-//   margin: 4rem 0;
-//   font-family: 'Montserrat', sans-serif;
+const Wrapper = styled.div`
+  margin: 4rem 0;
+  font-family: 'Montserrat', sans-serif;
 
-//   h2{
-//     text-align: center;
-//     margin-bottom: 2rem;
-//     font-size: 34px;
-//     line-height: 38px;
-//     font-weight: 700;
-//   }
-//     h3{
-//     text-align: center;
-//     margin-bottom: 1rem;
-//     color: #bbbbc3;
-//     font-weight: 600;
-// `;
+  h2{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 700;
+  }
+    h3{
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #bbbbc3;
+    font-weight: 600;
+`;
 
-// const Card = styled.div`
-//   background: var(--clr-white);
-//   width: 350px;
+const Card = styled.div`
+  background: var(--clr-white);
+  width: 350px;
 
-//   img {
-//     width: 100%;
-//     height: 300px;
-//     object-fit: cover;
-//   }
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
 
-//   h4 {
-//     padding: 0.5rem;
-//   }
+  h4 {
+    padding: 0.5rem;
+  }
 
-//   p {
-//     padding: 1rem 0.5rem 0.5rem 0.5rem;
-//     text-align: center;
-//     font-size: 14px;
-//   }
-// `;
+  p {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    text-align: center;
+    font-size: 14px;
+  }
+`;
 
 export default Carousel;
