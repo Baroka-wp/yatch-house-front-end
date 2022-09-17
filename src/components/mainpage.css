@@ -52,3 +52,7 @@ body {
     margin-bottom: 0.5rem;
     text-align: center;
 }
+.dots {
+    display: flex;
+    justify-content: center;
+}
