@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import uuid from "react-uuid";
+import { v4 as uuidv4 } from 'uuid';
 import CircleIcon from '@mui/icons-material/Circle';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -15,10 +15,10 @@ const MainPage = () => (
     <Wrapper>
       <h2>Popular Destinations</h2>
       <h3> Select your desired destination</h3>
-      <div className='dots'>
-        {[...Array(15)].map((el, i) => (
-          <div key={uuid()}>
-            <CircleIcon color='disabled' sx={{ fontSize: "0.5rem" }} />
+      <div className="dots">
+        {[...Array(15)].map(() => (
+          <div key={uuidv4()}>
+            <CircleIcon color="disabled" sx={{ fontSize: '0.5rem' }} />
           </div>
         ))}
       </div>
@@ -27,46 +27,46 @@ const MainPage = () => (
           perPage: 3,
           arrows: true,
           pagination: false,
-          drag: "free",
-          gap: "1rem",
+          drag: 'free',
+          gap: '1rem',
         }}
       >
         {yatches.map((item) => (
           <SplideSlide key={item.id}>
             <Card>
-              <div className='card'>
+              <div className="card">
                 <img src={item.image} alt={item.name} />
-                <div className='yatch_name'>
+                <div className="yatch_name">
                   <h4>{item.name}</h4>
                 </div>
-                <div className='dots'>
-                  {[...Array(15)].map((el, i) => (
-                    <div key={uuid()}>
+                <div className="dots">
+                  {[...Array(15)].map(() => (
+                    <div key={uuidv4()}>
                       <CircleIcon
-                        color='disabled'
-                        sx={{ fontSize: "0.7rem" }}
+                        color="disabled"
+                        sx={{ fontSize: '0.7rem' }}
                       />
                     </div>
                   ))}
                 </div>
                 <p>{item.description}</p>
-                <div className='social'>
+                <div className="social">
                   <FacebookRoundedIcon
                     sx={{
-                      fontSize: "1.5rem",
-                      color: "rgb(0, 0, 0, 0.26)",
-                      marginRight: "1rem",
+                      fontSize: '1.5rem',
+                      color: 'rgb(0, 0, 0, 0.26)',
+                      marginRight: '1rem',
                     }}
                   />
                   <InstagramIcon
                     sx={{
-                      fontSize: "1.5rem",
-                      color: "rgba(0, 0, 0, 0.26)",
-                      marginRight: "1rem",
+                      fontSize: '1.5rem',
+                      color: 'rgba(0, 0, 0, 0.26)',
+                      marginRight: '1rem',
                     }}
                   />
                   <TwitterIcon
-                    sx={{ fontSize: "1.5rem", color: "rgb(0, 0, 0, 0.26)" }}
+                    sx={{ fontSize: '1.5rem', color: 'rgb(0, 0, 0, 0.26)' }}
                   />
                 </div>
               </div>
