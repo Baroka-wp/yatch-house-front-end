@@ -25,3 +25,23 @@ body {
     background-clip: border-box;
     word-wrap: break-word;
 }
+.splide__list {
+    margin: 3rem !important;
+}
+.splide__arrow {
+    height: 3rem;
+    width: 2.2rem;
+    /* background-color: chartreuse; */
+}
+
+.splide__arrow--next {
+    border-radius: 50% 0 0 50%;
+}
+
+.splide__arrow--prev {
+    border-radius: 0 50% 50% 0;
+}
+
+.splide__arrow:active {
+    background-color: rgb(3, 75, 37);
+}
