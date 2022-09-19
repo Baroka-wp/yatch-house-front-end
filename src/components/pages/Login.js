@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {
   FormGroup,
@@ -6,7 +7,6 @@ import {
   Input,
   Row,
   Col,
-  Button,
 } from 'reactstrap';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -17,22 +17,22 @@ const Login = () => {
   });
 
   const {
-    user, loading, error, dispatch,
+    loading, error, dispatch,
   } = useContext(AuthContext);
 
-  console.log(user);
-  console.log(loading);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setCredential({ ...credential, [e.target.name]: e.target.value });
+    setCredential((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const handleClick = async (e) => {
     e.preventDefault();
     dispatch({ type: 'LOGIN_START' });
     try {
-      const res = await axios.post('http://localhost:3001/users/sign_in', credential);
+      const res = await axios.post('http://localhost:8080/api/v1/auth/admin', credential);
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
+      navigate('/reservation/new');
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err });
     }
@@ -41,6 +41,7 @@ const Login = () => {
   return (
     <div className="col-md-5 login_registration_form">
       <h3> Login </h3>
+      {error && (<span className="text-danger">Password or email is incorrect</span>)}
       <hr />
       <form>
         <Row>
@@ -66,7 +67,7 @@ const Login = () => {
                 Password
               </Label>
               <Input
-                id="examplePassword"
+                id="password"
                 name="password"
                 placeholder="password placeholder"
                 type="password"
@@ -75,14 +76,14 @@ const Login = () => {
             </FormGroup>
           </Col>
         </Row>
-        <Button
+        <button
+          disabled={loading}
           onClick={handleClick}
-          color="primary"
+          className=" btn btn-sm btn-primary"
           type="submit"
         >
           Login
-        </Button>
-        {error && <span className="text-danger">{error}</span>}
+        </button>
       </form>
     </div>
   );

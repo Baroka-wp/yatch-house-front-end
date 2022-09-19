@@ -7,7 +7,6 @@ import MainPage from './components/MainPage';
 import Login from './components/pages/Login';
 import Registration from './components/pages/Registration';
 import NewReservation from './components/pages/NewReservation';
-import { AuthContextProvider } from './context/AuthContext';
 
 const App = () => (
   <Provider store={store}>
@@ -16,9 +15,7 @@ const App = () => (
         <Route path="/" element={<MainPage />} />
         <Route path="/admins/login" element={<Login />} />
         <Route path="/admins/registration" element={<Registration />} />
-        <AuthContextProvider>
-          <Route path="/reservation/new" element={<NewReservation />} />
-        </AuthContextProvider>
+        <Route path="/reservation/new" element={<NewReservation />} />
       </Routes>
     </BrowserRouter>
   </Provider>
