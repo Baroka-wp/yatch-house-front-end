@@ -5,9 +5,13 @@ import '@splidejs/react-splide/css';
 import './mainpage.css';
 import Carousel from './carousel';
 import MobileNavbar from './MobileNavBar';
+import SideNavbar from './MainNavBar';
 
 const MainPage = () => (
-  <div>
+  <div className="main_page">
+    <div className="mainNavBar">
+      <SideNavbar />
+    </div>
     <div className="wrapper">
       <div className="mobile_menu_background">
         <MobileNavbar />
