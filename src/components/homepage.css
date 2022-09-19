@@ -1,0 +1,90 @@
+.wallpaper-content h1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background: linear-gradient(to right, #fff 0%, #0d0d0d 46%, #fff 76%, #383838 87%, #1b1b1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hamburger {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+.line {
+  width: 25px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  border-radius: 2px;
+}
+
+.reserve {
+  background-color: #228c22;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem 1rem 1rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.reserve-icon {
+  margin-left: 1rem;
+  position: relative;
+  top: 5px;
+}
+
+.homepage-dots {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  color: transparent;
+}
+
+.reserve-icon div:nth-child(3) {
+  color: white;
+}
+
+/* Media query for a device with a width of 500px */
+@media only screen and (max-width: 500px) {
+  .wallpaper-content h1 {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .reserve {
+    top: 60%;
+    padding: 0.5rem 1rem 1rem 1rem;
+  }
+
+  .homepage-dots {
+    right: 1rem;
+  }
+
+  svg {
+    font-size: 0.8rem !important;
+  }
+
+  .css-1r0ftf6-MuiSvgIcon-root {
+    font-size: 0.8rem !important;
+    width: 2rem !important;
+    height: 3rem !important;
+  }
+
+  .reserve-icon .css-1c4inqc-MuiSvgIcon-root {
+    font-size: 1rem !important;
+  }
+}

@@ -13,11 +13,13 @@ const MainPage = () => (
       <div className="dots">
         {[...Array(15)].map(() => (
           <div key={uuidv4()}>
-            <CircleIcon color="disabled" sx={{ fontSize: '0.5rem' }} />
+            <CircleIcon color="disabled" sx={{ fontSize: '0.5rem' }} className="circle-dots" />
           </div>
         ))}
       </div>
-      <Carousel />
+      <div className="carousel">
+        <Carousel />
+      </div>
     </div>
   </div>
 );
