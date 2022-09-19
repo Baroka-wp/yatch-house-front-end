@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchIcon from "@mui/icons-material/Search";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
-import CircleRoundedIcon from "@mui/icons-material/CircleRounded";
+import CircleIcon from "@mui/icons-material/Circle";
 import './homepage.css';
 import { v4 as uuidv4 } from "uuid";
 
@@ -53,7 +53,7 @@ const HomePage = () => (
         <div className='homepage-dots'>
             {[...Array(4)].map(() => (
                 <div key={uuidv4()}>
-                    <CircleRoundedIcon sx={{ fontSize: '1rem',border: "2px solid white", borderRadius:"50%" }} />
+                    <CircleIcon sx={{ fontSize: '1rem',border: "2px solid white", borderRadius:"50%" }} />
                 </div>
             ))}
         </div>
