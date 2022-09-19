@@ -23,6 +23,9 @@ class HouseForm extends React.Component {
             location: this.state.location,
             image: this.state.image,
         },
+        headers: {
+            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content,
+        },
     }).then((response) => {
         console.log(response);
     }).catch((error) => {
