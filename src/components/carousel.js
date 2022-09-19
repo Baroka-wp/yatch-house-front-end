@@ -17,15 +17,15 @@ const Carousel = () => (
         drag: 'free',
         gap: '2rem',
         breakpoints: {
-            500:{
-                perPage: 1,
-                gap: '3rem',
-            },
-            900:{
-                perPage: 3,
-                gap: '3rem',
-            }
-        }
+          500: {
+            perPage: 1,
+            gap: '3rem',
+          },
+          900: {
+            perPage: 3,
+            gap: '3rem',
+          },
+        },
       }}
     >
       {yatches.map((item) => (

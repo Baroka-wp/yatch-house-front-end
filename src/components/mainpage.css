@@ -130,10 +130,9 @@ body {
     margin: 0 auto;
   }
 
-  .card{
+  .card {
     height: 400px;
   }
-
 
   .yatch img {
     height: 200px;
@@ -151,12 +150,11 @@ body {
     font-size: 1rem;
   }
 
-  .yatch svg{
+  .yatch svg {
     font-size: 1.3rem !important;
   }
 
-  .circle-dots{
+  .circle-dots {
     font-size: 0.5rem !important;
   }
 }
-
