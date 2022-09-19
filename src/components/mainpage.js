@@ -17,7 +17,9 @@ const MainPage = () => (
           </div>
         ))}
       </div>
-      <Carousel />
+      <div className="carousel">
+        <Carousel />
+      </div>
     </div>
   </div>
 );

@@ -150,11 +150,11 @@ body {
     font-size: 1rem;
   }
 
-  .yatch svg {
+  .carousel svg {
     font-size: 1.3rem !important;
   }
 
-  .circle-dots {
+  .dots svg {
     font-size: 0.5rem !important;
   }
 }
