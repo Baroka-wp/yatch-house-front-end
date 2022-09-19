@@ -9,8 +9,22 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    background: #959595;
-    background: linear-gradient(to right, #959595 0%, #0D0D0D 46%, #010101 50%, #0A0A0A 53%, #4E4E4E 76%, #383838 87%, #1B1B1B 100%);
+    background-color: #fff;
+    background: linear-gradient(to right, #fff 0%, #0D0D0D 46%, #010101 50%, #0A0A0A 53%, #fff 76%, #383838 87%, #1B1B1B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.hamburger{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+}
+
+.line{
+    width:25px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    border-radius: 2px;
 }
