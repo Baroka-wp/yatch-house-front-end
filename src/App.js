@@ -8,6 +8,7 @@ import MainPage from './components/mainpage';
 import Login from './components/pages/Login';
 import Registration from './components/pages/Registration';
 import NewReservation from './components/pages/NewReservation';
+import HouseForm from './components/pages/HouseForm';
 
 const App = () => (
   <div>
@@ -18,8 +19,8 @@ const App = () => (
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/' element={<MainPage />} />
+            <Route path='/' element={<HouseForm />} />
+            {/* <Route path='/' element={<MainPage />} /> */}
             <Route path='/admins/login' element={<Login />} />
             <Route path='/admins/registration' element={<Registration />} />
             <Route path='/reservation/new' element={<NewReservation />} />
