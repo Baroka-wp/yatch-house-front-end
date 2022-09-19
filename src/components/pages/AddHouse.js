@@ -1,7 +1,16 @@
 import Axios from 'axios';
-import React from 'react';
+import React,{useState} from 'react';
+
 
 const AddItem = () => {
+    const [inputs, setInputs] = useState({
+        name: '',
+        price: '',
+        description: '',
+        image: '',
+        location: '',
+    });
+
     <div>
         <h1>Add a House</h1>
         <form>
