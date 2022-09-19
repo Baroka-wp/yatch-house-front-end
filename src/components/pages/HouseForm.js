@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 class HouseForm extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +12,26 @@ class HouseForm extends React.Component {
     };
   }
 
+  handleSubmit = (event) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:3000/houses',
+        data: {
+            name: this.state.name,
+            description: this.state.description,
+            price: this.state.price,
+            location: this.state.location,
+            image: this.state.image,
+        },
+    }).then((response) => {
+        console.log(response);
+    }).catch((error) => {
+        console.log(error);
+    }
+    );
+    event.preventDefault();
+  }
+
   handleChange = (event) => {
     const name = event.target.name;
     const newState = {};
@@ -19,9 +39,6 @@ class HouseForm extends React.Component {
     this.setState(newState);
     event.preventDefault();
   };
-
-
-
 
   render() {
     return (
