@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import CircleIcon from '@mui/icons-material/Circle';
 import '@splidejs/react-splide/css';
 import './mainpage.css';
-import Carousel from './carousel';
+import Carousel from './Carousel';
 
 const MainPage = () => (
   <div>
