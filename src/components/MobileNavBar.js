@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const customStyles = {
   content: {
@@ -43,19 +43,26 @@ const MobileNavbar = () => {
     {
       id: 2,
       path: '/reservation',
-      text: 'RESERVATIONS',
+      text: 'RESERVATION',
     },
     {
       id: 3,
-      path: '/contact',
-      text: 'CONTACT',
+      path: '/admins/login',
+      text: 'Sign In',
+    },
+    {
+      id: 4,
+      path: '/admins/registration',
+      text: 'Register',
     },
   ];
 
   return (
     <>
-      <nav className="navBar">
-        <button type="button" onClick={openModal} aria-label={<FontAwesomeIcon icon={faBars} />}><FontAwesomeIcon icon={faBars} /></button>
+      <nav className="navBar_mobile">
+        <button type="button" onClick={openModal} aria-label="">
+          <FontAwesomeIcon icon={faBars} />
+        </button>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -68,28 +75,32 @@ const MobileNavbar = () => {
           <ul className="navList">
             <li key={links[0].id}>
               <NavLink to={links[0].path} className="active-link">
-                <span onClick={closeModal}>{links[0].text}</span>
+                <span onClick={closeModal} onKeyDown={closeModal} role="presentation">{links[0].text}</span>
               </NavLink>
             </li>
             <li key={links[1].id}>
               <NavLink to={links[1].path} className="active-link">
-                <span onClick={closeModal}>{links[1].text}</span>
-              </NavLink>
-            </li>
-            <li key={links[2].id}>
-              <NavLink to={links[2].path} className="active-link">
-                <span onClick={closeModal}>{links[2].text}</span>
+                <span onClick={closeModal} onKeyDown={closeModal} role="presentation">{links[1].text}</span>
               </NavLink>
             </li>
           </ul>
-          <ul className="navList logout">
-            <li key={4}>
-              <NavLink to="logout" className="active-link">
-                Sign Out
+          <ul className="navList user">
+            <li key={links[2].id}>
+              <NavLink to={links[2].path} className="active-link">
+                <span onClick={closeModal} onKeyDown={closeModal} role="presentation">{links[2].text}</span>
+              </NavLink>
+            </li>
+            <li key={links[3].id}>
+              <NavLink to={links[3].path} className="active-link">
+                <span onClick={closeModal} onKeyDown={closeModal} role="presentation">{links[3].text}</span>
               </NavLink>
             </li>
           </ul>
         </Modal>
+
+        <button type="button" aria-label="">
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
       </nav>
     </>
   );
