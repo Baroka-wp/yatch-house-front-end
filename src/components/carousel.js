@@ -2,7 +2,7 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import Socials from './Socials';
+import Socials from './socials';
 import '@splidejs/react-splide/css';
 import yatches from './dummydata/joydata';
 import './mainpage.css';
