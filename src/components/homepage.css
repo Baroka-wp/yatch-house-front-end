@@ -51,7 +51,7 @@
     right:2rem;
     color:transparent;
 }
-.css-1vq1xvp-MuiSvgIcon-root:nth-child(3){
+.reserve-icon div:nth-child(3){
     color: white;
 }
 /* Media query for a device with a width of 500px */
@@ -74,6 +74,9 @@
         font-size: 0.8rem !important;
         width:2rem !important;
         height: 3rem !important;
+    }
+    .reserve-icon .css-1c4inqc-MuiSvgIcon-root{
+        font-size: 1rem !important;
     }
 
 
