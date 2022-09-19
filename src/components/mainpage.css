@@ -10,6 +10,47 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.wrapper {
+  margin: 4rem 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 34px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+.wrapper h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #bbbbc3;
+  font-weight: 600;
+}
+
+.yatch {
+  background: var(--clr-white);
+  width: 350px;
+}
+
+.yatch img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.yatch h4 {
+  padding: 0.5rem;
+}
+
+.yatch p {
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  text-align: center;
+  font-size: 14px;
+}
+
 .card {
   position: relative;
   height: 500px;
