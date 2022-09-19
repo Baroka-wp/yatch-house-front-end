@@ -13,32 +13,17 @@ class HouseForm extends React.Component {
   }
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    const name = event.target.name;
+    const newState = {};
+    newState[name] = event.target.value;
+    this.setState(newState);
+    event.preventDefault();
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { name, description, price, location, image } = this.state;
-    const house = {
-      name,
-      description,
-      price,
-      location,
-      image,
-    };
-    const { createHouse } = this.props;
-    createHouse(house);
-    this.setState({
-      name: '',
-      description: '',
-      price: '',
-      location: '',
-      image: '',
-    });
-  };
+
+
 
   render() {
-    const { name, description, price, location, image } = this.state;
     return (
       <div className="container">
         <h1 className="text-center mt-5">Add a new house</h1>
@@ -50,7 +35,7 @@ class HouseForm extends React.Component {
               className="form-control"
               id="name"
               name="name"
-              value={name}
+              value={this.state.name}
               onChange={this.handleChange}
             />
           </div>
@@ -60,7 +45,7 @@ class HouseForm extends React.Component {
               className="form-control"
               id="description"
               name="description"
-              value={description}
+              value={this.state.description}
               onChange={this.handleChange}
             />
           </div>
@@ -71,7 +56,7 @@ class HouseForm extends React.Component {
               className="form-control"
               id="price"
               name="price"
-              value={price}
+              value={this.state.price}
               onChange={this.handleChange}
             />
           </div>
@@ -82,7 +67,7 @@ class HouseForm extends React.Component {
               className="form-control"
               id="location"
               name="location"
-              value={location}
+              value={this.state.location}
               onChange={this.handleChange}
             />
           </div>
@@ -93,11 +78,10 @@ class HouseForm extends React.Component {
                 className="form-control"
                 id="image"
                 name="image"
-                value={image}
+                value={this.state.image}
                 onChange={this.handleChange}
                 />
             </div>
-
 
             <button type="submit" className="btn btn-primary">
                 Add House
@@ -106,5 +90,5 @@ class HouseForm extends React.Component {
         </div>
         );
     }
-
+}
 export default HouseForm;
