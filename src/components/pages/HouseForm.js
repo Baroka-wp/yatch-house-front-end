@@ -1,8 +1,17 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 
+
+
 const HouseForm = () => {
+    const { user } = React.useContext(AuthContext);
+
+    if (user.role !== 'admin') {
+        return <Redirect to="/" />;
+    }
+
     const [inputs, setInputs] = useState({
+        user_id: user.id,
         name: '',
         description: '',
         price: '',
@@ -22,8 +31,17 @@ const HouseForm = () => {
     }
 
     return (
-      <div>
+      <div className='container'>
+        <h1 className='text-center mt-5'>Add a House</h1>
         <form onSubmit={handleSubmit}>
+          <label htmlFor='name'>Name</label>
+            <input
+                type='text'
+                name='name'
+                id='name'
+                value={inputs.name}
+                onChange={(event) => setInputs({...inputs, name: event.target.value})}
+            />
           <label htmlFor='description'>Description</label>
           <input
             type='text'
@@ -68,7 +86,11 @@ const HouseForm = () => {
               setInputs({ ...inputs, image: event.target.value })
             }
           />
-          <button type='submit'>Submit</button>
+          <div className='text-center'>
+            <button type='submit' className='btn btn-primary mt-5'>
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     );
