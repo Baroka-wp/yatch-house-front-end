@@ -99,6 +99,17 @@
   padding-top: 20px;
 }
 
+.main_page_footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: #97bf0f;
+  padding-top: 20px;
+}
+
 @media (min-width: 768px) {
   .navBar_mobile {
     display: none;
@@ -178,5 +189,9 @@
 
   .login_header {
     padding-top: 20px;
+  }
+
+  .main_page_footer {
+    display: none;
   }
 }
