@@ -4,7 +4,7 @@ const yatches = [
     user_id: 2,
     name: 'yatch house one',
     description: 'It has a nice view of the ocean with a private beach',
-    role:'non-admin',
+    role: 'non-admin',
     image:
       'https://www.houseboating.org/media/new/Dale-Hollow-Lake-Houseboat-Rentals-Media-25-800x600.jpg',
   },
