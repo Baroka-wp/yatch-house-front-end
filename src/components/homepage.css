@@ -58,6 +58,31 @@
   color: white;
 }
 
+.yatchCarousel {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prev-btn {
+  background: #efefef;
+  border: none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 0.5rem 1rem;
+  width: 80px;
+  color: white;
+}
+.next-btn {
+  background: #96BF1A;
+  border: none;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding: 0.5rem 1rem;
+  width: 80px;
+  color: white;
+}
+
+
 /* Media query for a device with a width of 500px */
 @media only screen and (max-width: 500px) {
   .wallpaper-content h1 {

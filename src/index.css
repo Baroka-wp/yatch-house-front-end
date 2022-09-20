@@ -1,3 +1,6 @@
+a {
+  text-decoration: none;
+}
 .navBar_mobile {
   display: flex;
   justify-content: space-between;
@@ -139,6 +142,7 @@
   }
 
   .sidebar_nav {
+    border-right: 1px solid #efefef;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -1,0 +1,59 @@
+.house {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+}
+
+.house img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.house_image {
+    display: flex;
+    gap: 10px;
+    align-self: start;
+}
+
+.house_container {
+   position: relative;
+   height: 100vh;
+}
+
+.house_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+}
+.house_info a {
+    align-self: flex-end;
+}
+
+.reserve-btn {
+    align-self: flex-end;
+    border: none;
+    padding: 10px 20px;
+    width: 200px;
+    background: #96bf1a;
+    border-radius: 25px;
+}
+
+.housse-prev-btn {
+    align-self: flex-end;
+    border: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 0.5rem 1rem;
+    width: 80px;
+    color: white;
+    background: #96bf1a;
+    height: auto;
+}

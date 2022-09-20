@@ -7,21 +7,21 @@ import MainPage from './components/mainpage';
 import Login from './components/pages/Login';
 import Registration from './components/pages/Registration';
 import NewReservation from './components/pages/NewReservation';
+import House from './components/pages/House';
 
 const App = () => (
-  <>
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/reservation" element={<MainPage />} />
-          <Route path="/admins/login" element={<Login />} />
-          <Route path="/admins/registration" element={<Registration />} />
-          <Route path="/reservation/new" element={<NewReservation />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
-  </>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/reservation" element={<MainPage />} />
+        <Route path="/admins/login" element={<Login />} />
+        <Route path="/admins/registration" element={<Registration />} />
+        <Route path="/reservation/:id" element={<House />} />
+        <Route path="/reservation/:id/new" element={<NewReservation />} />
+      </Routes>
+    </BrowserRouter>
+  </Provider>
 );
 
 export default App;
