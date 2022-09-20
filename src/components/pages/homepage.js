@@ -4,7 +4,7 @@ import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import CircleIcon from '@mui/icons-material/Circle';
 import './homepage.css';
 import { v4 as uuidv4 } from 'uuid';
-import MobileNavbar from './MobileNavBar';
+import MobileNavbar from '../MobileNavBar';
 
 const HomePage = () => (
   <div>

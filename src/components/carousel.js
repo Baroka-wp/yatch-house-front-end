@@ -6,7 +6,7 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import Socials from './socials';
 import '@splidejs/react-splide/css';
 import yatches from './dummydata/joydata';
-import './mainpage.css';
+import './pages/mainpage.css';
 
 const Carousel = () => {
   const [itemId, setItemId] = useState(0);

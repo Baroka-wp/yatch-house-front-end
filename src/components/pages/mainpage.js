@@ -1,9 +1,9 @@
 import React from 'react';
 import '@splidejs/react-splide/css';
 import './mainpage.css';
-import Carousel from './carousel';
-import MobileNavbar from './MobileNavBar';
-import SideNavbar from './MainNavBar';
+import Carousel from '../carousel';
+import MobileNavbar from '../MobileNavBar';
+import SideNavbar from '../MainNavBar';
 
 const MainPage = () => (
   <div className="main_page">
