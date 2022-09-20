@@ -91,7 +91,6 @@
   color: white;
 }
 
-
 /* Media query for a device with a width of 500px */
 @media only screen and (max-width: 500px) {
   .wallpaper-content h1 {
