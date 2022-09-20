@@ -6,7 +6,7 @@ import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const customStyles = {
   content: {
-    top: '25%',
+    top: '35%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
