@@ -9,6 +9,7 @@ import {
   Col,
 } from 'reactstrap';
 import { AuthContext } from '../../context/AuthContext';
+import logo from '../../img/Yatch-House.png';
 
 const Login = () => {
   const [credential, setCredential] = useState({
@@ -39,52 +40,60 @@ const Login = () => {
   };
 
   return (
-    <div className="col-md-5 login_registration_form">
-      <h3> Login </h3>
-      {error && (<span className="text-danger">Password or email is incorrect</span>)}
-      <hr />
-      <form>
-        <Row>
-          <Col md={12}>
-            <FormGroup>
-              <Label for="email">
-                Email
-              </Label>
-              <Input
-                id="email"
-                name="email"
-                placeholder="john@example.com"
-                type="email"
-                onChange={handleChange}
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-            <FormGroup>
-              <Label for="password">
-                Password
-              </Label>
-              <Input
-                id="password"
-                name="password"
-                placeholder="password placeholder"
-                type="password"
-                onChange={handleChange}
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-        <button
-          disabled={loading}
-          onClick={handleClick}
-          className=" btn btn-sm btn-primary"
-          type="submit"
-        >
-          Login
-        </button>
-      </form>
+    <div className="user_auth_container">
+      <div className="login_header">
+        <img src={logo} alt="logo" />
+        <h3> Login </h3>
+      </div>
+      <div className="col-md-5 login_registration_form">
+        {error && (<span className="text-danger">Password or email is incorrect</span>)}
+        <hr />
+        <form>
+          <Row>
+            <Col md={12}>
+              <FormGroup>
+                <Label for="email">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  placeholder="john@example.com"
+                  type="email"
+                  onChange={handleChange}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+              <FormGroup>
+                <Label for="password">
+                  Password
+                </Label>
+                <Input
+                  id="password"
+                  name="password"
+                  placeholder="password placeholder"
+                  type="password"
+                  onChange={handleChange}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+          <button
+            disabled={loading}
+            onClick={handleClick}
+            className=" btn btn-sm btn-primary"
+            type="submit"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+      <div className="login_footer">
+        <p>© 2022 Yatch House</p>
+      </div>
     </div>
   );
 };

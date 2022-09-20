@@ -1,9 +1,10 @@
 import React from 'react';
-import SearchIcon from '@mui/icons-material/Search';
+import { NavLink } from 'react-router-dom';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import CircleIcon from '@mui/icons-material/Circle';
 import './homepage.css';
 import { v4 as uuidv4 } from 'uuid';
+import MobileNavbar from './MobileNavBar';
 
 const HomePage = () => (
   <div>
@@ -17,37 +18,21 @@ const HomePage = () => (
         width: '100%',
       }}
     >
-      <div className="hamburger">
-        <div className="line" />
-        <div className="line" />
-      </div>
+      <MobileNavbar />
       <div className="wallpaper-content">
-        <SearchIcon
-          sx={{
-            color: '#1663be',
-            borderRadius: '48%',
-            border: '1px solid white',
-            backgroundColor: 'white',
-            fontSize: '1rem',
-            width: '2.6rem',
-            height: '4rem',
-            position: 'absolute',
-            top: '20px',
-            right: '2rem',
-            transform: 'rotate(90deg)',
-          }}
-        />
         <h1> Rent a Yatch House with Yatch flex</h1>
       </div>
       <div className="reserve-button">
-        <button className="reserve" type="button">
-          <span>Reserve Now</span>
-          <span className="reserve-icon">
-            <ExpandCircleDownIcon
-              sx={{ color: '#fff', transform: 'rotate(-90deg)' }}
-            />
-          </span>
-        </button>
+        <NavLink to="/reservation">
+          <button className="reserve" type="button">
+            <span>Reserve Now</span>
+            <span className="reserve-icon">
+              <ExpandCircleDownIcon
+                sx={{ color: '#fff', transform: 'rotate(-90deg)' }}
+              />
+            </span>
+          </button>
+        </NavLink>
       </div>
       <div className="homepage-dots">
         {[...Array(4)].map(() => (
