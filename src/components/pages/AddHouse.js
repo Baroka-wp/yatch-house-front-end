@@ -1,6 +1,6 @@
 import React from 'react';
-import HouseForm from './HouseForm';
-import { AuthContext } from '../context/AuthContext';
+import HouseForm from '../HouseForm';
+import { AuthContext } from '../../context/AuthContext';
 
 
 const AddHouse = () => {

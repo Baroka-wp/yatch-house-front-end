@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import axios from 'axios';
-import AuthContext from '../context/AuthContext';
+// import axios from 'axios';
+import { AuthContext } from '../context/AuthContext';
 
 const HouseForm = () => {
     const { user } = React.useContext(AuthContext);
@@ -14,16 +14,16 @@ const HouseForm = () => {
         image: '',
     });
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        axios.post('http://localhost:3000/houses', house)
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    }
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     axios.post('http://localhost:3000/houses', house)
+    //     .then((response) => {
+    //         console.log(response);
+    //     })
+    //     .catch((error) => {
+    //         console.log(error);
+    //     });
+    // }
 
     return (
       <div className='container'>
