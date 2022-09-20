@@ -1,16 +1,11 @@
 import React,{useState} from 'react';
 import axios from 'axios';
-
-
+import AuthContext from '../context/AuthContext';
 
 const HouseForm = () => {
     const { user } = React.useContext(AuthContext);
 
-    if (user.role !== 'admin') {
-        return <Redirect to="/" />;
-    }
-
-    const [inputs, setInputs] = useState({
+    const [house, setHouse] = useState({
         user_id: user.id,
         name: '',
         description: '',
@@ -21,7 +16,7 @@ const HouseForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:3000/houses', inputs)
+        axios.post('http://localhost:3000/houses', house)
         .then((response) => {
             console.log(response);
         })
@@ -39,8 +34,8 @@ const HouseForm = () => {
                 type='text'
                 name='name'
                 id='name'
-                value={inputs.name}
-                onChange={(event) => setInputs({...inputs, name: event.target.value})}
+                value={house.name}
+                onChange={(event) => setHouse({...house, name: event.target.value})}
             />
           <label htmlFor='description'>Description</label>
           <input
@@ -48,9 +43,9 @@ const HouseForm = () => {
             className='form-control'
             name='description'
             id='description'
-            value={inputs.description}
+            value={house.description}
             onChange={(event) =>
-              setInputs({ ...inputs, description: event.target.value })
+              setHouse({ ...house, description: event.target.value })
             }
           />
           <label htmlFor='price'>Price</label>
@@ -59,9 +54,9 @@ const HouseForm = () => {
             className='form-control'
             name='price'
             id='price'
-            value={inputs.price}
+            value={house.price}
             onChange={(event) =>
-              setInputs({ ...inputs, price: event.target.value })
+              setHouse({ ...house, price: event.target.value })
             }
           />
           <label htmlFor='location'>Location</label>
@@ -70,9 +65,9 @@ const HouseForm = () => {
             className='form-control'
             name='location'
             id='location'
-            value={inputs.location}
+            value={house.location}
             onChange={(event) =>
-              setInputs({ ...inputs, location: event.target.value })
+              setHouse({ ...house, location: event.target.value })
             }
           />
           <label htmlFor='image'>Image</label>
@@ -81,9 +76,9 @@ const HouseForm = () => {
             className='form-control'
             name='image'
             id='image'
-            value={inputs.image}
+            value={house.image}
             onChange={(event) =>
-              setInputs({ ...inputs, image: event.target.value })
+              setHouse({ ...house, image: event.target.value })
             }
           />
           <div className='text-center'>

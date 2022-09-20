@@ -1,12 +1,18 @@
 import React from 'react';
 import HouseForm from './HouseForm';
-import yatches from '../dummydata/joydata';
+import { AuthContext } from '../context/AuthContext';
 
 
+const AddHouse = () => {
+    const { user } = React.useContext(AuthContext);
 
-const AddHouse = () => (
-    <div>
-        <HouseForm />
-    </div>
-);
+    if (user.role !== 'admin') {
+        return <Redirect to="/" />;
+    }
+    return (
+        <div>
+            <HouseForm />
+        </div>
+    );
+}
 export default AddHouse;
