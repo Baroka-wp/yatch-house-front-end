@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import CircleIcon from '@mui/icons-material/Circle';
 import './homepage.css';
@@ -22,14 +23,16 @@ const HomePage = () => (
         <h1> Rent a Yatch House with Yatch flex</h1>
       </div>
       <div className="reserve-button">
-        <button className="reserve" type="button">
-          <span>Reserve Now</span>
-          <span className="reserve-icon">
-            <ExpandCircleDownIcon
-              sx={{ color: '#fff', transform: 'rotate(-90deg)' }}
-            />
-          </span>
-        </button>
+        <NavLink to="/reservation">
+          <button className="reserve" type="button">
+            <span>Reserve Now</span>
+            <span className="reserve-icon">
+              <ExpandCircleDownIcon
+                sx={{ color: '#fff', transform: 'rotate(-90deg)' }}
+              />
+            </span>
+          </button>
+        </NavLink>
       </div>
       <div className="homepage-dots">
         {[...Array(4)].map(() => (

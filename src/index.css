@@ -74,6 +74,31 @@
   display: none;
 }
 
+.user_auth_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 100px;
+}
+
+.login_footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: #97bf0f;
+  padding-top: 20px;
+}
+
 @media (min-width: 768px) {
   .navBar_mobile {
     display: none;
@@ -149,5 +174,9 @@
 
   .copyright {
     padding-left: 1rem;
+  }
+
+  .login_header {
+    padding-top: 20px;
   }
 }
