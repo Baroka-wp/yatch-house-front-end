@@ -63,7 +63,6 @@
   height: 50px;
   background: #97bf0f;
   opacity: 0.8;
-  z-index: 1;
 }
 
 .clearfix {
@@ -116,6 +115,10 @@
   }
 
   .mobile_menu_background {
+    display: none;
+  }
+
+  .ReactModalPortal {
     display: none;
   }
 
