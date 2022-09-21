@@ -4,14 +4,13 @@ import HouseForm from '../HouseForm';
 import './homepage.css';
 // import { AuthContext } from '../../context/AuthContext';
 
-const AddHouse = () =>
+const AddHouse = () => (
+  <div>
+    <HouseForm />
+  </div>
+);
   // const { user } = React.useContext(AuthContext);
   // if (user.role !== 'admin') {
   //   return <Redirect to="/" />;
   // }
-  (
-    <div>
-      <HouseForm />
-    </div>
-  );
 export default AddHouse;
