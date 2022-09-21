@@ -1,11 +1,11 @@
 .btn-sub {
-    background: #97bf0f;
-    width: 200px;
-    border-radius: 5px;
-    border: none;
-    padding: 10px 0;
+  background: #97bf0f;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 0;
 }
 
 .btn-sub:hover {
-    background: #96bf0f89;
+  background: #96bf0f89;
 }

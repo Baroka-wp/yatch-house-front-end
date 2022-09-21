@@ -113,7 +113,6 @@ a {
   padding-top: 20px;
 }
 
-
 @media (min-width: 768px) {
   .navBar_mobile {
     display: none;
@@ -203,6 +202,7 @@ a {
   .main_page_footer {
     display: none;
   }
+
   .reservation-container {
     position: absolute;
     top: 40%;
