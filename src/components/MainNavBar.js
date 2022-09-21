@@ -16,11 +16,16 @@ const SideNavbar = () => {
     },
     {
       id: 3,
+      path: '/houses/new',
+      text: 'Add House',
+    },
+    {
+      id: 4,
       path: '/admins/login',
       text: 'Sign In',
     },
     {
-      id: 4,
+      id: 5,
       path: '/admins/registration',
       text: 'Register',
     },
