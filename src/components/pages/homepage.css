@@ -37,22 +37,25 @@
 }
 
 .reserve {
-  background-color: #228c22;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #97bf0f;
   border: none;
   border-radius: 10px;
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0.5rem 1rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   color: #fff;
   font-size: 1rem;
 }
 
 .reserve-icon {
   margin-left: 1rem;
-  position: relative;
-  top: 5px;
+  /* position: relative;
+  top: 5px; */
 }
 
 .homepage-dots {
