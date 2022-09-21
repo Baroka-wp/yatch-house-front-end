@@ -54,6 +54,7 @@
 
 .reserve-icon {
   margin-left: 1rem;
+
   /* position: relative;
   top: 5px; */
 }
@@ -98,6 +99,10 @@
   max-width: 500px;
 }
 
+.display_indicator .react-slideshow-container .default-nav {
+  display: none !important;
+}
+
 /* Media query for a device with a width of 500px */
 @media only screen and (max-width: 500px) {
   .wallpaper-content h1 {
@@ -107,7 +112,7 @@
 
   .reserve {
     top: 60%;
-    padding: 0.5rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
   }
 
   .homepage-dots {
