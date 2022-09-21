@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
-import { AuthContext } from '../context/AuthContext';
+// import { AuthContext } from '../context/AuthContext';
 
 const HouseForm = () => {
-  const { user } = React.useContext(AuthContext);
+  // const { user } = React.useContext(AuthContext);
 
   const [house, setHouse] = useState({
-    user_id: user.id,
+    // user_id: user.id,
     name: '',
     description: '',
     price: '',
@@ -28,8 +28,8 @@ const HouseForm = () => {
   return (
     <div className="container">
       <h1 className="text-center mt-5">Add a House</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
+      <form onSubmit={handleSubmit} className="">
+        <label htmlFor="name" className="form-label mb-3">
           Name
           <input
             type="text"
@@ -40,7 +40,7 @@ const HouseForm = () => {
             onChange={(event) => setHouse({ ...house, name: event.target.value })}
           />
         </label>
-        <label htmlFor="description">
+        <label htmlFor="description" className="form-label mb-3">
           Description
           <input
             type="text"
@@ -51,7 +51,7 @@ const HouseForm = () => {
             onChange={(event) => setHouse({ ...house, description: event.target.value })}
           />
         </label>
-        <label htmlFor="price">
+        <label htmlFor="price" className="form-label mb-3">
           Price
           <input
             type="number"
@@ -62,7 +62,7 @@ const HouseForm = () => {
             onChange={(event) => setHouse({ ...house, price: event.target.value })}
           />
         </label>
-        <label htmlFor="location">
+        <label htmlFor="location" className="form-label mb-3">
           Location
           <input
             type="text"
@@ -73,7 +73,7 @@ const HouseForm = () => {
             onChange={(event) => setHouse({ ...house, location: event.target.value })}
           />
         </label>
-        <label htmlFor="image">
+        <label htmlFor="image" className="form-label mb-3">
           Image
           <input
             type="text"

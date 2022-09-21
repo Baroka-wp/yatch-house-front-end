@@ -1,18 +1,16 @@
 import React from 'react';
-import { Redirect } from 'react-router';
+// import { Redirect } from 'react-router';
 import HouseForm from '../HouseForm';
-import { AuthContext } from '../../context/AuthContext';
+import './homepage.css';
+// import { AuthContext } from '../../context/AuthContext';
 
-const AddHouse = () => {
-  const { user } = React.useContext(AuthContext);
-
-  if (user.role !== 'admin') {
-    return <Redirect to="/" />;
-  }
-  return (
-    <div>
-      <HouseForm />
-    </div>
-  );
-};
+const AddHouse = () => (
+  <div>
+    <HouseForm />
+  </div>
+);
+  // const { user } = React.useContext(AuthContext);
+  // if (user.role !== 'admin') {
+  //   return <Redirect to="/" />;
+  // }
 export default AddHouse;
