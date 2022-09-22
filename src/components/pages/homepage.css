@@ -1,39 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.wallpaper-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  font-family: 'Fredoka One', cursive;
+}
+
 .wallpaper-content h1 {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -30%);
   font-size: 3rem;
   font-weight: 600;
-  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  background:
-    linear-gradient(
-      to right,
-      #fff 0%,
-      #0d0d0d 46%,
-      #fff 76%,
-      #383838 87%,
-      #1b1b1b 100%
-    );
+  text-align: center;
+  width: 50%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(2, 79, 44, 1) 0%, rgba(0, 212, 255, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.hamburger {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 100;
-}
-
-.line {
-  width: 25px;
-  height: 5px;
-  background-color: #fff;
-  margin: 6px 0;
-  border-radius: 2px;
 }
 
 .reserve {
@@ -43,10 +30,11 @@
   background-color: #97bf0f;
   border: none;
   border-radius: 10px;
-  position: absolute;
+
+  /* position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   padding: 1rem 1rem 1rem 1rem;
   color: #fff;
   font-size: 1rem;
@@ -61,18 +49,18 @@
 
 .homepage-dots {
   position: absolute;
+  right: 1rem;
   bottom: 1rem;
-  right: 2rem;
   color: transparent;
 }
 
-.reserve-icon div:nth-child(3) {
+.homepage-dots div:nth-child(3) {
   color: white;
 }
 
 .yatchCarousel {
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .prev-btn {
@@ -95,9 +83,9 @@
   color: white;
 }
 
-.container {
+/* .container {
   max-width: 500px;
-}
+} */
 
 .display_indicator .react-slideshow-container .default-nav {
   display: none !important;
@@ -112,11 +100,10 @@
 @media only screen and (max-width: 500px) {
   .wallpaper-content h1 {
     font-size: 1.5rem;
-    color: #fff;
   }
 
   .reserve {
-    top: 60%;
+    /* top: 60%; */
     padding: 1rem 1rem 1rem 1rem;
   }
 

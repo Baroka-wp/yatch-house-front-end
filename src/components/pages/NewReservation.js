@@ -31,7 +31,7 @@ const NewReservation = () => {
       start_date: startDate.toISOString().split('T')[0],
       end_date: endDate.toISOString().split('T')[0],
     });
-    console.log(reservation);
+    // console.log(reservation);
     // axios.post('http://localhost:3000/reservations', reservation)
     //   .then((response) => {
     //     console.log(response);
@@ -50,66 +50,59 @@ const NewReservation = () => {
           <MobileNavbar />
         </div>
         <div className="clearfix" />
-        <div className="container">
+        <div className="container reservation">
           <div className="row">
             <div className="col-md-4">
-              <img src={house.image} alt="yatch" className="img-fluid" />
+              <img src={house.image} alt="yatch" className="img-fluid image" />
             </div>
-            <div className="col-8">
-              <h4> Reservation Infos : </h4>
-              <p>
-                <strong>
-                  House name :
-                  {house.name}
-                </strong>
-              </p>
-              <p>
-                <strong>
-                  House description :
-                </strong>
-                {'  '}
-                {house.description}
-              </p>
-              <p><strong>House price : $13</strong></p>
-              <p>
-                <strong>
-                  From:
-                  {'  '}
-                </strong>
-
-                {startDate.toISOString().split('T')[0]}
-              </p>
-              <p>
-                <strong>
-                  To:
-                  {' '}
-                  {'   '}
-                </strong>
-
-                {endDate.toISOString().split('T')[0]}
-              </p>
+            <div className="col reserve-infos">
+              <h3> Reservation Infos </h3>
+              <table>
+                <tr>
+                  <th>House Name: </th>
+                  <td>{house.name}</td>
+                </tr>
+                <tr>
+                  <th>Description: </th>
+                  <td>{house.description}</td>
+                </tr>
+                <tr>
+                  <th>Price: </th>
+                  <td>$13</td>
+                </tr>
+                <tr>
+                  <th>Start Date: </th>
+                  <td>{startDate.toISOString().split('T')[0]}</td>
+                </tr>
+                <tr>
+                  <th>End Date: </th>
+                  <td>{endDate.toISOString().split('T')[0]}</td>
+                </tr>
+              </table>
             </div>
           </div>
-          <div className="row">
-            <hr />
+          <div className="row date-range">
             <h3> Choose date range </h3>
             <hr />
-            <div className="col-md-12">
+            <div className="col-md-12 ">
               <form onSubmit={handleSubmit}>
-                <div className="">
-                  <p>Date de début</p>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                  />
-                  <br />
-                  <p>Date de fin</p>
-                  <DatePicker
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                  />
+                <div className="date-fields">
+                  <div className="start-date">
+                    <p>Start Date</p>
+                    <DatePicker
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                    />
+                  </div>
+                  <div className="end-date">
+                    <p>End Date</p>
+                    <DatePicker
+                      selected={endDate}
+                      onChange={(date) => setEndDate(date)}
+                    />
+                  </div>
                 </div>
-                <div className="">
+                <div className="submit">
                   <button type="submit" className="btn-sub mt-5">
                     Submit
                   </button>

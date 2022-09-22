@@ -15,7 +15,7 @@ const Search = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
-    navigate(`/reservation/${e.target.value}`);
+    navigate(`/houses/${e.target.value}`);
   };
 
   return (
