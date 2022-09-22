@@ -12,7 +12,7 @@ const SideNavbar = () => {
     },
     {
       id: 2,
-      path: '/my-reservation',
+      path: '/my_reservation',
       text: 'My Reservations',
     },
     {

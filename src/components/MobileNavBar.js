@@ -38,7 +38,7 @@ const MobileNavbar = () => {
   const links = [
     {
       id: 1,
-      path: '/my-reservation',
+      path: '/my_reservation',
       text: 'My Reservations',
     },
     {
