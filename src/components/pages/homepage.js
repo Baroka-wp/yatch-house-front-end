@@ -69,7 +69,7 @@ const HomePage = () => (
                   <span>Reserve Now</span>
                   <span className="reserve-icon">
                     <ExpandCircleDownIcon
-                      sx={{ color: '#fff', transform: 'rotate(-90deg)' }}
+                      sx={{ color: 'black', transform: 'rotate(-90deg)' }}
                     />
                   </span>
                 </button>
