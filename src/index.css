@@ -119,6 +119,28 @@ a {
   padding-top: 20px;
 }
 
+.reservation_report {
+  display: flex;
+  justify-content: center;
+}
+
+.reservation_report table {
+  width: 80%;
+  margin-top: 20px;
+}
+
+.table-item {
+  padding: 5px;
+}
+
+.tbl_center {
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+
 @media (min-width: 768px) {
   .navBar_mobile {
     display: none;
