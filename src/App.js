@@ -12,8 +12,7 @@ import Login from './components/pages/Login';
 import Registration from './components/pages/Registration';
 import NewReservation from './components/pages/NewReservation';
 import House from './components/pages/House';
-import MyReservation from './components/pages/MyReservation';
-
+import MyReservation from './components/pages/MyReservation.js';
 
 const App = () => {
   /* eslint-disable react/prop-types */
