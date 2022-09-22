@@ -27,19 +27,22 @@ const MyReservation = () => {
           <table>
             <tbody>
               <tr>
-                <th class="table-item">House name</th>
-                <th class="table-item">Start date</th>
-                <th class="table-item">End date</th>
-                <th class="table-item">Number of days</th>
-                <th class="table-item">Total cost</th>
+                <th className="table-item">House name</th>
+                <th className="table-item">Start date</th>
+                <th className="table-item">End date</th>
+                <th className="table-item">Number of days</th>
+                <th className="table-item">Total cost</th>
               </tr>
               {items.map((item) => (
-                <tr>
-                  <td class="table-item">{item.house_name}</td>
-                  <td class="table-item tbl_center">{item.start_date}</td>
-                  <td class="table-item tbl_center">{item.end_date}</td>
-                  <td class="table-item tbl_center">{item.number_of_days}</td>
-                  <td class="table-item tbl_center">$ {item.total_cost}</td>
+                <tr key={item.id}>
+                  <td className="table-item">{item.house_name}</td>
+                  <td className="table-item tbl_center">{item.start_date}</td>
+                  <td className="table-item tbl_center">{item.end_date}</td>
+                  <td className="table-item tbl_center">{item.number_of_days}</td>
+                  <td className="table-item tbl_center">
+                    $
+                    {item.total_cost}
+                  </td>
                 </tr>
               ))}
             </tbody>
