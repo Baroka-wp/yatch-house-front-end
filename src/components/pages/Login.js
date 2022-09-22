@@ -13,7 +13,7 @@ import logo from '../../img/Yatch-House.png';
 
 const Login = () => {
   const [credential, setCredential] = useState({
-    username: undefined,
+    email: undefined,
     password: undefined,
   });
 
@@ -31,7 +31,8 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: 'LOGIN_START' });
     try {
-      const res = await axios.post('http://localhost:8080/api/v1/auth/admin', credential);
+      const res = await axios.post('http://localhost:3001/users/sign_in',
+        { user: credential });
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
       navigate('/reservation/new');
     } catch (err) {
