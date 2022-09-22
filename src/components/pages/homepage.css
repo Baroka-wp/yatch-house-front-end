@@ -103,6 +103,11 @@
   display: none !important;
 }
 
+.user_sign_btn {
+  display: flex;
+  gap: 0.5rem;
+}
+
 /* Media query for a device with a width of 500px */
 @media only screen and (max-width: 500px) {
   .wallpaper-content h1 {
@@ -131,5 +136,10 @@
 
   .reserve-icon .css-1c4inqc-MuiSvgIcon-root {
     font-size: 1rem !important;
+  }
+
+  .user_sign_btn {
+    display: flex;
+    gap: 0.5rem;
   }
 }
