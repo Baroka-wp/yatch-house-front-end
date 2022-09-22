@@ -1,16 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+.house_container{
+  max-width: 100% !important;
+}
 .house {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   gap: 50px;
-  justify-content: space-evenly;
   width: 100%;
 }
 
 .house img {
-  width: 400px;
+  width: 300px;
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
@@ -23,29 +22,39 @@
   align-self: start;
 }
 
-.house_container {
-  position: relative;
-  height: 100vh;
-}
-
 .house_info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 400px;
 }
 
 .house_info a {
-  align-self: flex-end;
+  align-self: flex-start;
+}
+.house_name h2{
+  font-size: 2rem;
+  font-family: 'Niconne', cursive;
+  text-align: start;
+  text-decoration: underline;
+}
+.house_name p {
+  font-size: 1rem;
+  border:1px solid none;
+  border-radius: 10px;
+  background-color: #D5FDD5;
+  text-align: start;
+  padding:1rem 1.5rem;
+  width:350px;
+  font-family: 'Georgia';
+  src: local('Georgia'), url("../../fonts/georgiai.ttf") format('truetype');
 }
 
 .reserve-btn {
-  align-self: flex-end;
+  align-self: flex-start;
   border: none;
   padding: 10px 20px;
-  width: 200px;
-  background: #96bf1a;
-  border-radius: 25px;
+  background: #BFE3BF;
+  border-radius: 15px;
 }
 
 .housse-prev-btn {
@@ -58,4 +67,51 @@
   color: white;
   background: #96bf1a;
   height: auto;
+}
+.add-form h1 {
+  font-size: 2rem;
+  font-family: 'Niconne', cursive;
+  text-align: center;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  margin: 0 auto;
+  font-family:'Georgia';
+  src: local('Georgia'), url("../../fonts/georgiai.ttf") format('truetype');
+}
+
+@media screen and (max-width: 500px) {
+
+  .clearfix{
+    margin:0;
+  }
+  .house {
+    flex-direction: column;
+    width:500px;
+    gap: 20px;
+    top:30%;
+    left:35%;
+  }
+  .house_image{
+    align-self: center;
+  }
+
+  .house img {
+    width: 100%;
+    height: 200px;
+    margin:0 auto;
+  }
+
+  .house_info {
+    height: 200px;
+  }
 }

@@ -48,7 +48,7 @@ const MobileNavbar = () => {
     },
     {
       id: 3,
-      path: '/houses/new',
+      path: '/houses/:id/new',
       text: 'ADD HOUSE',
     },
     {

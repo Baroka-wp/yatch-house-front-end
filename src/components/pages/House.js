@@ -23,7 +23,7 @@ const House = () => {
         <div className="container house_container">
           <div className="house">
             <div className="house_image">
-              <Link to="/reservation" style={{ alignSelf: 'flex-end' }} className="housse-prev-btn">
+              <Link to="/houses" style={{ alignSelf: 'flex-end' }} className="housse-prev-btn">
                 <ArrowLeftIcon />
               </Link>
               <img src={house.image} alt={house.name} />
@@ -33,7 +33,7 @@ const House = () => {
                 <h2>{house.name}</h2>
                 <p>{house.description}</p>
               </div>
-              <Link to={`/reservation/${id}/new`} style={{ textDecoration: 'none' }}>
+              <Link to={`/reservations/${id}/new`} style={{ textDecoration: 'none' }}>
                 <button type="button" className="reserve-btn">
                   Book now
                 </button>

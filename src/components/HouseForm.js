@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 // import { AuthContext } from '../context/AuthContext';
 import SideNavbar from './MainNavBar';
 import MobileNavbar from './MobileNavBar';
+import './pages/house.css';
 
 const HouseForm = () => {
   // const { user } = React.useContext(AuthContext);
@@ -37,10 +38,9 @@ const HouseForm = () => {
           <MobileNavbar />
         </div>
         <div className="clearfix" />
-        <h3> Select your desired destination</h3>
-        <div className="container">
+        <div className="container add-form">
           <h1 className="text-center mt-5">Add a House</h1>
-          <form onSubmit={handleSubmit} className="">
+          <form onSubmit={handleSubmit} className="form-container">
             <label htmlFor="name" className="form-label mb-3">
               Name
               <input
@@ -97,7 +97,7 @@ const HouseForm = () => {
               />
             </label>
             <div className="text-center">
-              <button type="submit" className="btn btn-primary mt-5">
+              <button type="submit" className="btn btn-primary mt-3">
                 Submit
               </button>
             </div>

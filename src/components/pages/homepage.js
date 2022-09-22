@@ -21,7 +21,7 @@ const HomePage = () => (
       <div className='wallpaper-content'>
         <h1> Rent a Yatch House with Yatch flex</h1>
         <div className='reserve-button'>
-          <NavLink to='/reservation'>
+          <NavLink to='/reservations/:id/new'>
             <button className='reserve' type='button'>
               <span>Reserve Now</span>
               <span className='reserve-icon'>

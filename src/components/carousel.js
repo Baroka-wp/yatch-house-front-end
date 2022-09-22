@@ -28,7 +28,7 @@ const Carousel = () => {
         <ArrowLeftIcon />
       </button>
       <SplideSlide key={item.id}>
-        <Link to={`/reservation/${item.id}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/houses/${item.id}`} style={{ textDecoration: 'none' }}>
           <div className="yatch">
             <div className="card">
               <img src={item.image} alt={item.name} />

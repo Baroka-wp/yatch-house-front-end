@@ -22,7 +22,7 @@ const SideNavbar = () => {
     },
     {
       id: 4,
-      path: "/houses/new",
+      path: "/houses/:id/new",
       text: "Add House",
     },
     {
