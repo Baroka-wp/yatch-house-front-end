@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../img/Yatch-House.png';
 import './pages/mainpage.css';
 
+import { AuthContext } from '../context/AuthContext';
+
 const SideNavbar = () => {
+  const { user } = useContext(AuthContext);
+
   const links = [
     {
       id: 1,
@@ -22,17 +26,17 @@ const SideNavbar = () => {
     },
     {
       id: 4,
-      path: '/houses/:id/new',
+      path: '/houses/new',
       text: 'Add House',
     },
     {
       id: 5,
-      path: '/admins/login',
+      path: '/login',
       text: 'Sign In',
     },
     {
       id: 6,
-      path: '/admins/registration',
+      path: '/registration',
       text: 'Register',
     },
   ];
@@ -56,26 +60,32 @@ const SideNavbar = () => {
               <h4>{links[2].text}</h4>
             </NavLink>
           </li>
-          <li key={links[3].id}>
-            <NavLink to={links[3].path}>
-              <h4>{links[3].text}</h4>
-            </NavLink>
-          </li>
+          {user.data.admin && (
+            <li key={links[3].id}>
+              <NavLink to={links[3].path}>
+                <h4>{links[3].text}</h4>
+              </NavLink>
+            </li>
+          )}
         </ul>
       </div>
       <div className="side_botton">
-        <ul className="sidebar_nav_list">
-          <li key={links[4].id}>
-            <NavLink to={links[4].path} className="">
-              <h4>{links[4].text}</h4>
-            </NavLink>
-          </li>
-          <li key={links[5].id}>
-            <NavLink to={links[5].path} className="">
-              <h4>{links[5].text}</h4>
-            </NavLink>
-          </li>
-        </ul>
+        {
+        !user && (
+          <ul className="sidebar_nav_list">
+            <li key={links[4].id}>
+              <NavLink to={links[4].path} className="">
+                <h4>{links[4].text}</h4>
+              </NavLink>
+            </li>
+            <li key={links[5].id}>
+              <NavLink to={links[5].path} className="">
+                <h4>{links[5].text}</h4>
+              </NavLink>
+            </li>
+          </ul>
+        )
+      }
         <div className="copyright">
           <p>© 2022 Yatch House</p>
         </div>
