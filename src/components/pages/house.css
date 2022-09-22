@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
-.house_container{
+
+.house_container {
   max-width: 100% !important;
 }
+
 .house {
   display: flex;
   gap: 50px;
@@ -31,21 +33,23 @@
 .house_info a {
   align-self: flex-start;
 }
-.house_name h2{
+
+.house_name h2 {
   font-size: 2rem;
   font-family: 'Niconne', cursive;
   text-align: start;
   text-decoration: underline;
 }
+
 .house_name p {
   font-size: 1rem;
-  border:1px solid none;
+  border: 1px solid;
   border-radius: 10px;
-  background-color: #D5FDD5;
+  background-color: #d5fdd5;
   text-align: start;
-  padding:1rem 1.5rem;
-  width:350px;
-  font-family: 'Georgia';
+  padding: 1rem 1.5rem;
+  width: 350px;
+  font-family: 'Georgia', cursive;
   src: local('Georgia'), url("../../fonts/georgiai.ttf") format('truetype');
 }
 
@@ -53,7 +57,7 @@
   align-self: flex-start;
   border: none;
   padding: 10px 20px;
-  background: #BFE3BF;
+  background: #bfe3bf;
   border-radius: 15px;
 }
 
@@ -72,11 +76,13 @@
   background: #96bf1a;
   height: auto;
 }
+
 .add-form h1 {
   font-size: 2rem;
   font-family: 'Niconne', cursive;
   text-align: center;
 }
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -89,36 +95,40 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 1rem;
   margin: 0 auto;
-  font-family:'Georgia';
+  font-family: 'Georgia', cursive;
   src: local('Georgia'), url("../../fonts/georgiai.ttf") format('truetype');
 }
 
 @media screen and (max-width: 500px) {
-  .house_container{
+  .house_container {
     overflow-x: hidden;
   }
-  .clearfix{
-    margin:0;
+
+  .clearfix {
+    margin: 0;
   }
-  .housse-prev-btn svg{
-    font-size:2rem !important;
+
+  .housse-prev-btn svg {
+    font-size: 2rem !important;
   }
-  .housse-prev-btn{
+
+  .housse-prev-btn {
     padding: 0;
   }
+
   .house {
     flex-direction: column;
-    width:500px;
+    width: 500px;
     gap: 20px;
-    top:30%;
-    left:35%;
+    top: 30%;
+    left: 35%;
   }
 
   .house-icon {
     padding-top: 60%;
   }
 
-  .house_image a{
+  .house_image a {
     padding-top: 0;
   }
 
@@ -129,14 +139,16 @@
   }
 
   .house_info {
-    width:300px;
-    margin:1rem;
+    width: 300px;
+    margin: 1rem;
   }
-  .house_name h2{
+
+  .house_name h2 {
     font-size: 2rem;
     text-align: center;
   }
-  .house_name p{
-    width:100%;
+
+  .house_name p {
+    width: 100%;
   }
 }

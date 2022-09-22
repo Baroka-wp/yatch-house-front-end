@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Slide } from 'react-slideshow-image';
-import Socials from '../socials';
+import React from 'react';
 import 'react-slideshow-image/dist/styles.css';
-import yatches from '../dummydata/joydata';
 import MobileNavbar from '../MobileNavBar';
 import SideNavbar from '../MainNavBar';
 import Carousel from '../Carousel';

@@ -9,112 +9,117 @@
 .btn-sub:hover {
   background: #96bf0f89;
 }
-  .btn-sub {
-    width: 100%;
-  }
-  .img-fluid{
-    border-radius:10px;
-  }
-  .reservation{
-    font-family:'Georgia';
+
+.img-fluid {
+  border-radius: 10px;
+}
+
+.reservation {
+  font-family: 'Georgia', cursive;
+  src: local('Georgia'), url("../../fonts/georgiaz.ttf") format('truetype');
+}
+
+.reserve-infos h3 {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  padding-left: 1rem;
+}
+
+.reserve-infos td,
+th {
+  padding: 0.5rem;
+  border: 1px solid #97bf0f;
+}
+
+.date-range h3 {
+  font-size: 1rem;
+  font-family: "Georgia", cursive;
+  src: local('Georgia'), url("../../fonts/georgiaz.ttf") format('truetype');
+  margin-top: 0.5rem;
+}
+
+.date-fields {
+  display: flex;
+  margin: 0 1rem;
+}
+
+.start-date input {
+  width: 100px;
+  margin-right: 1rem;
+}
+
+.end-date input {
+  width: 100px;
+  margin-left: 1rem;
+}
+
+.end-date p {
+  margin-left: 1rem;
+}
+
+.submit {
+  text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+  .reservation {
+    font-family: 'Georgia', cursive;
     src: local('Georgia'), url("../../fonts/georgiaz.ttf") format('truetype');
+    margin-top: 4rem;
   }
-  .reserve-infos h3{
-    margin-top: 1rem;
+
+  .reserve-infos h3 {
+    margin-top: 2rem;
     font-size: 2rem;
-    text-align: center;
+    text-align: start;
     padding-left: 1rem;
+    margin-left: 2rem;
   }
-  .reserve-infos td,th{
+
+  .img-fluid {
+    margin: 1rem 1rem;
+    height: 100%;
+  }
+
+  .reserve-infos td,
+  th {
     padding: 0.5rem;
     border: 1px solid #97bf0f;
   }
-  .date-range h3{
+
+  .date-range h3 {
     font-size: 1rem;
-    font-family:"Georgia";
+    font-family: "Georgia", cursive;
     src: local('Georgia'), url("../../fonts/georgiaz.ttf") format('truetype');
-    margin-top: 0.5rem;
+    margin-top: 3rem;
+    text-align: start;
   }
-  .date-fields{
+
+  .date-fields {
     display: flex;
     margin: 0 1rem;
   }
-  .start-date input{
+
+  .start-date input {
     width: 100px;
     margin-right: 1rem;
   }
+
   .end-date input {
     width: 100px;
     margin-left: 1rem;
   }
-  .end-date p{
+
+  .end-date p {
     margin-left: 1rem;
   }
-  .submit{
-    text-align: center;
-  }
-  .btn-sub{
-    width:100px;
+
+  .submit {
+    text-align: start;
   }
 
-  @media screen and (min-width: 700px){
-    .reservation {
-        font-family: 'Georgia';
-        src: local('Georgia'), url("../../fonts/georgiaz.ttf") format('truetype');
-        margin-top:4rem;
-      }
-
-      .reserve-infos h3 {
-        margin-top: 2rem;
-        font-size: 2rem;
-        text-align: start;
-        padding-left: 1rem;
-        margin-left: 2rem;
-      }
-
-      .img-fluid {
-        margin: 1rem 1rem;
-        height: 100%;
-      }
-
-      .reserve-infos td,
-      th {
-        padding: 0.5rem;
-        border: 1px solid #97bf0f;
-      }
-
-      .date-range h3 {
-        font-size: 1rem;
-        font-family: "Georgia";
-        src: local('Georgia'), url("../../fonts/georgiaz.ttf") format('truetype');
-        margin-top: 3rem;
-        text-align: start;
-      }
-
-      .date-fields {
-        display: flex;
-        margin: 0 1rem;
-      }
-
-      .start-date input {
-        width: 100px;
-        margin-right: 1rem;
-      }
-
-      .end-date input {
-        width: 100px;
-        margin-left: 1rem;
-      }
-
-      .end-date p {
-        margin-left: 1rem;
-      }
-
-      .submit {
-        text-align: start;
-      }
-
-      .btn-sub {
-        width: 100px;
-      }
+  .btn-sub {
+    width: 100px;
   }
+}

@@ -7,45 +7,45 @@ const SideNavbar = () => {
   const links = [
     {
       id: 1,
-      path: "/",
-      text: "Home",
+      path: '/',
+      text: 'Home',
     },
     {
       id: 2,
-      path: "/",
-      text: "Home",
+      path: '/',
+      text: 'Home',
     },
     {
       id: 3,
-      path: "/houses",
-      text: "Houses",
+      path: '/houses',
+      text: 'Houses',
     },
     {
       id: 4,
-      path: "/houses/:id/new",
-      text: "Add House",
+      path: '/houses/:id/new',
+      text: 'Add House',
     },
     {
       id: 5,
-      path: "/admins/login",
-      text: "Sign In",
+      path: '/admins/login',
+      text: 'Sign In',
     },
     {
       id: 6,
-      path: "/admins/registration",
-      text: "Register",
+      path: '/admins/registration',
+      text: 'Register',
     },
   ];
 
   return (
-    <nav className='sidebar_nav'>
-      <div className='side_top'>
-        <div className='logo'>
+    <nav className="sidebar_nav">
+      <div className="side_top">
+        <div className="logo">
           <NavLink to={links[0].path}>
-            <img src={logo} alt='logo' />
+            <img src={logo} alt="logo" />
           </NavLink>
         </div>
-        <ul className='sidebar_nav_list'>
+        <ul className="sidebar_nav_list">
           <li key={links[1].id}>
             <NavLink to={links[1].path}>
               <h4>{links[1].text}</h4>
@@ -63,20 +63,20 @@ const SideNavbar = () => {
           </li>
         </ul>
       </div>
-      <div className='side_botton'>
-        <ul className='sidebar_nav_list'>
+      <div className="side_botton">
+        <ul className="sidebar_nav_list">
           <li key={links[4].id}>
-            <NavLink to={links[4].path} className=''>
+            <NavLink to={links[4].path} className="">
               <h4>{links[4].text}</h4>
             </NavLink>
           </li>
           <li key={links[5].id}>
-            <NavLink to={links[5].path} className=''>
+            <NavLink to={links[5].path} className="">
               <h4>{links[5].text}</h4>
             </NavLink>
           </li>
         </ul>
-        <div className='copyright'>
+        <div className="copyright">
           <p>© 2022 Yatch House</p>
         </div>
       </div>

@@ -11,23 +11,23 @@ const House = () => {
   const house = yatches[id - 1];
 
   return (
-    <div className='main_page'>
-      <div className='mainNavBar'>
+    <div className="main_page">
+      <div className="mainNavBar">
         <SideNavbar />
       </div>
-      <div className='wrapper'>
-        <div className='mobile_menu_background'>
+      <div className="wrapper">
+        <div className="mobile_menu_background">
           <MobileNavbar />
         </div>
-        <div className='clearfix' />
-        <div className='container house_container'>
-          <div className='house'>
-            <div className='house_image'>
-              <div class="house-icon">
+        <div className="clearfix" />
+        <div className="container house_container">
+          <div className="house">
+            <div className="house_image">
+              <div className="house-icon">
                 <Link
-                  to='/houses'
-                  style={{ alignSelf: "flex-end" }}
-                  className='housse-prev-btn'
+                  to="/houses"
+                  style={{ alignSelf: 'flex-end' }}
+                  className="housse-prev-btn"
                 >
                   <ArrowLeftIcon />
                 </Link>
@@ -35,23 +35,23 @@ const House = () => {
 
               <img src={house.image} alt={house.name} />
             </div>
-            <div className='house_info'>
-              <div className='house_name'>
+            <div className="house_info">
+              <div className="house_name">
                 <h2>{house.name}</h2>
                 <p>{house.description}</p>
               </div>
               <Link
                 to={`/reservations/${id}/new`}
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: 'none' }}
               >
-                <button type='button' className='reserve-btn'>
+                <button type="button" className="reserve-btn">
                   Book now
                 </button>
               </Link>
             </div>
           </div>
         </div>
-        <div className='main_page_footer'>
+        <div className="main_page_footer">
           <p>© 2022 Yatch House</p>
         </div>
       </div>

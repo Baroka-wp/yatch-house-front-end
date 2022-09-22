@@ -31,7 +31,7 @@ const NewReservation = () => {
       start_date: startDate.toISOString().split('T')[0],
       end_date: endDate.toISOString().split('T')[0],
     });
-    console.log(reservation);
+    // console.log(reservation);
     // axios.post('http://localhost:3000/reservations', reservation)
     //   .then((response) => {
     //     console.log(response);
@@ -41,21 +41,21 @@ const NewReservation = () => {
     // });
   };
   return (
-    <div className='main_page'>
-      <div className='mainNavBar'>
+    <div className="main_page">
+      <div className="mainNavBar">
         <SideNavbar />
       </div>
-      <div className='wrapper reservation-container'>
-        <div className='mobile_menu_background'>
+      <div className="wrapper reservation-container">
+        <div className="mobile_menu_background">
           <MobileNavbar />
         </div>
-        <div className='clearfix' />
-        <div className='container reservation'>
-          <div className='row'>
-            <div className='col-md-4'>
-              <img src={house.image} alt='yatch' className='img-fluid image' />
+        <div className="clearfix" />
+        <div className="container reservation">
+          <div className="row">
+            <div className="col-md-4">
+              <img src={house.image} alt="yatch" className="img-fluid image" />
             </div>
-            <div className='col reserve-infos'>
+            <div className="col reserve-infos">
               <h3> Reservation Infos </h3>
               <table>
                 <tr>
@@ -72,29 +72,29 @@ const NewReservation = () => {
                 </tr>
                 <tr>
                   <th>Start Date: </th>
-                  <td>{startDate.toISOString().split("T")[0]}</td>
+                  <td>{startDate.toISOString().split('T')[0]}</td>
                 </tr>
                 <tr>
                   <th>End Date: </th>
-                  <td>{endDate.toISOString().split("T")[0]}</td>
+                  <td>{endDate.toISOString().split('T')[0]}</td>
                 </tr>
               </table>
             </div>
           </div>
-          <div className='row date-range'>
+          <div className="row date-range">
             <h3> Choose date range </h3>
             <hr />
-            <div className='col-md-12 '>
+            <div className="col-md-12 ">
               <form onSubmit={handleSubmit}>
-                <div className='date-fields'>
-                  <div className='start-date'>
+                <div className="date-fields">
+                  <div className="start-date">
                     <p>Start Date</p>
                     <DatePicker
                       selected={startDate}
                       onChange={(date) => setStartDate(date)}
                     />
                   </div>
-                  <div className='end-date'>
+                  <div className="end-date">
                     <p>End Date</p>
                     <DatePicker
                       selected={endDate}
@@ -102,8 +102,8 @@ const NewReservation = () => {
                     />
                   </div>
                 </div>
-                <div className='submit'>
-                  <button type='submit' className='btn-sub mt-5'>
+                <div className="submit">
+                  <button type="submit" className="btn-sub mt-5">
                     Submit
                   </button>
                 </div>
@@ -111,7 +111,7 @@ const NewReservation = () => {
             </div>
           </div>
         </div>
-        <div className='main_page_footer'>
+        <div className="main_page_footer">
           <p>© 2022 Yatch House</p>
         </div>
       </div>
