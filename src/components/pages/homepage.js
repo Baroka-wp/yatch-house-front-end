@@ -9,35 +9,41 @@ import MobileNavbar from '../MobileNavBar';
 const HomePage = () => (
   <div>
     <div
-      className="wallpaper"
+      className='wallpaper'
       style={{
-        backgroundImage: 'url(/images/maldives.jpg)',
-        backgroundSize: 'cover',
-        height: '100vh',
-        position: 'relative',
-        width: '100%',
+        backgroundImage: "url(/images/maldives.jpg)",
+        backgroundSize: "cover",
+        height: "100vh",
+        width: "100%",
       }}
     >
       <MobileNavbar />
-      <div className="wallpaper-content">
+      <div className='wallpaper-content'>
         <h1> Rent a Yatch House with Yatch flex</h1>
+        <div className='reserve-button'>
+          <NavLink to='/reservation'>
+            <button className='reserve' type='button'>
+              <span>Reserve Now</span>
+              <span className='reserve-icon'>
+                <ExpandCircleDownIcon
+                  sx={{ color: "#fff", transform: "rotate(-90deg)" }}
+                />
+              </span>
+            </button>
+          </NavLink>
+        </div>
       </div>
-      <div className="reserve-button">
-        <NavLink to="/reservation">
-          <button className="reserve" type="button">
-            <span>Reserve Now</span>
-            <span className="reserve-icon">
-              <ExpandCircleDownIcon
-                sx={{ color: '#fff', transform: 'rotate(-90deg)' }}
-              />
-            </span>
-          </button>
-        </NavLink>
-      </div>
-      <div className="homepage-dots">
+
+      <div className='homepage-dots'>
         {[...Array(4)].map(() => (
           <div key={uuidv4()}>
-            <CircleIcon sx={{ fontSize: '1rem', border: '2px solid white', borderRadius: '50%' }} />
+            <CircleIcon
+              sx={{
+                fontSize: "1rem",
+                border: "2px solid white",
+                borderRadius: "50%",
+              }}
+            />
           </div>
         ))}
       </div>
