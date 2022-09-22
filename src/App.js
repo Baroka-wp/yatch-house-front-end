@@ -16,6 +16,7 @@ import { AuthContext } from './context/AuthContext';
 const App = () => {
   
   const ProtectedRoute = ({ children }) => {
+    /* eslint-disable react/prop-types */
     const { user } = useContext(AuthContext);
 
     if (!user) {
@@ -24,7 +25,7 @@ const App = () => {
 
     return children;
   };
-
+  /* eslint-disable react/prop-types */
 
   return(
     <Provider store={store}>
