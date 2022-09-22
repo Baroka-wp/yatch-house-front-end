@@ -41,76 +41,69 @@ const NewReservation = () => {
     // });
   };
   return (
-    <div className="main_page">
-      <div className="mainNavBar">
+    <div className='main_page'>
+      <div className='mainNavBar'>
         <SideNavbar />
       </div>
-      <div className="wrapper reservation-container">
-        <div className="mobile_menu_background">
+      <div className='wrapper reservation-container'>
+        <div className='mobile_menu_background'>
           <MobileNavbar />
         </div>
-        <div className="clearfix" />
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4">
-              <img src={house.image} alt="yatch" className="img-fluid" />
+        <div className='clearfix' />
+        <div className='container reservation'>
+          <div className='row'>
+            <div className='col-md-4'>
+              <img src={house.image} alt='yatch' className='img-fluid image' />
             </div>
-            <div className="col-8">
-              <h4> Reservation Infos : </h4>
-              <p>
-                <strong>
-                  House name :
-                  {house.name}
-                </strong>
-              </p>
-              <p>
-                <strong>
-                  House description :
-                </strong>
-                {'  '}
-                {house.description}
-              </p>
-              <p><strong>House price : $13</strong></p>
-              <p>
-                <strong>
-                  From:
-                  {'  '}
-                </strong>
-
-                {startDate.toISOString().split('T')[0]}
-              </p>
-              <p>
-                <strong>
-                  To:
-                  {' '}
-                  {'   '}
-                </strong>
-
-                {endDate.toISOString().split('T')[0]}
-              </p>
+            <div className='col reserve-infos'>
+              <h3> Reservation Infos </h3>
+              <table>
+                <tr>
+                  <th>House Name: </th>
+                  <td>{house.name}</td>
+                </tr>
+                <tr>
+                  <th>Description: </th>
+                  <td>{house.description}</td>
+                </tr>
+                <tr>
+                  <th>Price: </th>
+                  <td>$13</td>
+                </tr>
+                <tr>
+                  <th>Start Date: </th>
+                  <td>{startDate.toISOString().split("T")[0]}</td>
+                </tr>
+                <tr>
+                  <th>End Date: </th>
+                  <td>{endDate.toISOString().split("T")[0]}</td>
+                </tr>
+              </table>
             </div>
           </div>
-          <div className="row">
-            <hr />
+          <div className='row date-range'>
             <h3> Choose date range </h3>
             <hr />
-            <div className="col-md-12">
+            <div className='col-md-12 '>
               <form onSubmit={handleSubmit}>
-                <div className="">
-                  <p>Date de début</p>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                  />
-                  <br />
-                  <p>Date de fin</p>
-                  <DatePicker
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                  />
+                <div className='date-fields'>
+                  <div className='start-date'>
+                    <p>Start Date</p>
+                    <DatePicker
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                    />
+                  </div>
+                  <div className='end-date'>
+                    <p>End Date</p>
+                    <DatePicker
+                      selected={endDate}
+                      onChange={(date) => setEndDate(date)}
+                    />
+                  </div>
                 </div>
-                <div className="">
-                  <button type="submit" className="btn-sub mt-5">
+                <div className='submit'>
+                  <button type='submit' className='btn-sub mt-5'>
                     Submit
                   </button>
                 </div>
@@ -118,7 +111,7 @@ const NewReservation = () => {
             </div>
           </div>
         </div>
-        <div className="main_page_footer">
+        <div className='main_page_footer'>
           <p>© 2022 Yatch House</p>
         </div>
       </div>

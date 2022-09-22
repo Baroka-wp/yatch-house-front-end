@@ -17,24 +17,33 @@
   text-align: center;
   width:50%;
   background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(2, 79, 44, 1) 0%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(2, 79, 44, 1) 0%, rgba(0, 212, 255, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
 }
 
 .reserve {
-  background-color: #228c22;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #97bf0f;
   border: none;
   border-radius: 10px;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  /* position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  padding: 1rem 1rem 1rem 1rem;
   color: #fff;
   font-size: 1rem;
 }
 
 .reserve-icon {
   margin-left: 1rem;
-  position: relative;
+
+  /* position: relative;
+  top: 5px; */
 }
 
 .homepage-dots {
@@ -79,6 +88,10 @@
 
 
 
+.display_indicator .react-slideshow-container .default-nav {
+  display: none !important;
+}
+
 /* Media query for a device with a width of 500px */
 @media only screen and (max-width: 500px) {
   .wallpaper-content h1 {
@@ -86,7 +99,8 @@
   }
 
   .reserve {
-    padding: 0.5rem 1rem 1rem 1rem;
+    /* top: 60%; */
+    padding: 1rem 1rem 1rem 1rem;
   }
 
   .homepage-dots {

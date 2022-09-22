@@ -8,6 +8,7 @@
 
 .wrapper {
   margin: 2rem 0;
+  /* margin-top: 5rem; */
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -60,7 +61,7 @@
 
 .card {
   position: relative;
-  height: 500px;
+  height: 400px;
   width: 100%;
   overflow: hidden;
   border-radius: 1rem;
@@ -99,10 +100,34 @@
   width: 100%;
 }
 
+.react-slideshow-container + ul.indicators {
+  display: none !important;
+}
+
+.react-slideshow-container .default-nav {
+  background: rgb(151 191 15 / 50%) !important;
+}
+
+.react-slideshow-container .default-nav svg {
+  fill: #fff;
+}
+
+.card > img {
+  height: 210px;
+  margin-bottom: 20px;
+}
+
+.card > p {
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 14px;
+  color: #0d6efd;
+}
+
 /* Media queries with width of 500px */
 @media only screen and (max-width: 500px) {
   .wrapper {
-    margin: 2rem 0;
+    margin: 5rem 0;
   }
 
   .wrapper h2 {
@@ -146,5 +171,15 @@
 
   .dots svg {
     font-size: 0.5rem !important;
+  }
+
+  .next-btn{
+    padding:0;
+    margin-left: 0.7rem;
+  }
+
+  .prev-btn{
+    padding:0;
+    margin-right: 0.7rem;
   }
 }

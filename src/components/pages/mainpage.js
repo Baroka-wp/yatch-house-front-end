@@ -1,9 +1,12 @@
-import React from 'react';
-import '@splidejs/react-splide/css';
-import './mainpage.css';
-import Carousel from '../carousel';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Slide } from 'react-slideshow-image';
+import Socials from '../socials';
+import 'react-slideshow-image/dist/styles.css';
+import yatches from '../dummydata/joydata';
 import MobileNavbar from '../MobileNavBar';
 import SideNavbar from '../MainNavBar';
+import Carousel from '../Carousel';
 
 const MainPage = () => (
   <div className="main_page">
