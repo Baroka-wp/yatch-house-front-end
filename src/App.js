@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter, Routes, Route, Navigate,
+} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { AuthContext } from './context/AuthContext';
 import HomePage from './components/pages/homepage';
 import MainPage from './components/pages/mainpage';
 import AddHouse from './components/pages/AddHouse';
@@ -11,12 +14,10 @@ import NewReservation from './components/pages/NewReservation';
 import House from './components/pages/House';
 import MyReservation from './components/pages/MyReservation';
 
-import { AuthContext } from './context/AuthContext';
 
 const App = () => {
-  
+  /* eslint-disable react/prop-types */
   const ProtectedRoute = ({ children }) => {
-    /* eslint-disable react/prop-types */
     const { user } = useContext(AuthContext);
 
     if (!user) {
@@ -25,9 +26,9 @@ const App = () => {
 
     return children;
   };
-  /* eslint-disable react/prop-types */
+  /* eslint-enable react/prop-types */
 
-  return(
+  return (
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
@@ -42,7 +43,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
     </Provider>
-  )
+  );
 };
 
 export default App;
