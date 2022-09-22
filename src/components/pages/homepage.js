@@ -6,9 +6,6 @@ import { Zoom } from 'react-slideshow-image';
 
 const HomePage = () => (
   <div>
-    <div className="wallpaper-content">
-      <h1> Rent a Yatch House with Yatch flex</h1>
-    </div>
     <div className="display_indicator">
       <Zoom scale={1.4}>
         <div className="each-slide-effect">

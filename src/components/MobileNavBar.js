@@ -39,16 +39,16 @@ const MobileNavbar = () => {
     {
       id: 1,
       path: '/',
-      text: 'HOME',
+      text: 'HOMES',
     },
     {
       id: 2,
-      path: '/reservation',
-      text: 'RESERVATION',
+      path: '/houses',
+      text: 'HOUSES',
     },
     {
       id: 3,
-      path: '/houses/new',
+      path: '/houses/:id/new',
       text: 'ADD HOUSE',
     },
     {

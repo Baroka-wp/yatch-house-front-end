@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,12 +6,10 @@
   padding: 0;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-}
-
 .wrapper {
-  margin-top: 5rem;
+  margin: 2rem 0;
+
+  /* margin-top: 5rem; */
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -25,9 +23,22 @@ body {
 
 .wrapper h3 {
   text-align: center;
-  margin-bottom: 1rem;
-  color: #bbbbc3;
+  margin-bottom: 2rem;
+  color: rgb(0, 0, 0);
   font-weight: 600;
+  font-size: 2rem;
+  font-family: 'Niconne', cursive;
+}
+
+.carousel {
+  font-family: 'Georgia', cursive;
+  src: local('Georgia'), url("../../fonts/georgia.ttf") format('truetype');
+  font-weight: 400;
+}
+
+.sidebar_nav {
+  font-family: 'Georgia', cursive;
+  src: local('Georgia'), url("../../fonts/georgia.ttf") format('truetype');
 }
 
 .yatch {
@@ -37,7 +48,7 @@ body {
 
 .yatch img {
   width: 100%;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -46,7 +57,7 @@ body {
 }
 
 .yatch p {
-  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  padding: 0 0.5rem;
   text-align: center;
   font-size: 14px;
 }
@@ -87,7 +98,7 @@ body {
 .social {
   text-align: center;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 2.5rem;
   margin: 0 auto;
   width: 100%;
 }
@@ -110,7 +121,7 @@ body {
 }
 
 .card > p {
-  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  padding: 0 1rem;
   text-align: center;
   font-size: 14px;
   color: #0d6efd;
@@ -119,7 +130,7 @@ body {
 /* Media queries with width of 500px */
 @media only screen and (max-width: 500px) {
   .wrapper {
-    margin: 2rem 0;
+    margin: 5rem 0;
   }
 
   .wrapper h2 {
@@ -128,7 +139,7 @@ body {
   }
 
   .wrapper h3 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 0.8rem;
   }
 
@@ -163,5 +174,15 @@ body {
 
   .dots svg {
     font-size: 0.5rem !important;
+  }
+
+  .next-btn {
+    padding: 0;
+    margin-left: 0.7rem;
+  }
+
+  .prev-btn {
+    padding: 0;
+    margin-right: 0.7rem;
   }
 }
