@@ -19,7 +19,7 @@ const Registration = () => {
     <div className="user_auth_container">
       <div className="login_header">
         <img src={logo} alt="logo" />
-        <h3> Add New User </h3>
+        <h3> Sign up </h3>
       </div>
       <div className="col-md-5 login_registration_form">
         <Form>

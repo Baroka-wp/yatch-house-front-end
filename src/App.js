@@ -9,6 +9,7 @@ import Login from './components/pages/Login';
 import Registration from './components/pages/Registration';
 import NewReservation from './components/pages/NewReservation';
 import House from './components/pages/House';
+import MyReservation from './components/pages/MyReservation';
 
 const App = () => (
   <Provider store={store}>
@@ -18,7 +19,7 @@ const App = () => (
         <Route path="/houses" element={<MainPage />} />
         <Route path="/houses/:id" element={<House />} />
         <Route path="/houses/:id/new" element={<AddHouse />} />
-        {/* <Route path="/reservations" element={<Reservation />} /> */}
+        <Route path="/my_reservation" element={<MyReservation />} />
         <Route path="/reservations/:id/new" element={<NewReservation />} />
         <Route path="/admins/login" element={<Login />} />
         <Route path="/admins/registration" element={<Registration />} />
