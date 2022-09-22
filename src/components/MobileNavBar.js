@@ -39,7 +39,7 @@ const MobileNavbar = () => {
     {
       id: 1,
       path: '/',
-      text: 'HOME',
+      text: 'HOMES',
     },
     {
       id: 2,
