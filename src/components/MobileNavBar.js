@@ -38,28 +38,23 @@ const MobileNavbar = () => {
   const links = [
     {
       id: 1,
-      path: '/',
-      text: 'HOME',
+      path: '/my-reservation',
+      text: 'My Reservations',
     },
     {
       id: 2,
       path: '/houses',
-      text: 'HOUSES',
+      text: 'Houses',
     },
     {
       id: 3,
       path: '/houses/:id/new',
-      text: 'ADD HOUSE',
+      text: 'Add House',
     },
     {
       id: 4,
-      path: '/admins/login',
-      text: 'Sign In',
-    },
-    {
-      id: 5,
-      path: '/admins/registration',
-      text: 'Register',
+      path: '/houses/delete',
+      text: 'Delete House',
     },
   ];
 
@@ -85,17 +80,6 @@ const MobileNavbar = () => {
             ×
           </button>
           <ul className="navList">
-            <li key={links[0].id}>
-              <NavLink to={links[0].path} className="active-link">
-                <span
-                  onClick={closeModal}
-                  onKeyDown={closeModal}
-                  role="presentation"
-                >
-                  {links[0].text}
-                </span>
-              </NavLink>
-            </li>
             <li key={links[1].id}>
               <NavLink to={links[1].path} className="active-link">
                 <span
@@ -107,6 +91,19 @@ const MobileNavbar = () => {
                 </span>
               </NavLink>
             </li>
+            <li key={links[0].id}>
+              <NavLink to={links[0].path} className="active-link">
+                <span
+                  onClick={closeModal}
+                  onKeyDown={closeModal}
+                  role="presentation"
+                >
+                  {links[0].text}
+                </span>
+              </NavLink>
+            </li>
+          </ul>
+          <ul className="navList user">
             <li key={links[2].id}>
               <NavLink to={links[2].path} className="active-link">
                 <span
@@ -118,8 +115,6 @@ const MobileNavbar = () => {
                 </span>
               </NavLink>
             </li>
-          </ul>
-          <ul className="navList user">
             <li key={links[3].id}>
               <NavLink to={links[3].path} className="active-link">
                 <span
@@ -128,17 +123,6 @@ const MobileNavbar = () => {
                   role="presentation"
                 >
                   {links[3].text}
-                </span>
-              </NavLink>
-            </li>
-            <li key={links[4].id}>
-              <NavLink to={links[4].path} className="active-link">
-                <span
-                  onClick={closeModal}
-                  onKeyDown={closeModal}
-                  role="presentation"
-                >
-                  {links[4].text}
                 </span>
               </NavLink>
             </li>

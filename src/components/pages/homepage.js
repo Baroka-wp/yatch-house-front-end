@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import './homepage.css';
 import { Zoom } from 'react-slideshow-image';
 
