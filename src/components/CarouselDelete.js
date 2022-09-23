@@ -48,7 +48,6 @@ const CarouselDelete = () => {
       // deleteHouse.then(() => {
       //   return <Navigate to="/houses" />;
       // });
-      
     } catch (err) {
       console.log(err);
     }
@@ -56,7 +55,10 @@ const CarouselDelete = () => {
 
   return (
     <>
-      <div style={{ textAlign: 'center', color: 'green', fontSize: '20px', fontWeight: 'bold' }}>
+      <div style={{
+        textAlign: 'center', color: 'green', fontSize: '20px', fontWeight: 'bold',
+      }}
+      >
         {deleteNotif}
       </div>
       <div className="d-flex yatchCarousel">
