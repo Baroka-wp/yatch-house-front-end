@@ -107,7 +107,7 @@ const HouseForm = () => {
                 name="price"
                 id="price"
                 value={house.price}
-                onChange={(event) => setHouse({ ...house, price: event.target.value })}
+                onChange={(event) => setHouse({ ...house, price: parseInt(event.target.value, 10) })}
               />
             </label>
             <label htmlFor="location" className="form-label mb-3">
