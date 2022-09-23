@@ -7,25 +7,35 @@ import './pages/house.css';
 
 const HouseForm = () => {
   // const { user } = React.useContext(AuthContext);
-
+  const [file , setFile] = useState("");
   const [house, setHouse] = useState({
-    // user_id: user.id,
     name: '',
     description: '',
     price: '',
     location: '',
-    image: '',
   });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  //     axios.post('http://localhost:3000/houses', house)
-  //     .then((response) => {
-  //         console.log(response);
-  //     })
-  //     .catch((error) => {
-  //         console.log(error);
-  //     });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('file', file);
+    Object.keys(house).forEach((key) => {
+      formData.append(key, house[key]);
+    });
+    try {
+      await axios.post("http://localhost:3001/api/v1/houses", 
+      { 
+        house: formData 
+      }, 
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      });
+    } catch (err) {
+      console.log(err);
+    }
+
   };
 
   return (
@@ -41,6 +51,16 @@ const HouseForm = () => {
         <div className="container add-form">
           <h1 className="text-center mt-5">Add a House</h1>
           <form onSubmit={handleSubmit} className="form-container">
+            <div className="image_form">
+              <img
+                src={
+                  file
+                    ? URL.createObjectURL(file)
+                    : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                }
+                alt=""
+              />
+            </div>
             <label htmlFor="name" className="form-label mb-3">
               Name
               <input
@@ -83,17 +103,6 @@ const HouseForm = () => {
                 id="location"
                 value={house.location}
                 onChange={(event) => setHouse({ ...house, location: event.target.value })}
-              />
-            </label>
-            <label htmlFor="image" className="form-label mb-3">
-              Image
-              <input
-                type="text"
-                className="form-control"
-                name="image"
-                id="image"
-                value={house.image}
-                onChange={(event) => setHouse({ ...house, image: event.target.value })}
               />
             </label>
             <div className="text-center">
