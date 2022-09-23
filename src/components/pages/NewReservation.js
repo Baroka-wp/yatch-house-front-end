@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { useParams } from 'react-router';
+import { useParams, Navigate } from 'react-router';
 import DatePicker from 'react-datepicker';
 import SideNavbar from '../MainNavBar';
 import MobileNavbar from '../MobileNavBar';
@@ -38,6 +38,7 @@ const NewReservation = () => {
     axios.post('http://localhost:3001/api/v1/reservations', { reservation })
       .then((response) => {
         console.log(response);
+          <Navigate to="my_reservation" />;
       })
       .catch((error) => {
         console.log(error);
