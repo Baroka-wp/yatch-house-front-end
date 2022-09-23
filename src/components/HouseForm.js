@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 // import { AuthContext } from '../context/AuthContext';
+import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUploadOutlined';
+
 import SideNavbar from './MainNavBar';
 import MobileNavbar from './MobileNavBar';
 import './pages/house.css';
 
 const HouseForm = () => {
   // const { user } = React.useContext(AuthContext);
-  const [file , setFile] = useState("");
+  const [file, setFile] = useState('');
   const [house, setHouse] = useState({
     name: '',
     description: '',
@@ -23,19 +25,18 @@ const HouseForm = () => {
       formData.append(key, house[key]);
     });
     try {
-      await axios.post("http://localhost:3001/api/v1/houses", 
-      { 
-        house: formData 
-      }, 
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        }
-      });
+      await axios.post('http://localhost:3001/api/v1/houses',
+        {
+          house: {...formData},
+        },
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
     } catch (err) {
       console.log(err);
     }
-
   };
 
   return (
@@ -51,14 +52,27 @@ const HouseForm = () => {
         <div className="container add-form">
           <h1 className="text-center mt-5">Add a House</h1>
           <form onSubmit={handleSubmit} className="form-container">
-            <div className="image_form">
-              <img
-                src={
-                  file
-                    ? URL.createObjectURL(file)
-                    : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-                }
-                alt=""
+            <div className="formInput">
+              <div className="image_form">
+                <img
+                  src={
+                      file
+                        ? URL.createObjectURL(file)
+                        : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
+                    }
+                  alt=""
+                />
+              </div>
+              <label htmlFor="file">
+                Image:
+                {' '}
+                <DriveFolderUploadOutlinedIcon className="icon" />
+              </label>
+              <input
+                type="file"
+                id="file"
+                onChange={(e) => setFile(e.target.files[0])}
+                style={{ display: 'none' }}
               />
             </div>
             <label htmlFor="name" className="form-label mb-3">
