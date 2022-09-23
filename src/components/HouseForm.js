@@ -21,19 +21,21 @@ const HouseForm = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('file', file);
-    Object.keys(house).forEach((key) => {
-      formData.append(key, house[key]);
-    });
+    formData.append('upload_preset', 'upload');
     try {
+      const uploadRes = await axios.post(
+        'https://api.cloudinary.com/v1_1/baroka/image/upload',
+        formData,
+      );
+
+      const { url } = uploadRes.data;
+      const houseInfo = {
+        ...house,
+        image: url,
+      };
+
       await axios.post('http://localhost:3001/api/v1/houses',
-        {
-          house: {...formData},
-        },
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        });
+        { house: houseInfo });
     } catch (err) {
       console.log(err);
     }
