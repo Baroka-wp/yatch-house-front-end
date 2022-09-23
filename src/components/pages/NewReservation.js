@@ -15,7 +15,10 @@ const NewReservation = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
-  const [reservation, setReservation] = useState({});
+  const [reservation, setReservation] = useState({
+    start_date: startDate.toISOString().split('T')[0],
+    end_date: endDate.toISOString().split('T')[0],
+  });
 
   const yatches = useSelector((state) => state.houses);
   const { id } = useParams();
@@ -27,6 +30,7 @@ const NewReservation = () => {
     setReservation({
       ...reservation,
       house_id: house[0].id,
+      status: 'pending',
       user_id: user.data.id,
       start_date: startDate.toISOString().split('T')[0],
       end_date: endDate.toISOString().split('T')[0],

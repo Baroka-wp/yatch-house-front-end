@@ -33,8 +33,13 @@ const Login = () => {
     try {
       const res = await axios.post('http://localhost:3001/users/sign_in',
         { user: credential });
-      dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
-      navigate('/houses');
+      console.log(res);
+      if (res.data.data.id != null) {
+        dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
+        navigate('/houses');
+      } else {
+        dispatch({ type: 'LOGIN_FAILURE', payload: res.data });
+      }
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err });
     }
