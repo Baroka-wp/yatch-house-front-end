@@ -54,7 +54,7 @@ const SideNavbar = () => {
     {
       id: 6,
       path: '/registration',
-      text: 'Register',
+      text: 'Sign up',
     },
     {
       id: 7,

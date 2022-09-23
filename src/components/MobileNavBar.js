@@ -75,6 +75,16 @@ const MobileNavbar = () => {
       path: '/houses/delete',
       text: 'Delete House',
     },
+    {
+      id: 5,
+      path: '/login',
+      text: 'Sign In',
+    },
+    {
+      id: 6,
+      path: '/registration',
+      text: 'Sign up',
+    },
   ];
 
   return (
@@ -154,6 +164,35 @@ const MobileNavbar = () => {
                 </li>
               </>
             )}
+
+            {
+              !user && (
+                <>
+                  <li key={links[4].id}>
+                    <NavLink to={links[4].path} className="">
+                      <span
+                        onClick={closeModal}
+                        onKeyDown={closeModal}
+                        role="presentation"
+                      >
+                        {links[4].text}
+                      </span>
+                    </NavLink>
+                  </li>
+                  <li key={links[5].id}>
+                    <NavLink to={links[5].path} className="">
+                      <span
+                        onClick={closeModal}
+                        onKeyDown={closeModal}
+                        role="presentation"
+                      >
+                        {links[5].text}
+                      </span>
+                    </NavLink>
+                  </li>
+                </>
+              )
+            }
           </ul>
           {
             user && (
