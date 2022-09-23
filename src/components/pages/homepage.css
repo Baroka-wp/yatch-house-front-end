@@ -45,6 +45,11 @@ a {
   transform: translate(-27%, -30%);
 }
 
+.reserve_now_center {
+  bottom: 5%;
+  transform: none;
+}
+
 .reserve {
   display: flex;
   justify-content: center;
@@ -57,6 +62,10 @@ a {
   color: #fff;
   font-size: 2rem;
   width: 150px;
+}
+
+.reserve_now {
+  width: 250px;
 }
 
 .reserve-icon {
@@ -126,6 +135,11 @@ a {
     bottom: 1%;
     left: 50%;
     transform: translate(-27%, -30%);
+  }
+
+  .reserve_now_center {
+    bottom: 5%;
+    transform: none;
   }
 
   .reserve {
