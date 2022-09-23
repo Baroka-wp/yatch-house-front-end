@@ -87,11 +87,18 @@ const SideNavbar = () => {
             )
           }
           {isAdmin(user) && (
-            <li key={links[3].id}>
-              <NavLink to={links[3].path}>
-                <h4>{links[3].text}</h4>
-              </NavLink>
-            </li>
+            <>
+              <li key={links[3].id}>
+                <NavLink to={links[3].path}>
+                  <h4>{links[3].text}</h4>
+                </NavLink>
+              </li>
+              <li key={links[6].id}>
+                <NavLink to={links[6].path}>
+                  <h4>{links[6].text}</h4>
+                </NavLink>
+              </li>
+            </>
           )}
         </ul>
       </div>
