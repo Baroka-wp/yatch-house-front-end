@@ -29,11 +29,11 @@ const HouseForm = () => {
       );
 
       const { url } = uploadRes.data;
+      console.log(url);
       const houseInfo = {
         ...house,
         image: url,
       };
-
       await axios.post('http://localhost:3001/api/v1/houses',
         { house: houseInfo });
     } catch (err) {
