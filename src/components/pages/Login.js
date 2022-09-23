@@ -34,7 +34,7 @@ const Login = () => {
       const res = await axios.post('http://localhost:3001/users/sign_in',
         { user: credential });
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
-      navigate('/reservation/new');
+      navigate('/houses');
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err });
     }
