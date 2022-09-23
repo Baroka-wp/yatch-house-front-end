@@ -1,14 +1,16 @@
 import { Link, useParams } from 'react-router-dom';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import yatches from '../dummydata/joydata';
+import { useSelector } from 'react-redux';
 import './house.css';
 
 import SideNavbar from '../MainNavBar';
 import MobileNavbar from '../MobileNavBar';
 
 const House = () => {
+  const yatches = useSelector((state) => state.houses);
   const { id } = useParams();
-  const house = yatches[id - 1];
+
+  const house = yatches.filter((yatch) => yatch.id === parseInt(id, 10));
 
   return (
     <div className="main_page">
@@ -33,12 +35,12 @@ const House = () => {
                 </Link>
               </div>
 
-              <img src={house.image} alt={house.name} />
+              <img src={house[0].image} alt={house[0].image} />
             </div>
             <div className="house_info">
               <div className="house_name">
-                <h2>{house.name}</h2>
-                <p>{house.description}</p>
+                <h2>{house[0].location}</h2>
+                <p>{house[0].description}</p>
               </div>
               <Link
                 to={`/reservations/${id}/new`}
