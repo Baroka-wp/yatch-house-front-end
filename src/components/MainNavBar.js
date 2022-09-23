@@ -6,7 +6,15 @@ import './pages/mainpage.css';
 import { AuthContext } from '../context/AuthContext';
 
 const SideNavbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, dispatch } = useContext(AuthContext);
+
+  const handleLogout = async () => {
+    dispatch({ type: "LOGOUT" });
+    try {
+      await axios.get("http://localhost:3001/users/sign_out");
+      console.log("logout");
+    } catch (err) { }
+  }
 
   const links = [
     {
@@ -84,6 +92,17 @@ const SideNavbar = () => {
               </NavLink>
             </li>
           </ul>
+        )
+      }
+
+      {
+        user && (
+          <button 
+            onClick={() => handleLogout()}
+            type="button" 
+            className="btn btn-danger"
+          >Log Out
+          </button>
         )
       }
         <div className="copyright">
