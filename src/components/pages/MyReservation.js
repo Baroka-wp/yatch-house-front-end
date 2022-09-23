@@ -1,16 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import 'react-slideshow-image/dist/styles.css';
 import MobileNavbar from '../MobileNavBar';
 import SideNavbar from '../MainNavBar';
-import reservationsList from '../dummydata/reservation_report';
+import { getAllReservations } from '../../redux/reservation/reservationReducer';
+import { getAllItems } from '../../redux/house/houseReducer';
+
+import { AuthContext } from '../../context/AuthContext';
 
 const MyReservation = () => {
-  const [items, setItem] = useState([]);
+  const yatches = useSelector((state) => state.houses);
+  const reservationsList = useSelector((state) => state.reservations);
+
+  const { user } = useContext(AuthContext);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const data = reservationsList.filter((res) => res.user_id === 2);
-    setItem(data);
-  }, []);
+    dispatch(getAllReservations(user.data.id));
+    dispatch(getAllItems());
+  }, [dispatch, user.data.id]);
+
+  const house = (r) => {
+    const h = yatches.filter((y) => parseInt(y.id, 10) === parseInt(r.house_id, 10));
+    return h[0];
+  };
 
   return (
     <div className="main_page">
@@ -27,24 +40,21 @@ const MyReservation = () => {
           <table>
             <tbody>
               <tr>
-                <th className="table-item">House name</th>
+                <th className="table-item">House location</th>
                 <th className="table-item">Start date</th>
                 <th className="table-item">End date</th>
-                <th className="table-item">Number of days</th>
-                <th className="table-item">Total cost</th>
               </tr>
-              {items.map((item) => (
-                <tr key={item.id}>
-                  <td className="table-item">{item.house_name}</td>
-                  <td className="table-item tbl_center">{item.start_date}</td>
-                  <td className="table-item tbl_center">{item.end_date}</td>
-                  <td className="table-item tbl_center">{item.number_of_days}</td>
-                  <td className="table-item tbl_center">
-                    $
-                    {item.total_cost}
-                  </td>
-                </tr>
-              ))}
+              {
+                reservationsList && reservationsList.map((item) => (
+                  <tr key={item.id}>
+                    {
+                      house(item) && (<td className="table-item">{house(item).location}</td>)
+                    }
+                    <td className="table-item tbl_center">{item.start_date}</td>
+                    <td className="table-item tbl_center">{item.end_date}</td>
+                  </tr>
+                ))
+              }
             </tbody>
           </table>
         </div>
