@@ -13,6 +13,7 @@ import Registration from './components/pages/Registration';
 import NewReservation from './components/pages/NewReservation';
 import House from './components/pages/House';
 import MyReservation from './components/pages/MyReservation';
+import DeleteHouse from './components/pages/DeleteHouse';
 
 const App = () => {
   /* eslint-disable react/prop-types */
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/reservations/:id/new" element={<ProtectedRoute><NewReservation /></ProtectedRoute>} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/houses/delete" element={<DeleteHouse />} />
         </Routes>
       </BrowserRouter>
     </Provider>
