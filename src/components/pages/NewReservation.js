@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { useParams } from 'react-router';
+import { Navigate, useParams } from 'react-router';
 import DatePicker from 'react-datepicker';
 import SideNavbar from '../MainNavBar';
 import MobileNavbar from '../MobileNavBar';
@@ -25,8 +25,9 @@ const NewReservation = () => {
 
   const house = yatches.filter((yatch) => yatch.id === parseInt(id, 10));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     setReservation({
       ...reservation,
       house_id: house[0].id,
@@ -35,9 +36,11 @@ const NewReservation = () => {
       start_date: startDate.toISOString().split('T')[0],
       end_date: endDate.toISOString().split('T')[0],
     });
-    axios.post('http://localhost:3001/api/v1/reservations', { reservation })
+    console.log(reservation);
+    await axios.post('http://localhost:3001/api/v1/reservations', { reservation })
       .then((response) => {
         console.log(response);
+          <Navigate to="/my_reservation" />;
       })
       .catch((error) => {
         console.log(error);
@@ -78,11 +81,11 @@ const NewReservation = () => {
                 </tr>
                 <tr>
                   <th>Start Date: </th>
-                  <td>{startDate.toISOString().split('T')[0]}</td>
+                  <td>{reservation.start_date.toISOString().split('T')[0]}</td>
                 </tr>
                 <tr>
                   <th>End Date: </th>
-                  <td>{endDate.toISOString().split('T')[0]}</td>
+                  <td>{reservation.end_date.toISOString().split('T')[0]}</td>
                 </tr>
               </table>
             </div>

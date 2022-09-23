@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import './registration.css';
+import axios from 'axios';
 import {
   Form,
   FormGroup,
@@ -13,7 +14,23 @@ import {
 import logo from '../../img/Yatch-House.png';
 
 const Registration = () => {
+  const [userInfo, setUserInfo] = useState({});
   const [phoneNumber, setPhoneNumber] = useState('');
+
+  const handleChange = (e) => {
+    setUserInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setUserInfo((prev) => ({ ...prev, telephone: phoneNumber }));
+
+    try {
+      axios.post('http://localhost:3001/users', { user: userInfo });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="user_auth_container">
@@ -50,6 +67,8 @@ const Registration = () => {
                   name="name"
                   placeholder="Your name"
                   type="name"
+                  onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
@@ -63,6 +82,8 @@ const Registration = () => {
                   name="email"
                   placeholder="john@example.com"
                   type="email"
+                  onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
@@ -74,10 +95,12 @@ const Registration = () => {
                   Password
                 </Label>
                 <Input
-                  id="examplePassword"
+                  id="password"
                   name="password"
                   placeholder="password placeholder"
                   type="password"
+                  onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
@@ -87,14 +110,23 @@ const Registration = () => {
                   Password confirmation
                 </Label>
                 <Input
-                  id="examplePassword"
+                  id="password confirmation"
                   name="password"
                   placeholder="password placeholder"
                   type="password"
+                  onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
           </Row>
+          <button
+            onClick={handleClick}
+            className=" btn btn-sm btn-primary"
+            type="submit"
+          >
+            Sign up
+          </button>
         </Form>
       </div>
       <div className="login_footer">

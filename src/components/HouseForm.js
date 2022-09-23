@@ -55,6 +55,7 @@ const HouseForm = () => {
             name="name"
             id="name"
             onChange={(event) => setHouse({ ...house, name: event.target.value })}
+            required
           />
         </label>
         <label htmlFor="description" className="form-label mb-3">

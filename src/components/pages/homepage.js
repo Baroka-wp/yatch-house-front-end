@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './homepage.css';
 import { Zoom } from 'react-slideshow-image';
+import Slider from './Slider';
 
 const HomePage = () => (
   <div>
@@ -10,81 +10,9 @@ const HomePage = () => (
     </div>
     <div className="display_indicator">
       <Zoom scale={1.4}>
-        <div className="each-slide-effect">
-          <div style={{
-            backgroundImage: 'url("/images/maldives.jpg")',
-            height: '100vh',
-          }}
-          >
-            <div className="wallpaper-content">
-              <h1> Rent a Yatch House with Yatch flex</h1>
-            </div>
-            <div className="user_sign_btn">
-              <div className="reserve-button">
-                <NavLink to="/login">
-                  <button className="reserve sign_in" type="button">
-                    <span>Sign In</span>
-                  </button>
-                </NavLink>
-                <NavLink to="/registration">
-                  <button className="reserve sign_up" type="button">
-                    <span>Sign Up</span>
-                  </button>
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="each-slide-effect">
-          <div style={{
-            backgroundImage: 'url("/images/yatch1.jpg")',
-            height: '100vh',
-          }}
-          >
-            <div className="wallpaper-content">
-              <h1> Rent a Yatch House with Yatch flex</h1>
-            </div>
-            <div className="user_sign_btn">
-              <div className="reserve-button">
-                <NavLink to="/login">
-                  <button className="reserve sign_in" type="button">
-                    <span>Sign In</span>
-                  </button>
-                </NavLink>
-                <NavLink to="/registration">
-                  <button className="reserve sign_up" type="button">
-                    <span>Sign Up</span>
-                  </button>
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="each-slide-effect">
-          <div style={{
-            backgroundImage: 'url("/images/yatch2.jpg")',
-            height: '100vh',
-          }}
-          >
-            <div className="wallpaper-content">
-              <h1> Rent a Yatch House with Yatch flex</h1>
-            </div>
-            <div className="user_sign_btn">
-              <div className="reserve-button">
-                <NavLink to="/login">
-                  <button className="reserve sign_in" type="button">
-                    <span>Sign In</span>
-                  </button>
-                </NavLink>
-                <NavLink to="/registration">
-                  <button className="reserve sign_up" type="button">
-                    <span>Sign Up</span>
-                  </button>
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Slider image="/images/maldives.jpg" />
+        <Slider image="/images/yatch1.jpg" />
+        <Slider image="/images/yatch2.jpg" />
       </Zoom>
     </div>
   </div>
