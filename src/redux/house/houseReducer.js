@@ -1,17 +1,14 @@
-// import axios from 'axios';
-import houses from '../../components/dummydata/joydata';
+import axios from 'axios';
 
 const GET_ALL_ITEMS = 'GET_ALL_ITEMS';
 
 export const getAllItems = () => async (dispatch) => {
-  // const url = '';
-  // const res = await axios.get(url);
-  // const data = res.data;
-  const data = houses;
+  const res = await axios.get('http://localhost:3001/api/v1/houses');
+  const houses = res.data;
 
   dispatch({
     type: GET_ALL_ITEMS,
-    payload: data,
+    payload: houses,
   });
 };
 

@@ -245,4 +245,10 @@ tr:nth-child(odd) {
     margin-left: 100px;
     width: 500px;
   }
+
+  .image_form img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
 }

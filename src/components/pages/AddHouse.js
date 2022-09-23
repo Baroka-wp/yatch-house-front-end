@@ -1,15 +1,23 @@
 import React from 'react';
-// import { Redirect } from 'react-router';
+// import { Navigate } from 'react-router';
 import HouseForm from '../HouseForm';
-// import { AuthContext } from '../../context/AuthContext';
+import SideNavbar from '../MainNavBar';
+import MobileNavbar from '../MobileNavBar';
 
 const AddHouse = () => (
-  <div>
-    <HouseForm />
+  <div className="main_page">
+    <div className="mainNavBar">
+      <SideNavbar />
+    </div>
+    <div className="wrapper">
+      <div className="mobile_menu_background">
+        <MobileNavbar />
+      </div>
+      <div className="clearfix" />
+      <HouseForm />
+    </div>
+    <div className="main_page_footer"><p>© 2022 Yatch House</p></div>
   </div>
+
 );
-  // const { user } = React.useContext(AuthContext);
-  // if (user.role !== 'admin') {
-  //   return <Redirect to="/" />;
-  // }
 export default AddHouse;

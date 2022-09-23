@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import houseReducer from './house/houseReducer';
 
 const rootReducer = combineReducers({
-  house: houseReducer,
+  houses: houseReducer,
 });
 const store = createStore(rootReducer, applyMiddleware(thunk));
 

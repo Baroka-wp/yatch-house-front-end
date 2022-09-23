@@ -1,44 +1,43 @@
 // import logo from '../../img/Yatch-House.png';
-import React, { useState } from 'react';
-// import axios from 'axios';
+import React, { useState, useContext } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 import { useParams } from 'react-router';
 import DatePicker from 'react-datepicker';
 import SideNavbar from '../MainNavBar';
 import MobileNavbar from '../MobileNavBar';
-import yatches from '../dummydata/joydata';
 import './newreservation.css';
 
-// import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 const NewReservation = () => {
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
-  const user = { id: 1, name: 'John Doe', email: 'john@do.co' };
-
   const [reservation, setReservation] = useState({});
 
+  const yatches = useSelector((state) => state.houses);
   const { id } = useParams();
-  const house = yatches[id - 1];
+
+  const house = yatches.filter((yatch) => yatch.id === parseInt(id, 10));
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setReservation({
       ...reservation,
-      house_id: house.id,
-      user_id: user.id,
+      house_id: house[0].id,
+      user_id: user.data.id,
       start_date: startDate.toISOString().split('T')[0],
       end_date: endDate.toISOString().split('T')[0],
     });
-    // console.log(reservation);
-    // axios.post('http://localhost:3000/reservations', reservation)
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    // });
+    axios.post('http://localhost:3001/api/v1/reservations', { reservation })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="main_page">
@@ -53,22 +52,25 @@ const NewReservation = () => {
         <div className="container reservation">
           <div className="row">
             <div className="col-md-4">
-              <img src={house.image} alt="yatch" className="img-fluid image" />
+              <img src={house[0].image} alt="yatch" className="img-fluid image" />
             </div>
             <div className="col reserve-infos">
               <h3> Reservation Infos </h3>
               <table>
                 <tr>
-                  <th>House Name: </th>
-                  <td>{house.name}</td>
+                  <th>House location: </th>
+                  <td>{house[0].location}</td>
                 </tr>
                 <tr>
                   <th>Description: </th>
-                  <td>{house.description}</td>
+                  <td>{house[0].description}</td>
                 </tr>
                 <tr>
                   <th>Price: </th>
-                  <td>$13</td>
+                  <td>
+                    $
+                    {house[0].price}
+                  </td>
                 </tr>
                 <tr>
                   <th>Start Date: </th>
