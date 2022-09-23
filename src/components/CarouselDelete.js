@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { SplideSlide } from '@splidejs/react-splide';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
@@ -36,6 +37,14 @@ const CarouselDelete = () => {
     }
   }
 
+  const handleDeleteHouse = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3001/api/v1/houses/${id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="d-flex yatchCarousel">
       <button type="button" className="prev-btn" onClick={() => setItemId(itemId - 1)}>
@@ -62,6 +71,7 @@ const CarouselDelete = () => {
               onClick={() => handleDeleteHouse(item.id)}
               type="button"
               className="btn btn-danger"
+              style={{ marginTop: '20px' }}
             >
               Delete this house
             </button>
