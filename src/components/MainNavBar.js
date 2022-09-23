@@ -24,8 +24,8 @@ const SideNavbar = () => {
     },
     {
       id: 2,
-      path: '/',
-      text: 'Home',
+      path: '/my_reservation',
+      text: 'My Reservations',
     },
     {
       id: 3,
@@ -47,6 +47,11 @@ const SideNavbar = () => {
       path: '/registration',
       text: 'Register',
     },
+    {
+      id: 7,
+      path: '/houses/delete',
+      text: 'Delete House',
+    },
   ];
 
   return (
@@ -58,11 +63,6 @@ const SideNavbar = () => {
           </NavLink>
         </div>
         <ul className="sidebar_nav_list">
-          <li key={links[1].id}>
-            <NavLink to={links[1].path}>
-              <h4>{links[1].text}</h4>
-            </NavLink>
-          </li>
           <li key={links[2].id}>
             <NavLink to={links[2].path}>
               <h4>{links[2].text}</h4>
