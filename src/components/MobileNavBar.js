@@ -67,7 +67,7 @@ const MobileNavbar = () => {
     },
     {
       id: 3,
-      path: '/houses/:id/new',
+      path: '/houses/new',
       text: 'Add House',
     },
     {
@@ -88,6 +88,7 @@ const MobileNavbar = () => {
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
+          ariaHideApp={false}
           contentLabel="Example Modal"
         >
           <button
