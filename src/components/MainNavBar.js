@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import logo from '../img/Yatch-House.png';
 import './pages/mainpage.css';
@@ -9,13 +9,20 @@ import { AuthContext } from '../context/AuthContext';
 const SideNavbar = () => {
   const { user, dispatch } = useContext(AuthContext);
 
-  const handleLogout = async () => {
-    dispatch({ type: 'LOGOUT' });
-    try {
-      await axios.get('http://localhost:3001/users/sign_out');
-    } catch (err) {
-      console.log(err);
+  const isAdmin = (user) => {
+    if (user) {
+      return user.data.admin;
     }
+    return false;
+  };
+
+  const handleLogout = async () => {
+    // try {
+    //   await axios.delete('http://localhost:3001/users/sign_out');
+    // } catch (err) {
+    //   console.log(err);
+    // }
+    dispatch({ type: 'LOGOUT' });
   };
 
   const links = [
@@ -70,7 +77,7 @@ const SideNavbar = () => {
               <h4>{links[2].text}</h4>
             </NavLink>
           </li>
-          {user.data.admin && (
+          {isAdmin(user) && (
             <li key={links[3].id}>
               <NavLink to={links[3].path}>
                 <h4>{links[3].text}</h4>
