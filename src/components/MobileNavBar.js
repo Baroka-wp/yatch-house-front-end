@@ -154,7 +154,18 @@ const MobileNavbar = () => {
               </>
             )}
           </ul>
-          
+          {
+            user && (
+              <button
+                onClick={() => handleLogout()}
+                type="button"
+                className="btn btn-danger"
+                style={{ marginLeft: '10px', marginTop: '20px' }}
+              >
+                Log Out
+              </button>
+            )
+          }
         </Modal>
 
         <button type="button" aria-label="">
