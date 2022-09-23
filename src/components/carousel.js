@@ -36,8 +36,6 @@ const Carousel = () => {
     }
   }
 
-  console.log(item);
-
   return (
     <div className="d-flex yatchCarousel">
       <button type="button" className="prev-btn" onClick={() => setItemId(itemId - 1)}>
