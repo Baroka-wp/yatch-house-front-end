@@ -21,12 +21,12 @@ const HomePage = () => (
             </div>
             <div className="user_sign_btn">
               <div className="reserve-button">
-                <NavLink to="/admins/login">
+                <NavLink to="/login">
                   <button className="reserve sign_in" type="button">
                     <span>Sign In</span>
                   </button>
                 </NavLink>
-                <NavLink to="/admins/registration">
+                <NavLink to="/registration">
                   <button className="reserve sign_up" type="button">
                     <span>Sign Up</span>
                   </button>
@@ -46,12 +46,12 @@ const HomePage = () => (
             </div>
             <div className="user_sign_btn">
               <div className="reserve-button">
-                <NavLink to="/admins/login">
+                <NavLink to="/login">
                   <button className="reserve sign_in" type="button">
                     <span>Sign In</span>
                   </button>
                 </NavLink>
-                <NavLink to="/admins/registration">
+                <NavLink to="/registration">
                   <button className="reserve sign_up" type="button">
                     <span>Sign Up</span>
                   </button>
@@ -71,12 +71,12 @@ const HomePage = () => (
             </div>
             <div className="user_sign_btn">
               <div className="reserve-button">
-                <NavLink to="/admins/login">
+                <NavLink to="/login">
                   <button className="reserve sign_in" type="button">
                     <span>Sign In</span>
                   </button>
                 </NavLink>
-                <NavLink to="/admins/registration">
+                <NavLink to="/registration">
                   <button className="reserve sign_up" type="button">
                     <span>Sign Up</span>
                   </button>
