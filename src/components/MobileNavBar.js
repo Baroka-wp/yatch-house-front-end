@@ -20,17 +20,16 @@ const customStyles = {
 };
 
 const MobileNavbar = () => {
-  let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const openModal = () => {
     setIsOpen(true);
   };
 
-  const afterOpenModal = () => {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
-  };
+  // const afterOpenModal = () => {
+  //   // references are now sync'd and can be accessed.
+  //   subtitle.style.color = '#f00';
+  // };
 
   const closeModal = () => {
     setIsOpen(false);
@@ -52,6 +51,7 @@ const MobileNavbar = () => {
     //   console.log(err);
     // }
     dispatch({ type: 'LOGOUT' });
+    setIsOpen(false);
   };
 
   const links = [
@@ -95,7 +95,6 @@ const MobileNavbar = () => {
         </button>
         <Modal
           isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
           ariaHideApp={false}
