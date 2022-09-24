@@ -29,7 +29,7 @@ const Login = () => {
 
   const [isLoading, setShow] = useState(false);
 
-  const handleClick = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setShow(true);
     dispatch({ type: 'LOGIN_START' });
@@ -59,7 +59,7 @@ const Login = () => {
       <div className="col-md-5 login_registration_form">
         {error && (<span className="text-danger">Password or email is incorrect</span>)}
         <hr />
-        <form style={{ marginBottom: '20px' }}>
+        <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
           <Row>
             <Col md={12}>
               <FormGroup>
@@ -72,6 +72,7 @@ const Login = () => {
                   placeholder="john@example.com"
                   type="email"
                   onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
@@ -88,13 +89,13 @@ const Login = () => {
                   placeholder="password placeholder"
                   type="password"
                   onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
           </Row>
           <button
             disabled={isLoading}
-            onClick={handleClick}
             className=" btn btn-sm btn-primary"
             type="submit"
           >

@@ -25,7 +25,7 @@ const Registration = () => {
   const [isLoading, setShow] = useState(false);
   let history = useNavigate();
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setShow(true);
     setUserInfo((prev) => ({ ...prev, telephone: phoneNumber }));
@@ -50,7 +50,7 @@ const Registration = () => {
         <h3> Sign up </h3>
       </div>
       <div className="col-md-5 login_registration_form">
-        <Form style={{ marginBottom: '20px' }} id="signUpForm">
+        <Form onSubmit={handleSubmit} style={{ marginBottom: '20px' }} id="signUpForm">
           <Row>
             <Col md={12}>
               <FormGroup>
@@ -132,7 +132,6 @@ const Registration = () => {
             </Col>
           </Row>
           <button
-            onClick={handleClick}
             className=" btn btn-sm btn-primary"
             type="submit"
             disabled={isLoading}
