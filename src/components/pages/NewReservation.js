@@ -2,7 +2,8 @@
 import React, { useState, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { Navigate, useParams } from 'react-router';
+import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import SideNavbar from '../MainNavBar';
 import MobileNavbar from '../MobileNavBar';
@@ -21,9 +22,12 @@ const NewReservation = () => {
 
   const house = yatches.filter((yatch) => yatch.id === parseInt(id, 10));
 
+  const [isLoading, setShow] = useState(false);
+  const history = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setShow(true);
     const reservation = {
       start_date: startDate.toISOString().split('T')[0],
       end_date: new Date(endDate).toISOString().split('T')[0],
@@ -32,14 +36,14 @@ const NewReservation = () => {
       user_id: user.data.id,
     };
 
-    console.log(reservation);
     await axios.post('http://localhost:3001/api/v1/reservations', { reservation })
-      .then((response) => {
-        console.log(response);
-          <Navigate to="/my_reservation" />;
+      .then(() => {
+        const url = `${process.env.PUBLIC_URL}/my_reservation`;
+        history(url);
       })
       .catch((error) => {
         console.log(error);
+        setShow(false);
       });
   };
 
@@ -135,8 +139,8 @@ const NewReservation = () => {
                   </p>
                 </div>
                 <div className="submit">
-                  <button type="submit" className="btn-sub">
-                    Submit
+                  <button type="submit" className="btn-sub" disabled={isLoading}>
+                  {isLoading ? 'Booking...' : 'Submit'}
                   </button>
                 </div>
               </form>
