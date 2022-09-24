@@ -13,6 +13,8 @@ import Registration from './components/pages/Registration';
 import NewReservation from './components/pages/NewReservation';
 import House from './components/pages/House';
 import MyReservation from './components/pages/MyReservation';
+import "react-notifications/lib/notifications.css";
+import { NotificationContainer } from "react-notifications";
 
 const App = () => {
   /* eslint-disable react/prop-types */
@@ -31,15 +33,44 @@ const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/houses" element={<MainPage />} />
-          <Route path="/houses/:id" element={<ProtectedRoute><House /></ProtectedRoute>} />
-          <Route path="/houses/new" element={<ProtectedRoute><AddHouse /></ProtectedRoute>} />
-          <Route path="/my_reservation" element={<ProtectedRoute><MyReservation /></ProtectedRoute>} />
-          <Route path="/reservations/:id/new" element={<ProtectedRoute><NewReservation /></ProtectedRoute>} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/registration" element={<Registration />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/houses' element={<MainPage />} />
+          <Route
+            path='/houses/:id'
+            element={
+              <ProtectedRoute>
+                <House />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/houses/new'
+            element={
+              <ProtectedRoute>
+                <AddHouse />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/my_reservation'
+            element={
+              <ProtectedRoute>
+                <MyReservation />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/reservations/:id/new'
+            element={
+              <ProtectedRoute>
+                <NewReservation />
+              </ProtectedRoute>
+            }
+          />
+          <Route path='/login' element={<Login />} />
+          <Route path='/registration' element={<Registration />} />
         </Routes>
+        <NotificationContainer />
       </BrowserRouter>
     </Provider>
   );

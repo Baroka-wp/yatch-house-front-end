@@ -9,12 +9,10 @@ import Stack from '@mui/material/Stack';
 import { getAllItems } from '../redux/house/houseReducer';
 import Socials from './socials';
 import '@splidejs/react-splide/css';
-// import yatches from './dummydata/joydata';
 import './pages/mainpage.css';
 
 const Carousel = () => {
   const yatches = useSelector((state) => state.houses);
-
   const [itemId, setItemId] = useState(0);
   const [item, setItem] = useState(yatches[itemId]);
 
