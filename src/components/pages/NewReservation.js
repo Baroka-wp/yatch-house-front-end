@@ -11,14 +11,14 @@ import './newreservation.css';
 import { AuthContext } from '../../context/AuthContext';
 
 const NewReservation = () => {
-  let date = new Date();
+  // let date = new Date();
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(date.setDate(date.getDate() + 1));
+  const [endDate, setEndDate] = useState(new Date());
 
   const [reservation, setReservation] = useState({
     start_date: startDate.toISOString().split('T')[0],
-    end_date: endDate,
+    end_date: new Date(endDate).toISOString().split('T')[0],
   });
 
   const yatches = useSelector((state) => state.houses);
@@ -47,6 +47,25 @@ const NewReservation = () => {
         console.log(error);
       });
   };
+
+  const [totalPrice, setTotalPrice] = useState(Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24)) * house[0].price);
+
+  const calculateTotalPriceFromEnd = (date) => {
+    const firstDate = date.toISOString().split('T')[0];
+    const secondDate = startDate.toISOString().split('T')[0];
+    const days = Math.floor((new Date(firstDate) - new Date(secondDate)) / (1000 * 60 * 60 * 24));
+
+    setTotalPrice(days * house[0].price);
+  };
+
+  const calculateTotalPriceFromStart = (date) => {
+    const firstDate = endDate.toISOString().split('T')[0];
+    const secondDate = date.toISOString().split('T')[0];
+    const days = Math.floor((new Date(firstDate) - new Date(secondDate)) / (1000 * 60 * 60 * 24));
+    
+    setTotalPrice(days * house[0].price);
+  };
+
   return (
     <div className="main_page">
       <div className="mainNavBar">
@@ -95,27 +114,31 @@ const NewReservation = () => {
             <h3> Choose date range </h3>
             <hr />
             <div className="col-md-12 ">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} style={{ marginBottom: '30px' }}>
                 <div className="date-fields">
                   <div className="start-date">
                     <p>Start Date</p>
                     <DatePicker
                       selected={startDate}
-                      onChange={(date) => setStartDate(date)}
+                      onChange={(date) => {setStartDate(date); calculateTotalPriceFromStart(date)}}
                       minDate={new Date()}
+                      maxDate={new Date(endDate)}
                     />
                   </div>
                   <div className="end-date">
                     <p>End Date</p>
                     <DatePicker
                       selected={endDate}
-                      onChange={(date) => setEndDate(date)}
-                      minDate={date.setDate(date.getDate() + 1)}
+                      onChange={(date) => {setEndDate(date); calculateTotalPriceFromEnd(date)}}
+                      minDate={new Date()}
                     />
                   </div>
                 </div>
+                <div className="total-price" style={{ paddingLeft: '4%', marginTop: '25px' }}>
+                  <p>Total amount: <b>$ {totalPrice}</b></p>
+                </div>
                 <div className="submit">
-                  <button type="submit" className="btn-sub mt-5">
+                  <button type="submit" className="btn-sub">
                     Submit
                   </button>
                 </div>
