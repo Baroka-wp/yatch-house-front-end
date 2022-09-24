@@ -27,8 +27,11 @@ const Login = () => {
     setCredential((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const [isLoading, setShow] = useState(false);
+
   const handleClick = async (e) => {
     e.preventDefault();
+    setShow(true);
     dispatch({ type: 'LOGIN_START' });
     try {
       const res = await axios.post('http://localhost:3001/users/sign_in',
@@ -39,9 +42,11 @@ const Login = () => {
         navigate('/houses');
       } else {
         dispatch({ type: 'LOGIN_FAILURE', payload: res.data });
+        setShow(false);
       }
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err });
+      setShow(false);
     }
   };
 
@@ -88,12 +93,12 @@ const Login = () => {
             </Col>
           </Row>
           <button
-            disabled={loading}
+            disabled={isLoading}
             onClick={handleClick}
             className=" btn btn-sm btn-primary"
             type="submit"
           >
-            Login
+            {isLoading ? "Signing in..." : "Sign in"}
           </button>
         </form>
         <Link to="/registration">

@@ -27,18 +27,19 @@ const Registration = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    setShow({ isLoading: true });
+    setShow(true);
     setUserInfo((prev) => ({ ...prev, telephone: phoneNumber }));
 
     try {
       axios.post('http://localhost:3001/users', { user: userInfo }).then(() => {
-        setShow({ isLoading: false });
+        setShow(false);
         document.getElementById("signUpForm").reset();
         let url = `${process.env.PUBLIC_URL}/login`;
         history(url);
       });
     } catch (err) {
       console.log(err);
+      setShow(false);
     }
   };
 
