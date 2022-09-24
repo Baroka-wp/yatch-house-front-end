@@ -22,12 +22,17 @@ const Registration = () => {
     setUserInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const [isLoading, setShow] = useState(false);
+
   const handleClick = (e) => {
     e.preventDefault();
+    setShow({ isLoading: true });
     setUserInfo((prev) => ({ ...prev, telephone: phoneNumber }));
 
     try {
-      axios.post('http://localhost:3001/users', { user: userInfo });
+      axios.post('http://localhost:3001/users', { user: userInfo }).then(() => {
+        setShow({ isLoading: false });
+      });
     } catch (err) {
       console.log(err);
     }
@@ -40,7 +45,7 @@ const Registration = () => {
         <h3> Sign up </h3>
       </div>
       <div className="col-md-5 login_registration_form">
-        <Form style={{ marginBottom: '20px' }}>
+        <Form style={{ marginBottom: '20px' }} id="">
           <Row>
             <Col md={12}>
               <FormGroup>
@@ -125,8 +130,9 @@ const Registration = () => {
             onClick={handleClick}
             className=" btn btn-sm btn-primary"
             type="submit"
+            disabled={isLoading}
           >
-            Sign up
+            {isLoading ? "Signing up..." : "Sign up"}
           </button>
         </Form>
         <Link to="/login">
