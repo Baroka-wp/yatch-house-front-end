@@ -122,13 +122,15 @@ const SideNavbar = () => {
 
         {
         user && (
-          <button
-            onClick={() => handleLogout()}
-            type="button"
-            className="btn btn-danger"
-          >
-            Log Out
-          </button>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+            <button
+              onClick={() => handleLogout()}
+              type="button"
+              className="btn btn-danger"
+            >
+              Log Out
+            </button>
+          </div>
         )
       }
         <div className="copyright">
