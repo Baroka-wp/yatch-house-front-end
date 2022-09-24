@@ -101,6 +101,7 @@ const NewReservation = () => {
                     <DatePicker
                       selected={startDate}
                       onChange={(date) => setStartDate(date)}
+                      minDate={new Date()}
                     />
                   </div>
                   <div className="end-date">
@@ -108,6 +109,7 @@ const NewReservation = () => {
                     <DatePicker
                       selected={endDate}
                       onChange={(date) => setEndDate(date)}
+                      minDate={new Date()}
                     />
                   </div>
                 </div>
