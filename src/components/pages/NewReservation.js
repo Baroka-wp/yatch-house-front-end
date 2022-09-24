@@ -16,11 +16,6 @@ const NewReservation = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(date.setDate(date.getDate() + 1));
 
-  const [reservation, setReservation] = useState({
-    start_date: startDate.toISOString().split('T')[0],
-    end_date: new Date(endDate).toISOString().split('T')[0],
-  });
-
   const yatches = useSelector((state) => state.houses);
   const { id } = useParams();
 
@@ -29,14 +24,15 @@ const NewReservation = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setReservation({
-      ...reservation,
-      house_id: house[0].id,
-      status: 'pending',
-      user_id: user.data.id,
+    const reservation = {
       start_date: startDate.toISOString().split('T')[0],
-      end_date: endDate.toISOString().split('T')[0],
-    });
+      end_date: new Date(endDate).toISOString().split('T')[0],
+      house_id: house[0].id,
+      status: 'booked',
+      user_id: user.data.id,
+    };
+
+
     console.log(reservation);
     await axios.post('http://localhost:3001/api/v1/reservations', { reservation })
       .then((response) => {
@@ -98,14 +94,6 @@ const NewReservation = () => {
                     $
                     {house[0].price}
                   </td>
-                </tr>
-                <tr>
-                  <th>Start Date: </th>
-                  <td>{reservation.start_date}</td>
-                </tr>
-                <tr>
-                  <th>End Date: </th>
-                  <td>{reservation.end_date}</td>
                 </tr>
               </table>
             </div>
