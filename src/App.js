@@ -17,7 +17,6 @@ import MyReservation from './components/pages/MyReservation';
 import 'react-notifications/lib/notifications.css';
 import DeleteHouse from './components/pages/DeleteHouse';
 
-
 const App = () => {
   /* eslint-disable react/prop-types */
   const ProtectedRoute = ({ children }) => {
