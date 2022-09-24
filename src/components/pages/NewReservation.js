@@ -11,10 +11,10 @@ import './newreservation.css';
 import { AuthContext } from '../../context/AuthContext';
 
 const NewReservation = () => {
-  // let date = new Date();
+  let date = new Date();
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(date.setDate(date.getDate() + 1));
 
   const [reservation, setReservation] = useState({
     start_date: startDate.toISOString().split('T')[0],
