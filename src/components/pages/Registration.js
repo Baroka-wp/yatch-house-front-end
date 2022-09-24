@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, redirect, useNavigate  } from 'react-router-dom';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import './registration.css';
@@ -23,6 +23,7 @@ const Registration = () => {
   };
 
   const [isLoading, setShow] = useState(false);
+  let history = useNavigate();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -32,6 +33,9 @@ const Registration = () => {
     try {
       axios.post('http://localhost:3001/users', { user: userInfo }).then(() => {
         setShow({ isLoading: false });
+        document.getElementById("signUpForm").reset();
+        let url = `${process.env.PUBLIC_URL}/login`;
+        history(url);
       });
     } catch (err) {
       console.log(err);
@@ -45,7 +49,7 @@ const Registration = () => {
         <h3> Sign up </h3>
       </div>
       <div className="col-md-5 login_registration_form">
-        <Form style={{ marginBottom: '20px' }} id="">
+        <Form style={{ marginBottom: '20px' }} id="signUpForm">
           <Row>
             <Col md={12}>
               <FormGroup>
