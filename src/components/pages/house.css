@@ -151,4 +151,10 @@
   .house_name p {
     width: 100%;
   }
+
+  .image_form img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
 }
