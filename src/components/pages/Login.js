@@ -18,7 +18,7 @@ const Login = () => {
   });
 
   const {
-    loading, error, dispatch,
+    error, dispatch,
   } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -99,7 +99,7 @@ const Login = () => {
             className=" btn btn-sm btn-primary"
             type="submit"
           >
-            {isLoading ? "Signing in..." : "Sign in"}
+            {isLoading ? 'Signing in...' : 'Sign in'}
           </button>
         </form>
         <Link to="/registration">

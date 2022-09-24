@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, redirect, useNavigate  } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import './registration.css';
@@ -23,7 +23,7 @@ const Registration = () => {
   };
 
   const [isLoading, setShow] = useState(false);
-  let history = useNavigate();
+  const history = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,8 +33,8 @@ const Registration = () => {
     try {
       axios.post('http://localhost:3001/users', { user: userInfo }).then(() => {
         setShow(false);
-        document.getElementById("signUpForm").reset();
-        let url = `${process.env.PUBLIC_URL}/login`;
+        document.getElementById('signUpForm').reset();
+        const url = `${process.env.PUBLIC_URL}/login`;
         history(url);
       });
     } catch (err) {
@@ -136,7 +136,7 @@ const Registration = () => {
             type="submit"
             disabled={isLoading}
           >
-            {isLoading ? "Signing up..." : "Sign up"}
+            {isLoading ? 'Signing up...' : 'Sign up'}
           </button>
         </Form>
         <Link to="/login">
