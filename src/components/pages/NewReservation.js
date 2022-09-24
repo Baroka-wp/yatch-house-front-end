@@ -47,7 +47,7 @@ const NewReservation = () => {
       });
   };
 
-  let daysNumber = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+  const daysNumber = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
 
   const [totalPrice, setTotalPrice] = useState(daysNumber * house[0].price);
 
@@ -113,8 +113,8 @@ const NewReservation = () => {
                     <p>Start Date</p>
                     <DatePicker
                       selected={startDate}
-                      onChange={(date) => { 
-                        setStartDate(date); calculateTotalPriceFromStart(date); 
+                      onChange={(date) => {
+                        setStartDate(date); calculateTotalPriceFromStart(date);
                       }}
                       minDate={new Date()}
                       maxDate={new Date(endDate)}
@@ -140,7 +140,7 @@ const NewReservation = () => {
                 </div>
                 <div className="submit">
                   <button type="submit" className="btn-sub" disabled={isLoading}>
-                  {isLoading ? 'Booking...' : 'Submit'}
+                    {isLoading ? 'Booking...' : 'Submit'}
                   </button>
                 </div>
               </form>
