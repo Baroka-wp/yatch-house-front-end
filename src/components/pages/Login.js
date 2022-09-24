@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import {
   FormGroup,
@@ -54,7 +54,7 @@ const Login = () => {
       <div className="col-md-5 login_registration_form">
         {error && (<span className="text-danger">Password or email is incorrect</span>)}
         <hr />
-        <form>
+        <form style={{ marginBottom: '20px' }}>
           <Row>
             <Col md={12}>
               <FormGroup>
@@ -96,6 +96,9 @@ const Login = () => {
             Login
           </button>
         </form>
+        <Link to="/registration">
+          Sign up
+        </Link>
       </div>
       <div className="login_footer">
         <p>© 2022 Yatch House</p>

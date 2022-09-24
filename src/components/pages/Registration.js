@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import './registration.css';
@@ -39,7 +40,7 @@ const Registration = () => {
         <h3> Sign up </h3>
       </div>
       <div className="col-md-5 login_registration_form">
-        <Form>
+        <Form style={{ marginBottom: '20px' }}>
           <Row>
             <Col md={12}>
               <FormGroup>
@@ -128,6 +129,9 @@ const Registration = () => {
             Sign up
           </button>
         </Form>
+        <Link to="/login">
+          Sign in
+        </Link>
       </div>
       <div className="login_footer">
         <p>© 2022 Yatch House</p>
