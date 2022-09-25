@@ -47,7 +47,7 @@ const Carousel = () => {
                 <div className="card">
                   <img src={item.image} alt={item.name} />
                   <div className="yatch_name">
-                    <h4>{item.location}</h4>
+                    <h4>{item.name}</h4>
                   </div>
                   <p>{item.description}</p>
                   <div className="social">
