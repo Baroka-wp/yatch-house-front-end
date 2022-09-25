@@ -42,7 +42,10 @@ const House = () => {
             <div className="house_info">
               <div className="house_name">
                 <h2>{house[0].name}</h2>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{
+                  display: 'flex', justifyContent: 'center', gap: '10px', alignItems: 'center', marginBottom: '20px',
+                }}
+                >
                   <FontAwesomeIcon icon={faLocationDot} style={{ width: '25px', height: '25px', color: '#97bf0f' }} />
                   <span style={{ fontSize: '2rem', fontFamily: 'Niconne, cursive' }}>{house[0].location}</span>
                 </div>

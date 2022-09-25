@@ -15,7 +15,7 @@ const Carousel = () => {
   const yatches = useSelector((state) => state.houses);
   const [itemId, setItemId] = useState(0);
   const [item, setItem] = useState(yatches[itemId]);
-
+  console.log(`yatches: ${yatches}`);
   const dispatch = useDispatch();
 
   useEffect(() => {
