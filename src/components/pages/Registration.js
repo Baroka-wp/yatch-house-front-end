@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import './registration.css';
@@ -21,14 +22,24 @@ const Registration = () => {
     setUserInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleClick = (e) => {
+  const [isLoading, setShow] = useState(false);
+  const history = useNavigate();
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setShow(true);
     setUserInfo((prev) => ({ ...prev, telephone: phoneNumber }));
 
     try {
-      axios.post('http://localhost:3001/users', { user: userInfo });
+      axios.post('http://localhost:3001/users', { user: userInfo }).then(() => {
+        setShow(false);
+        document.getElementById('signUpForm').reset();
+        const url = `${process.env.PUBLIC_URL}/login`;
+        history(url);
+      });
     } catch (err) {
       console.log(err);
+      setShow(false);
     }
   };
 
@@ -39,7 +50,7 @@ const Registration = () => {
         <h3> Sign up </h3>
       </div>
       <div className="col-md-5 login_registration_form">
-        <Form>
+        <Form onSubmit={handleSubmit} style={{ marginBottom: '20px' }} id="signUpForm">
           <Row>
             <Col md={12}>
               <FormGroup>
@@ -121,13 +132,16 @@ const Registration = () => {
             </Col>
           </Row>
           <button
-            onClick={handleClick}
             className=" btn btn-sm btn-primary"
             type="submit"
+            disabled={isLoading}
           >
-            Sign up
+            {isLoading ? 'Signing up...' : 'Sign up'}
           </button>
         </Form>
+        <Link to="/login">
+          Sign in
+        </Link>
       </div>
       <div className="login_footer">
         <p>© 2022 Yatch House</p>

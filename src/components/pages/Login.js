@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import {
   FormGroup,
@@ -18,7 +18,7 @@ const Login = () => {
   });
 
   const {
-    loading, error, dispatch,
+    error, dispatch,
   } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -27,8 +27,11 @@ const Login = () => {
     setCredential((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleClick = async (e) => {
+  const [isLoading, setShow] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setShow(true);
     dispatch({ type: 'LOGIN_START' });
     try {
       const res = await axios.post('http://localhost:3001/users/sign_in',
@@ -39,9 +42,11 @@ const Login = () => {
         navigate('/houses');
       } else {
         dispatch({ type: 'LOGIN_FAILURE', payload: res.data });
+        setShow(false);
       }
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err });
+      setShow(false);
     }
   };
 
@@ -54,7 +59,7 @@ const Login = () => {
       <div className="col-md-5 login_registration_form">
         {error && (<span className="text-danger">Password or email is incorrect</span>)}
         <hr />
-        <form>
+        <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
           <Row>
             <Col md={12}>
               <FormGroup>
@@ -67,6 +72,7 @@ const Login = () => {
                   placeholder="john@example.com"
                   type="email"
                   onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
@@ -83,19 +89,22 @@ const Login = () => {
                   placeholder="password placeholder"
                   type="password"
                   onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
           </Row>
           <button
-            disabled={loading}
-            onClick={handleClick}
+            disabled={isLoading}
             className=" btn btn-sm btn-primary"
             type="submit"
           >
-            Login
+            {isLoading ? 'Signing in...' : 'Sign in'}
           </button>
         </form>
+        <Link to="/registration">
+          Sign up
+        </Link>
       </div>
       <div className="login_footer">
         <p>© 2022 Yatch House</p>

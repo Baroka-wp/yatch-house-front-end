@@ -81,11 +81,11 @@ const NewReservation = () => {
                 </tr>
                 <tr>
                   <th>Start Date: </th>
-                  <td>{reservation.start_date.toISOString().split('T')[0]}</td>
+                  <td>{reservation.start_date}</td>
                 </tr>
                 <tr>
                   <th>End Date: </th>
-                  <td>{reservation.end_date.toISOString().split('T')[0]}</td>
+                  <td>{reservation.end_date}</td>
                 </tr>
               </table>
             </div>
