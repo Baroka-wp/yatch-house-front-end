@@ -1,5 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import './house.css';
 
@@ -40,7 +42,10 @@ const House = () => {
             <div className="house_info">
               <div className="house_name">
                 <h2>{house[0].name}</h2>
-                <h2>{house[0].location}</h2>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', alignItems: 'center', marginBottom: '20px' }}>
+                  <FontAwesomeIcon icon={faLocationDot} style={{ width: '25px', height: '25px', color: '#97bf0f' }} />
+                  <span style={{ fontSize: '2rem', fontFamily: 'Niconne, cursive' }}>{house[0].location}</span>
+                </div>
                 <p>{house[0].description}</p>
               </div>
               <Link
