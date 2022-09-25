@@ -79,7 +79,7 @@ const NewReservation = () => {
         <div className="clearfix" />
         <div className="container reservation">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ alignSelf: 'flex-end' }}>
               <img src={house[0].image} alt="yatch" className="img-fluid image" />
             </div>
             <div className="col reserve-infos">

@@ -15,7 +15,7 @@ const Carousel = () => {
   const yatches = useSelector((state) => state.houses);
   const [itemId, setItemId] = useState(0);
   const [item, setItem] = useState(yatches[itemId]);
-
+  console.log(`yatches: ${yatches}`);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Carousel = () => {
                 <div className="card">
                   <img src={item.image} alt={item.name} />
                   <div className="yatch_name">
-                    <h4>{item.location}</h4>
+                    <h4>{item.name}</h4>
                   </div>
                   <p>{item.description}</p>
                   <div className="social">

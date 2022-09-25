@@ -27,9 +27,7 @@ const Search = () => {
   };
 
   return (
-    <div className="search">
-      <FontAwesomeIcon icon={faSearch} onClick={onClick} />
-
+    <div className="search" style={{ display: 'flex', gap: '5px' }}>
       {showInput ? (
         <select
           value={search}
@@ -43,6 +41,8 @@ const Search = () => {
           ))}
         </select>
       ) : null}
+
+      <FontAwesomeIcon icon={faSearch} onClick={onClick} />
     </div>
   );
 };

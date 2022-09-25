@@ -139,7 +139,7 @@
   }
 
   .wrapper h3 {
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 0.8rem;
   }
 
@@ -150,6 +150,7 @@
 
   .card {
     height: 400px;
+    width: 300px;
   }
 
   .yatch img {
@@ -157,11 +158,11 @@
   }
 
   .yatch h4 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .yatch p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .yatch_name {
