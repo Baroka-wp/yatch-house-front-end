@@ -39,6 +39,7 @@ const House = () => {
             </div>
             <div className="house_info">
               <div className="house_name">
+                <h2>{house[0].name}</h2>
                 <h2>{house[0].location}</h2>
                 <p>{house[0].description}</p>
               </div>
