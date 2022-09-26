@@ -86,7 +86,11 @@ const NewReservation = () => {
               <h3> Reservation Infos </h3>
               <table>
                 <tr>
-                  <th>House location: </th>
+                  <th>Name: </th>
+                  <td>{house[0].name}</td>
+                </tr>
+                <tr>
+                  <th>Location: </th>
                   <td>{house[0].location}</td>
                 </tr>
                 <tr>
