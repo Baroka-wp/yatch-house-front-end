@@ -44,6 +44,7 @@ const MyReservation = () => {
                 <th className="table-item">Location</th>
                 <th className="table-item">Start date</th>
                 <th className="table-item">End date</th>
+                <th className="table-item">Total</th>
               </tr>
               {
                 reservationsList.map((item) => (
@@ -52,6 +53,7 @@ const MyReservation = () => {
                     {house(item) && (<td className="table-item">{house(item).location}</td>)}
                     <td className="table-item tbl_center">{item.start_date.split('T')[0]}</td>
                     <td className="table-item tbl_center">{item.end_date.split('T')[0]}</td>
+                    <td className="table-item tbl_center">$ {item.total}</td>
                   </tr>
                 ))
               }
