@@ -55,13 +55,13 @@ const Registration = () => {
           <Row>
             <Col md={12}>
               <FormGroup>
-                <Label for="Nom">Numéro de téléphone</Label>
+                <Label for="Nom">Telephone Number</Label>
                 <PhoneInput
                   country="fr"
                   value={phoneNumber}
                   onChange={setPhoneNumber}
                   inputProps={{
-                    name: 'Télephone',
+                    name: 'telephone',
                     required: true,
                   }}
                 />
