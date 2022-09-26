@@ -53,7 +53,10 @@ const MyReservation = () => {
                     {house(item) && (<td className="table-item">{house(item).location}</td>)}
                     <td className="table-item tbl_center">{item.start_date.split('T')[0]}</td>
                     <td className="table-item tbl_center">{item.end_date.split('T')[0]}</td>
-                    <td className="table-item tbl_center">$ {item.total}</td>
+                    <td className="table-item tbl_center">
+                      $
+                      {item.total}
+                    </td>
                   </tr>
                 ))
               }

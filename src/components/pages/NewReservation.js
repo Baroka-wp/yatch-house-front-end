@@ -151,7 +151,7 @@ const NewReservation = () => {
                   className="total-price"
                   style={{ paddingLeft: '4%', marginTop: '25px' }}
                 >
-                  <input type="hidden" name="total" value={totalPrice}></input>
+                  <input type="hidden" name="total" value={totalPrice} />
                   <p>
                     Total amount:
                     <b>
