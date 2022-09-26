@@ -40,16 +40,16 @@ const MyReservation = () => {
           <table>
             <tbody>
               <tr>
-                <th className="table-item">House location</th>
+                <th className="table-item">Name</th>
+                <th className="table-item">Location</th>
                 <th className="table-item">Start date</th>
                 <th className="table-item">End date</th>
               </tr>
               {
-                reservationsList && reservationsList.map((item) => (
+                reservationsList.map((item) => (
                   <tr key={item.id}>
-                    {
-                      house(item) && (<td className="table-item">{house(item).location}</td>)
-                    }
+                    {house(item) && (<td className="table-item">{house(item).name}</td>)}
+                    {house(item) && (<td className="table-item">{house(item).location}</td>)}
                     <td className="table-item tbl_center">{item.start_date.split('T')[0]}</td>
                     <td className="table-item tbl_center">{item.end_date.split('T')[0]}</td>
                   </tr>

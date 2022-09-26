@@ -4,7 +4,9 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import './registration.css';
 import axios from 'axios';
-import { Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import {
+  Form, FormGroup, Label, Input, Row, Col,
+} from 'reactstrap';
 import logo from '../../img/Yatch-House.png';
 
 const Registration = () => {

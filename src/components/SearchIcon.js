@@ -36,7 +36,7 @@ const Search = () => {
         >
           {houses.map((house) => (
             <option key={house.id} value={house.id}>
-              {house.location}
+              {house.name}
             </option>
           ))}
         </select>
