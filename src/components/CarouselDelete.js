@@ -43,11 +43,19 @@ const CarouselDelete = () => {
 
   const [canDisplay, diplayNotif] = useState(false);
 
+  const timeOut = () => {
+    const timer = setTimeout(() => {
+      setNotif('');
+    }, 3000);
+    return () => clearTimeout(timer);
+  };
+
   const handleDeleteHouse = async (id) => {
     try {
       setShow(true);
       await axios.delete(`http://localhost:3001/api/v1/houses/${id}`).then(() => {
         setNotif('House deleted');
+        timeOut();
         dispatch(deleteHouse(id));
         setShow(false);
         diplayNotif(true);
@@ -62,25 +70,27 @@ const CarouselDelete = () => {
 
   return (
     <>
-      {
-        diplayNotif ? (
-          <div style={{
-            textAlign: 'center', color: 'green', fontSize: '20px', fontWeight: 'bold',
-          }}
-          >
-            {deleteNotif}
-          </div>
-        )
-        :
-        (
-          <div style={{
-            textAlign: 'center', color: 'red', fontSize: '20px', fontWeight: 'bold',
-          }}
-          >
-            {deleteNotif}
-          </div>
-        )
-      }
+      <div style={{ height: '1rem', marginBottom: '1rem' }}>
+        {
+          canDisplay ? (
+            <div id="notif" style={{
+              textAlign: 'center', color: 'green', fontSize: '20px', fontWeight: 'bold',
+            }}
+            >
+              {deleteNotif}
+            </div>
+          )
+          :
+          (
+            <div id="notif" style={{
+              textAlign: 'center', color: 'red', fontSize: '20px', fontWeight: 'bold',
+            }}
+            >
+              {deleteNotif}
+            </div>
+          )
+        }
+      </div>
       
       <div className="d-flex yatchCarousel">
         <button type="button" className="prev-btn" onClick={() => setItemId(itemId - 1)}>
