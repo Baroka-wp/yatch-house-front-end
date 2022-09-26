@@ -102,7 +102,7 @@ const CarouselDelete = () => {
         {
           item ? (
             <SplideSlide>
-              <Link to={`/houses/${item.id}`} style={{ textDecoration: 'none' }}>
+              {/* <Link to={`/houses/${item.id}`} style={{ textDecoration: 'none' }}> */}
                 <div className="yatch">
                   <div className="card">
                     <img src={item.image} alt={item.name} />
@@ -115,7 +115,7 @@ const CarouselDelete = () => {
                     </div>
                   </div>
                 </div>
-              </Link>
+              {/* </Link> */}
               <button
                 onClick={() => handleDeleteHouse(item.id)}
                 disabled={isLoading}
