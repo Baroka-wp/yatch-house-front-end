@@ -44,7 +44,7 @@ const Registration = () => {
         <NavLink to="/">
           <img src={logo} alt="logo" />
         </NavLink>
-        <h3> Sign up </h3>
+        <h3> Register </h3>
       </div>
       <div className="col-md-5 login_registration_form">
         <Form
