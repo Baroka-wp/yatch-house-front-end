@@ -2,7 +2,6 @@ import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import store from '../redux/store';
-// import DeleteHouse from '../components/pages/DeleteHouse';
 
 describe('deletehouse', () => {
   it('renders deletehouse component', () => {
