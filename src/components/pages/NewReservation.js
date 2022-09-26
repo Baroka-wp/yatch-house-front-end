@@ -36,7 +36,8 @@ const NewReservation = () => {
       user_id: user.data.id,
     };
 
-    await axios.post('http://localhost:3001/api/v1/reservations', { reservation })
+    await axios
+      .post('http://localhost:3001/api/v1/reservations', { reservation })
       .then(() => {
         const url = `${process.env.PUBLIC_URL}/my_reservation`;
         history(url);
@@ -54,7 +55,9 @@ const NewReservation = () => {
   const calculateTotalPriceFromEnd = (date) => {
     const firstDate = date.toISOString().split('T')[0];
     const secondDate = startDate.toISOString().split('T')[0];
-    const days = Math.floor((new Date(firstDate) - new Date(secondDate)) / (1000 * 60 * 60 * 24));
+    const days = Math.floor(
+      (new Date(firstDate) - new Date(secondDate)) / (1000 * 60 * 60 * 24),
+    );
 
     setTotalPrice(days * house[0].price);
   };
@@ -62,7 +65,9 @@ const NewReservation = () => {
   const calculateTotalPriceFromStart = (date) => {
     const firstDate = endDate.toISOString().split('T')[0];
     const secondDate = date.toISOString().split('T')[0];
-    const days = Math.floor((new Date(firstDate) - new Date(secondDate)) / (1000 * 60 * 60 * 24));
+    const days = Math.floor(
+      (new Date(firstDate) - new Date(secondDate)) / (1000 * 60 * 60 * 24),
+    );
 
     setTotalPrice(days * house[0].price);
   };
@@ -80,7 +85,11 @@ const NewReservation = () => {
         <div className="container reservation">
           <div className="row">
             <div className="col-md-4" style={{ alignSelf: 'flex-end' }}>
-              <img src={house[0].image} alt="yatch" className="img-fluid image" />
+              <img
+                src={house[0].image}
+                alt="yatch"
+                className="img-fluid image"
+              />
             </div>
             <div className="col reserve-infos">
               <h3> Reservation Infos </h3>
@@ -114,7 +123,8 @@ const NewReservation = () => {
                     <DatePicker
                       selected={startDate}
                       onChange={(date) => {
-                        setStartDate(date); calculateTotalPriceFromStart(date);
+                        setStartDate(date);
+                        calculateTotalPriceFromStart(date);
                       }}
                       minDate={new Date()}
                       maxDate={new Date(endDate)}
@@ -124,12 +134,18 @@ const NewReservation = () => {
                     <p>End Date</p>
                     <DatePicker
                       selected={endDate}
-                      onChange={(date) => { setEndDate(date); calculateTotalPriceFromEnd(date); }}
+                      onChange={(date) => {
+                        setEndDate(date);
+                        calculateTotalPriceFromEnd(date);
+                      }}
                       minDate={new Date()}
                     />
                   </div>
                 </div>
-                <div className="total-price" style={{ paddingLeft: '4%', marginTop: '25px' }}>
+                <div
+                  className="total-price"
+                  style={{ paddingLeft: '4%', marginTop: '25px' }}
+                >
                   <p>
                     Total amount:
                     <b>
@@ -139,7 +155,11 @@ const NewReservation = () => {
                   </p>
                 </div>
                 <div className="submit">
-                  <button type="submit" className="btn-sub" disabled={isLoading}>
+                  <button
+                    type="submit"
+                    className="btn-sub"
+                    disabled={isLoading}
+                  >
                     {isLoading ? 'Booking...' : 'Submit'}
                   </button>
                 </div>
