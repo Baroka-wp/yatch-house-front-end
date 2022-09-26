@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import store from '../redux/store';
 import AddHouse from '../components/pages/AddHouse';

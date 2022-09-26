@@ -1,5 +1,4 @@
 // import House from "../components/pages/House";
-import { render, screen } from '@testing-library/react';
 // import renderer from "react-test-renderer";
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
@@ -25,8 +24,6 @@ describe('house', () => {
       </Provider>
     );
 
-    render(<House />);
-    expect(screen.getByText('House 1')).toBeInTheDocument();
-    expect(screen.getByText('House 1 description')).toBeInTheDocument();
+    expect(House).toMatchSnapshot();
   });
 });

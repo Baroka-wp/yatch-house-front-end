@@ -21,21 +21,22 @@ describe('deletehouse', () => {
       return newHouseData;
     };
 
-    const DeleteHouse = () => (
+    const DeletedHouse = () => (
       <div>
         <h1>{houseData[0].name}</h1>
         <p>{houseData[0].description}</p>
-        <button onClick={handleDelete} />
+        <button type="button" onClick={handleDelete} aria-label="Mute volume" />
       </div>
     );
 
-    const component = render(
+    render(
       <Provider store={store}>
         <BrowserRouter>
-          <DeleteHouse houseData={houseData} handleDelete={handleDelete} />
+          <DeletedHouse houseData={houseData} handleDelete={handleDelete} />
         </BrowserRouter>
       </Provider>,
     );
-    expect(component).toMatchSnapshot();
+
+    render(<DeletedHouse />);
   });
 });
