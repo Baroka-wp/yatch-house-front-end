@@ -4,6 +4,7 @@ import MobileNavbar from '../MobileNavBar';
 import SideNavbar from '../MainNavBar';
 import Carousel from '../carousel';
 
+
 const MainPage = () => (
   <div className="main_page">
     <div className="mainNavBar">
