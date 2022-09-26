@@ -15,7 +15,6 @@ const Carousel = () => {
   const yatches = useSelector((state) => state.houses);
   const [itemId, setItemId] = useState(0);
   const [item, setItem] = useState(yatches[itemId]);
-  console.log(`yatches: ${yatches}`);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,41 +35,46 @@ const Carousel = () => {
 
   return (
     <div className="d-flex yatchCarousel">
-      <button type="button" className="prev-btn" onClick={() => setItemId(itemId - 1)}>
+      <button
+        type="button"
+        className="prev-btn"
+        onClick={() => setItemId(itemId - 1)}
+      >
         <ArrowLeftIcon />
       </button>
-      {
-        item ? (
-          <SplideSlide>
-            <Link to={`/houses/${item.id}`} style={{ textDecoration: 'none' }}>
-              <div className="yatch">
-                <div className="card">
-                  <img src={item.image} alt={item.name} />
-                  <div className="yatch_name">
-                    <h4>{item.name}</h4>
-                  </div>
-                  <p>{item.description}</p>
-                  <div className="social">
-                    <Socials />
-                  </div>
+      {item ? (
+        <SplideSlide>
+          <Link to={`/houses/${item.id}`} style={{ textDecoration: 'none' }}>
+            <div className="yatch">
+              <div className="card">
+                <img src={item.image} alt={item.name} />
+                <div className="yatch_name">
+                  <h4>{item.name}</h4>
+                </div>
+                <p>{item.description}</p>
+                <div className="social">
+                  <Socials />
                 </div>
               </div>
-            </Link>
-          </SplideSlide>
-        ) : (
-          <Stack spacing={1}>
-            {/* For variant="text", adjust the height via font-size */}
-            <Skeleton variant="rectangular" width={310} height={250} />
-            <Skeleton variant="rounded" width={310} height={100} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-          </Stack>
-        )
-      }
-      <button type="button" className="next-btn" onClick={() => setItemId(itemId + 1)}>
+            </div>
+          </Link>
+        </SplideSlide>
+      ) : (
+        <Stack spacing={1}>
+          {/* For variant="text", adjust the height via font-size */}
+          <Skeleton variant="rectangular" width={310} height={250} />
+          <Skeleton variant="rounded" width={310} height={100} />
+          <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+        </Stack>
+      )}
+      <button
+        type="button"
+        className="next-btn"
+        onClick={() => setItemId(itemId + 1)}
+      >
         <ArrowRightIcon />
       </button>
     </div>
-
   );
 };
 
