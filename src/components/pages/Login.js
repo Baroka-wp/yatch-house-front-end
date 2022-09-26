@@ -1,12 +1,8 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import {
-  FormGroup,
-  Label,
-  Input,
-  Row,
-  Col,
+  FormGroup, Label, Input, Row, Col,
 } from 'reactstrap';
 import { AuthContext } from '../../context/AuthContext';
 import logo from '../../img/Yatch-House.png';
@@ -17,9 +13,7 @@ const Login = () => {
     password: undefined,
   });
 
-  const {
-    loading, error, dispatch,
-  } = useContext(AuthContext);
+  const { error, dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -27,46 +21,54 @@ const Login = () => {
     setCredential((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleClick = async (e) => {
+  const [isLoading, setShow] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setShow(true);
     dispatch({ type: 'LOGIN_START' });
     try {
-      const res = await axios.post('http://localhost:3001/users/sign_in',
-        { user: credential });
-      console.log(res);
+      const res = await axios.post('http://localhost:3001/users/sign_in', {
+        user: credential,
+      });
       if (res.data.data.id != null) {
         dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
         navigate('/houses');
       } else {
         dispatch({ type: 'LOGIN_FAILURE', payload: res.data });
+        setShow(false);
       }
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err });
+      setShow(false);
     }
   };
 
   return (
     <div className="user_auth_container">
       <div className="login_header">
-        <img src={logo} alt="logo" />
+        <NavLink to="/">
+          <img src={logo} alt="logo" />
+        </NavLink>
         <h3> Sign in </h3>
       </div>
       <div className="col-md-5 login_registration_form">
-        {error && (<span className="text-danger">Password or email is incorrect</span>)}
+        {error && (
+          <span className="text-danger">Password or email is incorrect</span>
+        )}
         <hr />
-        <form>
+        <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
           <Row>
             <Col md={12}>
               <FormGroup>
-                <Label for="email">
-                  Email
-                </Label>
+                <Label for="email">Email</Label>
                 <Input
                   id="email"
                   name="email"
                   placeholder="john@example.com"
                   type="email"
                   onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
@@ -74,28 +76,27 @@ const Login = () => {
           <Row>
             <Col md={12}>
               <FormGroup>
-                <Label for="password">
-                  Password
-                </Label>
+                <Label for="password">Password</Label>
                 <Input
                   id="password"
                   name="password"
                   placeholder="password placeholder"
                   type="password"
                   onChange={handleChange}
+                  required
                 />
               </FormGroup>
             </Col>
           </Row>
           <button
-            disabled={loading}
-            onClick={handleClick}
+            disabled={isLoading}
             className=" btn btn-sm btn-primary"
             type="submit"
           >
-            Login
+            {isLoading ? 'Signing in...' : 'Sign in'}
           </button>
         </form>
+        <Link to="/registration">Sign up</Link>
       </div>
       <div className="login_footer">
         <p>© 2022 Yatch House</p>

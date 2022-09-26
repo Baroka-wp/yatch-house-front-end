@@ -118,7 +118,7 @@
 
   .house {
     flex-direction: column;
-    width: 500px;
+    width: 100%;
     gap: 20px;
     top: 30%;
     left: 35%;
@@ -126,6 +126,12 @@
 
   .house-icon {
     padding-top: 60%;
+  }
+
+  .house_image {
+    gap: 0;
+    width: 100%;
+    padding-right: 15px;
   }
 
   .house_image a {
@@ -150,5 +156,11 @@
 
   .house_name p {
     width: 100%;
+  }
+
+  .image_form img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
   }
 }
