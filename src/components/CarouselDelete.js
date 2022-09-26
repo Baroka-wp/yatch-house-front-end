@@ -73,25 +73,28 @@ const CarouselDelete = () => {
       <div style={{ height: '1rem', marginBottom: '1rem' }}>
         {
           canDisplay ? (
-            <div id="notif" style={{
-              textAlign: 'center', color: 'green', fontSize: '20px', fontWeight: 'bold',
-            }}
+            <div
+              id="notif"
+              style={{
+                textAlign: 'center', color: 'green', fontSize: '20px', fontWeight: 'bold',
+              }}
             >
               {deleteNotif}
             </div>
           )
-          :
-          (
-            <div id="notif" style={{
-              textAlign: 'center', color: 'red', fontSize: '20px', fontWeight: 'bold',
-            }}
-            >
-              {deleteNotif}
-            </div>
-          )
+            : (
+              <div
+                id="notif"
+                style={{
+                  textAlign: 'center', color: 'red', fontSize: '20px', fontWeight: 'bold',
+                }}
+              >
+                {deleteNotif}
+              </div>
+            )
         }
       </div>
-      
+
       <div className="d-flex yatchCarousel">
         <button type="button" className="prev-btn" onClick={() => setItemId(itemId - 1)}>
           <ArrowLeftIcon />
