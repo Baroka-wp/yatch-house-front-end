@@ -1,7 +1,6 @@
-export default function ReservationsDelete(reservation_id,myReservations) {
-    currentReservations= myReservations.filter((reservation) => {
-         reservation.id !== reservation_id;
-    })
-
-    return currentReservations;
-} 
+export default function ReservationsDelete(reservationId, myReservations) {
+  const currentReservations = myReservations.filter(
+    (reservation) => reservation.id !== reservationId,
+  );
+  return currentReservations;
+}
