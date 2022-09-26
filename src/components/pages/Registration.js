@@ -44,7 +44,7 @@ const Registration = () => {
         <NavLink to="/">
           <img src={logo} alt="logo" />
         </NavLink>
-        <h3> Sign up </h3>
+        <h3> Register </h3>
       </div>
       <div className="col-md-5 login_registration_form">
         <Form
@@ -78,6 +78,7 @@ const Registration = () => {
                   placeholder="Your name"
                   type="name"
                   onChange={handleChange}
+                  aria-label="name-input"
                   required
                 />
               </FormGroup>
@@ -91,6 +92,7 @@ const Registration = () => {
                   placeholder="john@example.com"
                   type="email"
                   onChange={handleChange}
+                  aria-label="email-input"
                   required
                 />
               </FormGroup>
@@ -106,6 +108,7 @@ const Registration = () => {
                   placeholder="password placeholder"
                   type="password"
                   onChange={handleChange}
+                  aria-label="password-input"
                   required
                 />
               </FormGroup>
@@ -119,6 +122,7 @@ const Registration = () => {
                   placeholder="password placeholder"
                   type="password"
                   onChange={handleChange}
+                  aria-label="confirm-password-input"
                   required
                 />
               </FormGroup>

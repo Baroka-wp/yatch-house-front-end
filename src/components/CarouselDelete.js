@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { SplideSlide } from '@splidejs/react-splide';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
@@ -101,20 +100,18 @@ const CarouselDelete = () => {
         {
           item ? (
             <SplideSlide>
-              <Link to={`/houses/${item.id}`} style={{ textDecoration: 'none' }}>
-                <div className="yatch">
-                  <div className="card">
-                    <img src={item.image} alt={item.name} />
-                    <div className="yatch_name">
-                      <h4>{item.name}</h4>
-                    </div>
-                    <p>{item.description}</p>
-                    <div className="social">
-                      <Socials />
-                    </div>
+              <div className="yatch">
+                <div className="card">
+                  <img src={item.image} alt={item.name} />
+                  <div className="yatch_name">
+                    <h4>{item.name}</h4>
+                  </div>
+                  <p>{item.description}</p>
+                  <div className="social">
+                    <Socials />
                   </div>
                 </div>
-              </Link>
+              </div>
               <button
                 onClick={() => handleDeleteHouse(item.id)}
                 disabled={isLoading}

@@ -43,7 +43,7 @@ const SideNavbar = () => {
     },
     {
       id: 4,
-      path: '/houses/new',
+      path: '/houses_new',
       text: 'Add House',
     },
     {
@@ -58,7 +58,7 @@ const SideNavbar = () => {
     },
     {
       id: 7,
-      path: '/houses/delete',
+      path: '/houses_delete',
       text: 'Delete House',
     },
   ];

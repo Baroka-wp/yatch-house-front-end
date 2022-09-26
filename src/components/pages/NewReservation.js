@@ -22,6 +22,10 @@ const NewReservation = () => {
 
   const house = yatches.filter((yatch) => yatch.id === parseInt(id, 10));
 
+  const daysNumber = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+  const [totalPrice, setTotalPrice] = useState(daysNumber * house[0].price);
+
   const [isLoading, setShow] = useState(false);
   const history = useNavigate();
 
@@ -34,6 +38,7 @@ const NewReservation = () => {
       house_id: house[0].id,
       status: 'booked',
       user_id: user.data.id,
+      total: totalPrice,
     };
 
     await axios
@@ -47,10 +52,6 @@ const NewReservation = () => {
         setShow(false);
       });
   };
-
-  const daysNumber = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
-
-  const [totalPrice, setTotalPrice] = useState(daysNumber * house[0].price);
 
   const calculateTotalPriceFromEnd = (date) => {
     const firstDate = date.toISOString().split('T')[0];
@@ -150,6 +151,7 @@ const NewReservation = () => {
                   className="total-price"
                   style={{ paddingLeft: '4%', marginTop: '25px' }}
                 >
+                  <input type="hidden" name="total" value={totalPrice} />
                   <p>
                     Total amount:
                     <b>

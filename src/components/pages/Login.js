@@ -50,7 +50,7 @@ const Login = () => {
         <NavLink to="/">
           <img src={logo} alt="logo" />
         </NavLink>
-        <h3> Sign in </h3>
+        <h3> Login </h3>
       </div>
       <div className="col-md-5 login_registration_form">
         {error && (
@@ -68,6 +68,7 @@ const Login = () => {
                   placeholder="john@example.com"
                   type="email"
                   onChange={handleChange}
+                  aria-label="email-input"
                   required
                 />
               </FormGroup>
@@ -83,6 +84,7 @@ const Login = () => {
                   placeholder="password placeholder"
                   type="password"
                   onChange={handleChange}
+                  aria-label="password-input"
                   required
                 />
               </FormGroup>
