@@ -1,7 +1,7 @@
 export default function HouseDelete(house_id,myhouses) {
-    currentHouses= myhouses.filter((house) => {
-         house.id !== house_id;
-    })
+    let result= myhouses.filter(house=> 
+        house.id !== house_id
+    );
 
-    return currentHouses;
+     return result;
 } 
