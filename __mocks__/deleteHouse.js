@@ -1,7 +1,6 @@
-export default function HouseDelete(house_id,myhouses) {
-    let result= myhouses.filter(house=> 
-        house.id !== house_id
-    );
+export default function HouseDelete(houseId, myhouses, reservations) {
+  const result = myhouses.filter((house) => house.id !== houseId);
+  const result2 = reservations.filter((reservation) => reservation.houseId !== houseId);
 
-     return result;
-} 
+  return { houses: result, reservations: result2 };
+}
