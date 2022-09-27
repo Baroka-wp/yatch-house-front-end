@@ -42,12 +42,24 @@ const House = () => {
             <div className="house_info">
               <div className="house_name">
                 <h2>{house[0].name}</h2>
-                <div style={{
-                  display: 'flex', justifyContent: 'center', gap: '10px', alignItems: 'center', marginBottom: '20px',
-                }}
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    alignItems: 'center',
+                    marginBottom: '20px',
+                  }}
                 >
-                  <FontAwesomeIcon icon={faLocationDot} style={{ width: '25px', height: '25px', color: '#97bf0f' }} />
-                  <span style={{ fontSize: '2rem', fontFamily: 'Niconne, cursive' }}>{house[0].location}</span>
+                  <FontAwesomeIcon
+                    icon={faLocationDot}
+                    style={{ width: '25px', height: '25px', color: '#97bf0f' }}
+                  />
+                  <span
+                    style={{ fontSize: '2rem', fontFamily: 'Niconne, cursive' }}
+                  >
+                    {house[0].location}
+                  </span>
                 </div>
                 <p>{house[0].description}</p>
               </div>
@@ -63,7 +75,12 @@ const House = () => {
           </div>
         </div>
         <div className="main_page_footer">
-          <p>© 2022 Yatch House</p>
+          <p>
+            ©
+            {new Date().getFullYear()}
+            {' '}
+            Yatch House
+          </p>
         </div>
       </div>
     </div>
