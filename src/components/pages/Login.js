@@ -101,7 +101,12 @@ const Login = () => {
         <Link to="/registration">Sign up</Link>
       </div>
       <div className="login_footer">
-        <p>© 2022 Yatch House</p>
+        <p>
+          ©
+          {new Date().getFullYear()}
+          {' '}
+          Yatch House
+        </p>
       </div>
     </div>
   );
