@@ -189,7 +189,7 @@ const CarouselDelete = () => {
         {
           handleNext()
         }
-      
+
       </div>
     </>
   );
