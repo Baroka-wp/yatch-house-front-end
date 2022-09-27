@@ -61,23 +61,14 @@ const CarouselDelete = () => {
   const handlePrev = () => {
     if (itemId === 0) {
       return (
-        <button
-          type="button"
-          className="prev-btn"
-        >
+        <button type="button" className="prev-btn">
           <ArrowLeftIcon />
         </button>
       );
     }
     return (
-      <button
-        type="button"
-        className="next-btn"
-        onClick={() => {
-          console.log(itemId);
-          setItemId(itemId - 1);
-        }}
-      >
+      <button type="button" className="next-btn"
+        onClick={() => {setItemId(itemId - 1)}}>
         <ArrowLeftIcon />
       </button>
     );
@@ -86,23 +77,14 @@ const CarouselDelete = () => {
   const handleNext = () => {
     if (itemId === yatches.length - 1) {
       return (
-        <button
-          type="button"
-          className="prev-btn"
-        >
+        <button type="button" className="prev-btn">
           <ArrowRightIcon />
         </button>
       );
     }
     return (
-      <button
-        type="button"
-        className="next-btn"
-        onClick={() => {
-          console.log(itemId);
-          setItemId(itemId + 1);
-        }}
-      >
+      <button type="button" className="next-btn"
+        onClick={() => { setItemId(itemId + 1)}}>
         <ArrowRightIcon />
       </button>
     );
