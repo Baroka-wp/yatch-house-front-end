@@ -6,9 +6,9 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
+import Link from '@mui/material/Link';
 import Socials from './socials';
 import './pages/mainpage.css';
-import Link from '@mui/material/Link';
 
 function CarrouselCard(props) {
   const {
@@ -29,6 +29,7 @@ function CarrouselCard(props) {
         </button>
       );
     }
+    return null;
   };
 
   return (
@@ -110,8 +111,24 @@ CarrouselCard.propTypes = {
   handleDeleteHouse: PropTypes.func,
   handleNext: PropTypes.func,
   handlePrev: PropTypes.func,
-  isLoading: PropTypes.boolean,
-  name: PropTypes.string
+  isLoading: PropTypes.bool,
+  name: PropTypes.string,
+};
+
+CarrouselCard.defaultProps = {
+  item: {
+    id: 0,
+    name: '',
+    location: '',
+    description: '',
+    image: '',
+  },
+  admin: false,
+  handleDeleteHouse: () => { },
+  handleNext: () => { },
+  handlePrev: () => { },
+  isLoading: false,
+  name: '',
 };
 
 export default CarrouselCard;
