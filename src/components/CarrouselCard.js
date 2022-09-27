@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import Socials from './socials';
 import '@splidejs/react-splide/css';
 import './pages/mainpage.css';
+import Link from '@mui/material/Link';
 
 
 function CarrouselCard(props) {
@@ -35,7 +36,8 @@ function CarrouselCard(props) {
     }
     {
       item ? (
-        <SplideSlide>
+          <SplideSlide>
+            <Link to={`/houses/${item.id}`} style={{ textDecoration: 'none' }}>
           <div className="yatch">
             <div className="card">
               <img src={item.image} alt={item.name} />
@@ -71,10 +73,11 @@ function CarrouselCard(props) {
                 <Socials />
               </div>
             </div>
-          </div>
-                      {
+          </div>      
+            </Link>
+            {
                          deleleBtn(admin, handleDeleteHouse, isLoading, item)
-                      }
+              }
         </SplideSlide>
       ) : (
         <Stack spacing={1}>
