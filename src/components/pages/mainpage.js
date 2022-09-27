@@ -19,7 +19,12 @@ const MainPage = () => (
         <Carousel />
       </div>
       <div className="main_page_footer">
-        <p>© 2022 Yatch House</p>
+        <p>
+          ©
+          {new Date().getFullYear()}
+          {' '}
+          Yatch House
+        </p>
       </div>
     </div>
   </div>
