@@ -1,0 +1,579 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addhouse renders addhouse component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="main_page"
+      >
+        <div
+          class="mainNavBar"
+        >
+          <nav
+            class="sidebar_nav"
+          >
+            <div
+              class="side_top"
+            >
+              <div
+                class="logo"
+              >
+                <a
+                  aria-current="page"
+                  class="active"
+                  href="/"
+                >
+                  <img
+                    alt="logo"
+                    src="Yatch-House.png"
+                  />
+                </a>
+              </div>
+              <ul
+                class="sidebar_nav_list"
+              >
+                <li>
+                  <a
+                    class=""
+                    href="/houses"
+                  >
+                    <h4>
+                      Houses
+                    </h4>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="side_botton"
+            >
+              <ul
+                class="sidebar_nav_list"
+              >
+                <li>
+                  <a
+                    class=""
+                    href="/login"
+                  >
+                    <h4>
+                      Sign In
+                    </h4>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class=""
+                    href="/registration"
+                  >
+                    <h4>
+                      Sign up
+                    </h4>
+                  </a>
+                </li>
+              </ul>
+              <div
+                class="copyright"
+              >
+                <p>
+                  © 2022 Yatch House
+                </p>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div
+          class="wrapper"
+        >
+          <div
+            class="mobile_menu_background"
+          >
+            <nav
+              class="navBar_mobile"
+            >
+              <button
+                aria-label=""
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-bars "
+                  data-icon="bars"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label=""
+                type="button"
+              >
+                <div
+                  class="search"
+                  style="display: flex; gap: 5px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-magnifying-glass "
+                    data-icon="magnifying-glass"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </button>
+            </nav>
+          </div>
+          <div
+            class="clearfix"
+          />
+          <div
+            class="container add-form"
+          >
+            <h1
+              class="text-center mt-5"
+            >
+              Add a House
+            </h1>
+            <form
+              class="form-container"
+            >
+              <div
+                class="formInput"
+              >
+                <div
+                  class="image_form"
+                >
+                  <img
+                    alt=""
+                    src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                    style="height: 200px; width: 200px; border-radius: 50%;"
+                  />
+                </div>
+                <label
+                  for="file"
+                >
+                  Image:
+                   
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium icon css-i4bv87-MuiSvgIcon-root"
+                    data-testid="DriveFolderUploadOutlinedIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V6h5.17l2 2H20v10zM9.41 14.42 11 12.84V17h2v-4.16l1.59 1.59L16 13.01 12.01 9 8 13.01l1.41 1.41z"
+                    />
+                  </svg>
+                </label>
+                <input
+                  id="file"
+                  style="display: none;"
+                  type="file"
+                />
+              </div>
+              <label
+                class="form-label mb-3"
+                for="name"
+              >
+                Name
+                <input
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  novalidate=""
+                  type="text"
+                />
+              </label>
+              <label
+                class="form-label mb-3"
+                for="description"
+              >
+                Description
+                <input
+                  class="form-control"
+                  id="description"
+                  name="description"
+                  novalidate=""
+                  type="text"
+                />
+              </label>
+              <label
+                class="form-label mb-3"
+                for="price"
+              >
+                Price
+                <input
+                  class="form-control"
+                  id="price"
+                  name="price"
+                  novalidate=""
+                  type="number"
+                />
+              </label>
+              <label
+                class="form-label mb-3"
+                for="location"
+              >
+                Location
+                <input
+                  class="form-control"
+                  id="location"
+                  name="location"
+                  novalidate=""
+                  type="text"
+                />
+              </label>
+              <div
+                class="text-center"
+              >
+                <button
+                  class="btn btn-primary mt-3 mb-5"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="main_page_footer"
+        >
+          <p>
+            © 2022 Yatch House
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ReactModalPortal"
+    />
+  </body>,
+  "container": <div>
+    <div
+      class="main_page"
+    >
+      <div
+        class="mainNavBar"
+      >
+        <nav
+          class="sidebar_nav"
+        >
+          <div
+            class="side_top"
+          >
+            <div
+              class="logo"
+            >
+              <a
+                aria-current="page"
+                class="active"
+                href="/"
+              >
+                <img
+                  alt="logo"
+                  src="Yatch-House.png"
+                />
+              </a>
+            </div>
+            <ul
+              class="sidebar_nav_list"
+            >
+              <li>
+                <a
+                  class=""
+                  href="/houses"
+                >
+                  <h4>
+                    Houses
+                  </h4>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="side_botton"
+          >
+            <ul
+              class="sidebar_nav_list"
+            >
+              <li>
+                <a
+                  class=""
+                  href="/login"
+                >
+                  <h4>
+                    Sign In
+                  </h4>
+                </a>
+              </li>
+              <li>
+                <a
+                  class=""
+                  href="/registration"
+                >
+                  <h4>
+                    Sign up
+                  </h4>
+                </a>
+              </li>
+            </ul>
+            <div
+              class="copyright"
+            >
+              <p>
+                © 2022 Yatch House
+              </p>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div
+        class="wrapper"
+      >
+        <div
+          class="mobile_menu_background"
+        >
+          <nav
+            class="navBar_mobile"
+          >
+            <button
+              aria-label=""
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-bars "
+                data-icon="bars"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label=""
+              type="button"
+            >
+              <div
+                class="search"
+                style="display: flex; gap: 5px;"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-magnifying-glass "
+                  data-icon="magnifying-glass"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </button>
+          </nav>
+        </div>
+        <div
+          class="clearfix"
+        />
+        <div
+          class="container add-form"
+        >
+          <h1
+            class="text-center mt-5"
+          >
+            Add a House
+          </h1>
+          <form
+            class="form-container"
+          >
+            <div
+              class="formInput"
+            >
+              <div
+                class="image_form"
+              >
+                <img
+                  alt=""
+                  src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                  style="height: 200px; width: 200px; border-radius: 50%;"
+                />
+              </div>
+              <label
+                for="file"
+              >
+                Image:
+                 
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium icon css-i4bv87-MuiSvgIcon-root"
+                  data-testid="DriveFolderUploadOutlinedIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V6h5.17l2 2H20v10zM9.41 14.42 11 12.84V17h2v-4.16l1.59 1.59L16 13.01 12.01 9 8 13.01l1.41 1.41z"
+                  />
+                </svg>
+              </label>
+              <input
+                id="file"
+                style="display: none;"
+                type="file"
+              />
+            </div>
+            <label
+              class="form-label mb-3"
+              for="name"
+            >
+              Name
+              <input
+                class="form-control"
+                id="name"
+                name="name"
+                novalidate=""
+                type="text"
+              />
+            </label>
+            <label
+              class="form-label mb-3"
+              for="description"
+            >
+              Description
+              <input
+                class="form-control"
+                id="description"
+                name="description"
+                novalidate=""
+                type="text"
+              />
+            </label>
+            <label
+              class="form-label mb-3"
+              for="price"
+            >
+              Price
+              <input
+                class="form-control"
+                id="price"
+                name="price"
+                novalidate=""
+                type="number"
+              />
+            </label>
+            <label
+              class="form-label mb-3"
+              for="location"
+            >
+              Location
+              <input
+                class="form-control"
+                id="location"
+                name="location"
+                novalidate=""
+                type="text"
+              />
+            </label>
+            <div
+              class="text-center"
+            >
+              <button
+                class="btn btn-primary mt-3 mb-5"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        class="main_page_footer"
+      >
+        <p>
+          © 2022 Yatch House
+        </p>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

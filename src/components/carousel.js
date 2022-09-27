@@ -1,6 +1,9 @@
+/* istanbul ignore file */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { SplideSlide } from '@splidejs/react-splide';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
@@ -96,6 +99,30 @@ const Carousel = () => {
                 <img src={item.image} alt={item.name} />
                 <div className="yatch_name">
                   <h4>{item.name}</h4>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '20px',
+                    alignItems: 'center',
+                    marginBottom: '0',
+                  }}
+                  className="yatch_location"
+                >
+                  <FontAwesomeIcon
+                    icon={faLocationDot}
+                    style={{ width: '25px', height: '10px', color: '#97bf0f' }}
+                  />
+                  <span
+                    style={{
+                      fontSize: '1rem',
+                      fontFamily: 'Niconne, cursive',
+                      marginLeft: '-20px',
+                    }}
+                  >
+                    {item.location}
+                  </span>
                 </div>
                 <p>{item.description}</p>
                 <div className="social">

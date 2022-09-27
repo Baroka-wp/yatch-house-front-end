@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import axios from 'axios';
 import { SplideSlide } from '@splidejs/react-splide';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import Skeleton from '@mui/material/Skeleton';
@@ -119,28 +121,31 @@ const CarouselDelete = () => {
   return (
     <>
       <div style={{ height: '1rem', marginBottom: '1rem' }}>
-        {
-          canDisplay ? (
-            <div
-              id="notif"
-              style={{
-                textAlign: 'center', color: 'green', fontSize: '20px', fontWeight: 'bold',
-              }}
-            >
-              {deleteNotif}
-            </div>
-          )
-            : (
-              <div
-                id="notif"
-                style={{
-                  textAlign: 'center', color: 'red', fontSize: '20px', fontWeight: 'bold',
-                }}
-              >
-                {deleteNotif}
-              </div>
-            )
-        }
+        {canDisplay ? (
+          <div
+            id="notif"
+            style={{
+              textAlign: 'center',
+              color: 'green',
+              fontSize: '20px',
+              fontWeight: 'bold',
+            }}
+          >
+            {deleteNotif}
+          </div>
+        ) : (
+          <div
+            id="notif"
+            style={{
+              textAlign: 'center',
+              color: 'red',
+              fontSize: '20px',
+              fontWeight: 'bold',
+            }}
+          >
+            {deleteNotif}
+          </div>
+        )}
       </div>
 
       <div className="d-flex yatchCarousel">
@@ -184,6 +189,7 @@ const CarouselDelete = () => {
         {
           handleNext()
         }
+      
       </div>
     </>
   );
