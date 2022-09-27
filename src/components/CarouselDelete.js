@@ -66,6 +66,56 @@ const CarouselDelete = () => {
     }
   };
 
+  const handlePrev = () => {
+    if (itemId === 0) {
+      return (
+        <button
+          type="button"
+          className="prev-btn"
+        >
+          <ArrowLeftIcon />
+        </button>
+      );
+    }
+    return (
+      <button
+        type="button"
+        className="next-btn"
+        onClick={() => {
+          console.log(itemId);
+          setItemId(itemId - 1);
+        }}
+      >
+        <ArrowLeftIcon />
+      </button>
+    );
+  };
+
+  const handleNext = () => {
+    if (itemId === yatches.length - 1) {
+      return (
+        <button
+          type="button"
+          className="prev-btn"
+        >
+          <ArrowRightIcon />
+        </button>
+      );
+    }
+    return (
+      <button
+        type="button"
+        className="next-btn"
+        onClick={() => {
+          console.log(itemId);
+          setItemId(itemId + 1);
+        }}
+      >
+        <ArrowRightIcon />
+      </button>
+    );
+  };
+
   return (
     <>
       <div style={{ height: '1rem', marginBottom: '1rem' }}>
@@ -94,9 +144,9 @@ const CarouselDelete = () => {
       </div>
 
       <div className="d-flex yatchCarousel">
-        <button type="button" className="prev-btn" onClick={() => setItemId(itemId - 1)}>
-          <ArrowLeftIcon />
-        </button>
+        {
+          handlePrev()
+        }
         {
           item ? (
             <SplideSlide>
@@ -131,9 +181,9 @@ const CarouselDelete = () => {
             </Stack>
           )
         }
-        <button type="button" className="next-btn" onClick={() => setItemId(itemId + 1)}>
-          <ArrowRightIcon />
-        </button>
+        {
+          handleNext()
+        }
       </div>
     </>
   );
