@@ -53,7 +53,8 @@
 }
 
 .yatch h4 {
-  padding: 0.5rem;
+  padding: 0 0.5rem;
+  color: green;
 }
 
 .yatch p {
@@ -86,7 +87,6 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: #000;
-  margin-bottom: 0.5rem;
   text-align: center;
 }
 
@@ -121,10 +121,10 @@
 }
 
 .card > p {
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   font-size: 14px;
-  color: #0d6efd;
+  color: #000;
 }
 
 /* Media queries with width of 500px */
@@ -159,6 +159,10 @@
 
   .yatch h4 {
     font-size: 1.5rem;
+  }
+
+  .house_name div {
+    justify-content: start !important;
   }
 
   .yatch p {
