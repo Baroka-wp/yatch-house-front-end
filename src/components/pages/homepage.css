@@ -1,18 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-.wallpaper-content h1 {
+.wallpaper-content {
   position: absolute;
   top: 35%;
   left: 50%;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 1em;
   transform: translate(-50%, -30%);
-  font-size: 3rem;
+  padding: 1em;
+}
+
+.wallpaper-content h1 {
+  font-size: 1.5rem;
   font-family: 'Fredoka One', cursive;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(2, 79, 44, 1) 0%, rgba(0, 212, 255, 1) 100%);
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(2, 79, 44, 1) 0%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wallpaper-content h1 span {
+  font-size: 2em;
+  background:
+    linear-gradient(
+      to right,
+      #eea2a2 0%,
+      #bbc1bf 19%,
+      #57c6e1 42%,
+      #b49fda 79%,
+      #7ac5d8 100%
+    );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -63,7 +91,7 @@ a {
   font-size: 1.5rem;
   width: 150px;
   font-family: 'Georgia', serif;
-  src: local('Georgia'), url("../../fonts/georgiai.ttf") format('truetype');
+  src: local('Georgia'), url('../../fonts/georgiai.ttf') format('truetype');
   font-style: italic;
 }
 
@@ -127,8 +155,12 @@ a {
 /* Media query for a device with a width of 500px */
 @media only screen and (max-width: 500px) {
   .wallpaper-content h1 {
-    font-size: 1.5rem;
+    font-size: 0.7rem;
     color: #fff;
+  }
+
+  .wallpaper-content h1 span {
+    font-size: 1em;
   }
 
   .reserve-button {
@@ -146,7 +178,10 @@ a {
   }
 
   .reserve {
-    padding: 1rem 1rem 1rem 1rem;
+    width: 100px;
+    font-style: italic;
+    font-size: 1rem;
+    padding: 0.1em;
   }
 
   .homepage-dots {
