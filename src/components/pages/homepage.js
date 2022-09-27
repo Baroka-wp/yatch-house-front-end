@@ -5,14 +5,12 @@ import Slider from './Slider';
 
 const HomePage = () => (
   <div>
-    <div className="wallpaper-content">
-      <h1> Rent a Yatch House with Yatch flex</h1>
-    </div>
     <div className="display_indicator">
       <Zoom scale={1.4}>
-        <Slider image="/images/maldives.jpg" />
-        <Slider image="/images/yatch1.jpg" />
-        <Slider image="/images/yatch2.jpg" />
+        <Slider image="/images/apartment2.jpg" />
+        <Slider image="/images/apartment3.jpg" />
+        <Slider image="/images/apartment4.jpg" />
+        <Slider image="/images/apartment5.jpg" />
       </Zoom>
     </div>
   </div>
