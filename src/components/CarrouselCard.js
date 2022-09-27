@@ -6,7 +6,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import Socials from './socials';
 import './pages/mainpage.css';
 
