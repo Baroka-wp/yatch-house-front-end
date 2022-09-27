@@ -1,16 +1,9 @@
 /* istanbul ignore file */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { SplideSlide } from '@splidejs/react-splide';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import Skeleton from '@mui/material/Skeleton';
-import Stack from '@mui/material/Stack';
 import { getAllItems } from '../redux/house/houseReducer';
-import Socials from './socials';
 import '@splidejs/react-splide/css';
 import './pages/mainpage.css';
 import CarrouselCard from './CarrouselCard';
