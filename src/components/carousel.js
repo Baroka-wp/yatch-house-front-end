@@ -85,11 +85,11 @@ const Carousel = () => {
     item={item}
     handlePrev={handlePrev}
     handleNext={handleNext}
-    handleDeleteHouse={'handleDeleteHouse'}
-    isLoading={'isLoading'}
+    handleDeleteHouse={"handleDeleteHouse"}
+    isLoading={"isLoading"}
     admin={false}
   />
-     
+    
   );
 };
 
