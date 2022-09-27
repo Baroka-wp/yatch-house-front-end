@@ -77,15 +77,13 @@ const SideNavbar = () => {
               <h4>{links[2].text}</h4>
             </NavLink>
           </li>
-          {
-            user && (
-              <li key={links[1].id}>
-                <NavLink to={links[1].path}>
-                  <h4>{links[1].text}</h4>
-                </NavLink>
-              </li>
-            )
-          }
+          {user && (
+            <li key={links[1].id}>
+              <NavLink to={links[1].path}>
+                <h4>{links[1].text}</h4>
+              </NavLink>
+            </li>
+          )}
           {isAdmin(user) && (
             <>
               <li key={links[3].id}>
@@ -103,8 +101,7 @@ const SideNavbar = () => {
         </ul>
       </div>
       <div className="side_botton">
-        {
-        !user && (
+        {!user && (
           <ul className="sidebar_nav_list">
             <li key={links[4].id}>
               <NavLink to={links[4].path} className="">
@@ -117,11 +114,9 @@ const SideNavbar = () => {
               </NavLink>
             </li>
           </ul>
-        )
-      }
+        )}
 
-        {
-        user && (
+        {user && (
           <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <button
               onClick={() => handleLogout()}
@@ -131,10 +126,14 @@ const SideNavbar = () => {
               Log Out
             </button>
           </div>
-        )
-      }
+        )}
         <div className="copyright">
-          <p>© 2022 Yatch House</p>
+          <p>
+            ©
+            {new Date().getFullYear()}
+            {' '}
+            Yatch House
+          </p>
         </div>
       </div>
     </nav>
