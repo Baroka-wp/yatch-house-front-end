@@ -6,7 +6,7 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { deleteHouse, getAllItems } from '../redux/house/houseReducer';
 import '@splidejs/react-splide/css';
 import './pages/mainpage.css';
-import CarrouselCard from './CarrouselCard'
+import CarrouselCard from './CarrouselCard';
 
 const CarouselDelete = () => {
   const yatches = useSelector((state) => state.houses, shallowEqual);
@@ -67,8 +67,11 @@ const CarouselDelete = () => {
       );
     }
     return (
-      <button type="button" className="next-btn"
-        onClick={() => {setItemId(itemId - 1)}}>
+      <button
+        type="button"
+        className="next-btn"
+        onClick={() => { setItemId(itemId - 1); }}
+      >
         <ArrowLeftIcon />
       </button>
     );
@@ -83,8 +86,11 @@ const CarouselDelete = () => {
       );
     }
     return (
-      <button type="button" className="next-btn"
-        onClick={() => { setItemId(itemId + 1)}}>
+      <button
+        type="button"
+        className="next-btn"
+        onClick={() => { setItemId(itemId + 1); }}
+      >
         <ArrowRightIcon />
       </button>
     );
@@ -119,14 +125,13 @@ const CarouselDelete = () => {
           </div>
         )}
       </div>
-
       <CarrouselCard
         item={item}
         handlePrev={handlePrev}
         handleNext={handleNext}
         handleDeleteHouse={handleDeleteHouse}
         isLoading={isLoading}
-        admin={true}
+        admin
       />
     </>
   );

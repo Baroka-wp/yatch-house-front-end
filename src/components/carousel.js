@@ -82,14 +82,14 @@ const Carousel = () => {
 
   return (
     <CarrouselCard
-    item={item}
-    handlePrev={handlePrev}
-    handleNext={handleNext}
-    handleDeleteHouse={"handleDeleteHouse"}
-    isLoading={"isLoading"}
-    admin={false}
-  />
-    
+      item={item}
+      handlePrev={handlePrev}
+      handleNext={handleNext}
+      handleDeleteHouse="handleDeleteHouse"
+      isLoading="isLoading"
+      admin={false}
+    />
+
   );
 };
 
