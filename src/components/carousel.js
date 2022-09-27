@@ -33,15 +33,61 @@ const Carousel = () => {
     }
   }
 
-  return (
-    <div className="d-flex yatchCarousel">
+  const handlePrev = () => {
+    if (itemId === 0) {
+      return (
+        <button
+          type="button"
+          className="prev-btn"
+        >
+          <ArrowLeftIcon />
+        </button>
+      );
+    }
+    return (
       <button
         type="button"
-        className="prev-btn"
-        onClick={() => setItemId(itemId - 1)}
+        className="next-btn"
+        onClick={() => {
+          console.log(itemId);
+          setItemId(itemId - 1);
+        }}
       >
         <ArrowLeftIcon />
       </button>
+    );
+  };
+
+  const handleNext = () => {
+    if (itemId === yatches.length - 1) {
+      return (
+        <button
+          type="button"
+          className="prev-btn"
+        >
+          <ArrowRightIcon />
+        </button>
+      );
+    }
+    return (
+      <button
+        type="button"
+        className="next-btn"
+        onClick={() => {
+          console.log(itemId);
+          setItemId(itemId + 1);
+        }}
+      >
+        <ArrowRightIcon />
+      </button>
+    );
+  };
+
+  return (
+    <div className="d-flex yatchCarousel">
+      {
+       handlePrev()
+      }
       {item ? (
         <SplideSlide>
           <Link to={`/houses/${item.id}`} style={{ textDecoration: 'none' }}>
@@ -67,13 +113,7 @@ const Carousel = () => {
           <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
         </Stack>
       )}
-      <button
-        type="button"
-        className="next-btn"
-        onClick={() => setItemId(itemId + 1)}
-      >
-        <ArrowRightIcon />
-      </button>
+      {handleNext()}
     </div>
   );
 };
