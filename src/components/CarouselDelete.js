@@ -41,7 +41,7 @@ const CarouselDelete = () => {
 
   const handleDeleteHouse = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/v1/houses/${id}`).then(() => {
+      await axios.delete(`https://my-yatch-house.herokuapp.com/api/v1/houses/${id}`).then(() => {
         setNotif('House deleted');
         dispatch(deleteHouse(id));
       });

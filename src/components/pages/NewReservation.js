@@ -36,7 +36,7 @@ const NewReservation = () => {
       user_id: user.data.id,
     };
 
-    await axios.post('http://localhost:3001/api/v1/reservations', { reservation })
+    await axios.post('https://my-yatch-house.herokuapp.com/api/v1/reservations', { reservation })
       .then(() => {
         const url = `${process.env.PUBLIC_URL}/my_reservation`;
         history(url);
@@ -117,15 +117,14 @@ const NewReservation = () => {
                         setStartDate(date); calculateTotalPriceFromStart(date);
                       }}
                       minDate={new Date()}
-                      maxDate={new Date(endDate)}
                     />
                   </div>
                   <div className="end-date">
                     <p>End Date</p>
                     <DatePicker
-                      selected={endDate}
+                      selected={startDate}
                       onChange={(date) => { setEndDate(date); calculateTotalPriceFromEnd(date); }}
-                      minDate={new Date()}
+                      minDate={new Date(startDate)}
                     />
                   </div>
                 </div>

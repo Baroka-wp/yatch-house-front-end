@@ -4,7 +4,7 @@ const GET_ALL_ITEMS = 'GET_ALL_ITEMS';
 const DELETE_HOUSE = 'DELETE_HOUSE';
 
 export const getAllItems = () => async (dispatch) => {
-  const res = await axios.get('http://localhost:3001/api/v1/houses');
+  const res = await axios.get('https://my-yatch-house.herokuapp.com/api/v1/houses');
   const houses = res.data;
 
   dispatch({

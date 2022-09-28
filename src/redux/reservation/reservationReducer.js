@@ -3,7 +3,7 @@ import axios from 'axios';
 const GET_ALL_RESERVATIONS = 'GET_ALL_RESERVATIONS';
 
 export const getAllReservations = (id) => async (dispatch) => {
-  const res = await axios.get('http://localhost:3001/api/v1/reservations');
+  const res = await axios.get('https://my-yatch-house.herokuapp.com/api/v1/reservations');
   const reservation = res.data;
   let myReservation = [];
   myReservation = reservation.data.filter((r) => r.user_id === id);

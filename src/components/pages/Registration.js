@@ -31,7 +31,7 @@ const Registration = () => {
     setUserInfo((prev) => ({ ...prev, telephone: phoneNumber }));
 
     try {
-      axios.post('http://localhost:3001/users', { user: userInfo }).then(() => {
+      axios.post('https://my-yatch-house.herokuapp.com/users', { user: userInfo }).then(() => {
         setShow(false);
         document.getElementById('signUpForm').reset();
         const url = `${process.env.PUBLIC_URL}/login`;

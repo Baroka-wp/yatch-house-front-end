@@ -63,7 +63,7 @@ const HouseForm = () => {
         formData);
       const { url } = uploadRes.data;
       const houseInfo = { ...house, image: url };
-      await axios.post('http://localhost:3001/api/v1/houses', { house: houseInfo });
+      await axios.post('https://my-yatch-house.herokuapp.com/api/v1/houses', { house: houseInfo });
     } catch (err) {
       console.log(err);
     }
