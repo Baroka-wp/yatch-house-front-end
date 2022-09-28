@@ -1,10 +1,10 @@
-// import logo from '../../img/Yatch-House.png';
 import React, { useState, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 import SideNavbar from '../MainNavBar';
 import MobileNavbar from '../MobileNavBar';
 import './newreservation.css';
@@ -123,7 +123,7 @@ const NewReservation = () => {
                 <div className="date-fields">
                   <div className="start-date">
                     <p>Start Date</p>
-                    <DatePicker
+                    <DatePicker                      
                       selected={startDate}
                       onChange={(date) => {
                         setStartDate(date);

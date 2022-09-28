@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Navigate } from 'react-router';
 import HouseForm from '../HouseForm';
 import SideNavbar from '../MainNavBar';
 import MobileNavbar from '../MobileNavBar';
