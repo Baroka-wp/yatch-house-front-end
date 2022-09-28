@@ -67,12 +67,12 @@ const MobileNavbar = () => {
     },
     {
       id: 3,
-      path: '/houses/new',
+      path: '/houses_new',
       text: 'Add House',
     },
     {
       id: 4,
-      path: '/houses/delete',
+      path: '/houses_delete',
       text: 'Delete House',
     },
     {

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import houseReducer from './house/houseReducer';
+import houseReducer, { getAllItems } from './house/houseReducer';
 import reservationReducer from './reservation/reservationReducer';
 
 const rootReducer = combineReducers({
@@ -8,5 +8,6 @@ const rootReducer = combineReducers({
   reservations: reservationReducer,
 });
 const store = createStore(rootReducer, applyMiddleware(thunk));
+store.dispatch(getAllItems());
 
 export default store;

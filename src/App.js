@@ -45,7 +45,7 @@ const App = () => {
             )}
           />
           <Route
-            path="/houses/new"
+            path="/houses_new"
             element={(
               <ProtectedRoute>
                 <AddHouse />
@@ -70,7 +70,14 @@ const App = () => {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/houses/delete" element={<DeleteHouse />} />
+          <Route
+            path="/houses_delete"
+            element={(
+              <ProtectedRoute>
+                <DeleteHouse />
+              </ProtectedRoute>
+            )}
+          />
         </Routes>
         <NotificationContainer />
       </BrowserRouter>

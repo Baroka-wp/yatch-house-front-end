@@ -1,16 +1,11 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import './registration.css';
 import axios from 'axios';
 import {
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Row,
-  Col,
+  Form, FormGroup, Label, Input, Row, Col,
 } from 'reactstrap';
 import logo from '../../img/Yatch-House.png';
 
@@ -46,21 +41,27 @@ const Registration = () => {
   return (
     <div className="user_auth_container">
       <div className="login_header">
-        <img src={logo} alt="logo" />
-        <h3> Sign up </h3>
+        <NavLink to="/">
+          <img src={logo} alt="logo" />
+        </NavLink>
+        <h3> Register </h3>
       </div>
       <div className="col-md-5 login_registration_form">
-        <Form onSubmit={handleSubmit} style={{ marginBottom: '20px' }} id="signUpForm">
+        <Form
+          onSubmit={handleSubmit}
+          style={{ marginBottom: '20px' }}
+          id="signUpForm"
+        >
           <Row>
             <Col md={12}>
               <FormGroup>
-                <Label for="Nom">Numéro de téléphone</Label>
+                <Label for="Nom">Telephone Number</Label>
                 <PhoneInput
                   country="fr"
                   value={phoneNumber}
                   onChange={setPhoneNumber}
                   inputProps={{
-                    name: 'Télephone',
+                    name: 'telephone',
                     required: true,
                   }}
                 />
@@ -70,30 +71,28 @@ const Registration = () => {
           <Row>
             <Col md={6}>
               <FormGroup>
-                <Label for="name">
-                  Name
-                </Label>
+                <Label for="name">Name</Label>
                 <Input
                   id="name"
                   name="name"
                   placeholder="Your name"
                   type="name"
                   onChange={handleChange}
+                  aria-label="name-input"
                   required
                 />
               </FormGroup>
             </Col>
             <Col md={6}>
               <FormGroup>
-                <Label for="email">
-                  Email
-                </Label>
+                <Label for="email">Email</Label>
                 <Input
                   id="email"
                   name="email"
                   placeholder="john@example.com"
                   type="email"
                   onChange={handleChange}
+                  aria-label="email-input"
                   required
                 />
               </FormGroup>
@@ -102,30 +101,28 @@ const Registration = () => {
           <Row>
             <Col md={6}>
               <FormGroup>
-                <Label for="examplePassword">
-                  Password
-                </Label>
+                <Label for="examplePassword">Password</Label>
                 <Input
                   id="password"
                   name="password"
                   placeholder="password placeholder"
                   type="password"
                   onChange={handleChange}
+                  aria-label="password-input"
                   required
                 />
               </FormGroup>
             </Col>
             <Col md={6}>
               <FormGroup>
-                <Label for="examplePassword">
-                  Password confirmation
-                </Label>
+                <Label for="examplePassword">Password confirmation</Label>
                 <Input
                   id="password confirmation"
                   name="password"
                   placeholder="password placeholder"
                   type="password"
                   onChange={handleChange}
+                  aria-label="confirm-password-input"
                   required
                 />
               </FormGroup>
@@ -139,12 +136,15 @@ const Registration = () => {
             {isLoading ? 'Signing up...' : 'Sign up'}
           </button>
         </Form>
-        <Link to="/login">
-          Sign in
-        </Link>
+        <Link to="/login">Sign in</Link>
       </div>
       <div className="login_footer">
-        <p>© 2022 Yatch House</p>
+        <p>
+          ©
+          {new Date().getFullYear()}
+          {' '}
+          Yatch House
+        </p>
       </div>
     </div>
   );
