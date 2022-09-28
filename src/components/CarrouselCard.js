@@ -72,7 +72,7 @@ function CarrouselCard(props) {
                     {item.location}
                   </span>
                 </div>
-                <p>{item.description}</p>
+                <p>{`${item.description.substring(0, 100)}...`}</p>
                 <div className="social">
                   <Socials />
                 </div>
