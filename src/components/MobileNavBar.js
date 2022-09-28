@@ -26,11 +26,6 @@ const MobileNavbar = () => {
     setIsOpen(true);
   };
 
-  // const afterOpenModal = () => {
-  //   // references are now sync'd and can be accessed.
-  //   subtitle.style.color = '#f00';
-  // };
-
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -45,11 +40,6 @@ const MobileNavbar = () => {
   };
 
   const handleLogout = async () => {
-    // try {
-    //   await axios.delete('http://localhost:3001/users/sign_out');
-    // } catch (err) {
-    //   console.log(err);
-    // }
     dispatch({ type: 'LOGOUT' });
     setIsOpen(false);
   };
