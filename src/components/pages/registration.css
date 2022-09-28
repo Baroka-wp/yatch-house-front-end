@@ -1,6 +1,15 @@
+.user_auth_container {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  min-height: 800px;
+}
+
+.login_header {
+  padding-top: 1em;
+}
+
 .login_registration_form {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 90%;
+  margin: 0 auto;
 }
