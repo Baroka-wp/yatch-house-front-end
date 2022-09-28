@@ -3,10 +3,11 @@
 > Yatch house is an application to book houses for rent like airbnb. The particularity is that the guests will live with their host to discover the local culture and customs. The user will be able to choose a house according to his preferences and book a period during which he will live with his guest.
 
 <h2 align="center">
-  Demo 📝
+  Demo 📝 
 </h2>
 
 ![image](https://user-images.githubusercontent.com/43172164/192555510-3290ed04-e641-4637-9b6f-50978a603278.png)
+
 
 ## Built With
 
@@ -16,6 +17,9 @@
 - JSX
 - React router
 - Redux
+
+## Back-end repo
+[backend repo](https://github.com/Baroka-wp/yatch_house)
 
 ## Getting Started
 
@@ -39,7 +43,7 @@ To get a local copy up and running follow these setup steps.
 
 **Live**
 
-- Live app: [BookStore](https://yatch-house-front-end.netlify.app/)
+- Live app: [YATCH-HOUSE](https://yatch-house.netlify.app/)
 
 ## Authors
 
