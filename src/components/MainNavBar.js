@@ -17,7 +17,6 @@ const SideNavbar = () => {
   };
 
   const handleLogout = async () => {
-
     dispatch({ type: 'LOGOUT' });
   };
 

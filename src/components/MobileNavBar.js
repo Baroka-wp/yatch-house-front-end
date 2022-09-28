@@ -40,7 +40,6 @@ const MobileNavbar = () => {
   };
 
   const handleLogout = async () => {
-
     dispatch({ type: 'LOGOUT' });
     setIsOpen(false);
   };
