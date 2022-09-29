@@ -123,7 +123,12 @@ const SideNavbar = () => {
           </div>
         )}
         <div className="copyright">
-          <p>©{new Date().getFullYear()} Yatch House</p>
+          <p>
+            ©
+            {new Date().getFullYear()}
+            {' '}
+            Yatch House
+          </p>
         </div>
       </div>
     </nav>

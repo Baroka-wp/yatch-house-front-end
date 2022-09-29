@@ -18,7 +18,12 @@ const DeleteHouse = () => (
         <CarouselDelete />
       </div>
       <div className="main_page_footer">
-        <p>©{new Date().getFullYear()} Yatch House</p>
+        <p>
+          ©
+          {new Date().getFullYear()}
+          {' '}
+          Yatch House
+        </p>
       </div>
     </div>
   </div>
