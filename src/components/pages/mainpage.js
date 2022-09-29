@@ -14,7 +14,8 @@ const MainPage = () => (
         <MobileNavbar />
       </div>
       <div className="clearfix" />
-      <h3> Select your desired destination ....</h3>
+      <h3> AVAILABLE HOUSES</h3>
+      <h6>Select your desired destination ....</h6>
       <div className="carousel">
         <Carousel />
       </div>

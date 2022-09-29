@@ -14,7 +14,6 @@ const DeleteHouse = () => (
         <MobileNavbar />
       </div>
       <div className="clearfix" />
-      <h3> Select your desired destination ....</h3>
       <div className="carousel">
         <CarouselDelete />
       </div>

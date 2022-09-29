@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 .house_container {
   max-width: 100% !important;
@@ -36,7 +36,7 @@
 
 .house_name h2 {
   font-size: 2rem;
-  font-family: 'Niconne', cursive;
+  font-family: 'Poppins', sans-serif;
   text-align: start;
   text-decoration: underline;
 }
@@ -50,7 +50,7 @@
   padding: 1rem 1.5rem;
   width: 350px;
   font-family: 'Georgia', cursive;
-  src: local('Georgia'), url("../../fonts/georgiai.ttf") format('truetype');
+  src: local('Georgia'), url('../../fonts/georgiai.ttf') format('truetype');
 }
 
 .reserve-btn {
@@ -79,7 +79,7 @@
 
 .add-form h1 {
   font-size: 2rem;
-  font-family: 'Niconne', cursive;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
 }
 
@@ -96,7 +96,7 @@
   padding: 1rem;
   margin: 0 auto;
   font-family: 'Georgia', cursive;
-  src: local('Georgia'), url("../../fonts/georgiai.ttf") format('truetype');
+  src: local('Georgia'), url('../../fonts/georgiai.ttf') format('truetype');
 }
 
 @media screen and (max-width: 500px) {
