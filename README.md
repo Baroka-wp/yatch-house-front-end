@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Yatch House
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Yatch house is an application to book houses for rent like airbnb. The particularity is that the guests will live with their host to discover the local culture and customs. The user will be able to choose a house according to his preferences and book a period during which he will live with his guest.
 
-## Available Scripts
+<h2 align="center">
+  Demo 📝
+</h2>
 
-In the project directory, you can run:
+![image](https://user-images.githubusercontent.com/43172164/192555510-3290ed04-e641-4637-9b6f-50978a603278.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Built With
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Create-react-app
+- Javascript
+- CSS
+- JSX
+- React router
+- Redux
 
-### `npm test`
+## Back-end repo
+[backend repo](https://github.com/Baroka-wp/yatch_house)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Live**
 
-### `npm run build`
+- Live app: [YATCH-HOUSE](https://yatch-house.netlify.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get a local copy up and running follow these setup steps.
 
-### `npm run eject`
+**Setup**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Open terminal and clone the project: `git clone https://github.com/baroka-wp/yatch-house-front-end.git`
+- cd into the directory `yatch-house-front-end`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Prerequisites**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- You need to have `node.js` installed in your system
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Install**
 
-## Learn More
+- On your terminal run : `npm i`
+- To run the app in the development mode : `npm start`
+- Launch the test runner : `npm test`
+- In case you run into any errors please raise an [issue](https://github.com/baroka-wp/yatch-house-front-end/issues).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Authors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Joy Kwamboka** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-### Code Splitting
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-kwambiee-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://www.linkedin.com/in/joy-kwamboka)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-kwambiee-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/kwambiee)
 
-### Analyzing the Bundle Size
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-kwambiee-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/kwambiee)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Author : IROTORI BAROKA**
 
-### Making a Progressive Web App
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-baroka-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://linkedin.com/in/baroka)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-baroka--wp-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/baroka-wp)
 
-### Advanced Configuration
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-birotori-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/birotori)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Gmail: [![Gmail Badge](https://img.shields.io/badge/-baroka--Irotori-white?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:birotori@gmail.com)
 
-### Deployment
+👤 **Roland Ossisa Yuma**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+>- GitHub: [@rolandfbk](https://github.com/rolandfbk)
+>- LinkedIn: [Roland Ossisa Yuma](https://linkedin.com/in/roland-ossisa-yuma)
+>- Twitter: [@rolandfbk](https://twitter.com/rolandfbk)
 
-### `npm run build` fails to minify
+👤 **Yasin Warsame**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [@Yazino12](https://github.com/Yazino12)
+- Twitter: [@yasino24](https://twitter.com/yasino24)
+- LinkedIn: [yasin-warsame](https://linkedin.com/in/yasin-warsame-a4176217a)
+
+👤 **Author : GEDEON USHINDI**
+
+- GitHub: [@GedeonTS](https://github.com/GedeonTS)
+- Twitter: [@Gedeon191](https://twitter.com/Gedeon191)
+- LinkedIn: [Ushindi Gedeon](https://linkedin.com/in/ushindi-gedeon)
+
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Credits
+
+Design inspiration: [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- This was not possible without the help of [Microverse](https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/hello_microverse_project.md).
+- The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/)
+

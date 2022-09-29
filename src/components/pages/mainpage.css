@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 2rem 0;
+
+  /* margin-top: 5rem; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 34px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+.wrapper h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: 'Niconne', cursive;
+}
+
+.carousel {
+  font-family: 'Georgia', cursive;
+  src: local('Georgia'), url("../../fonts/georgia.ttf") format('truetype');
+  font-weight: 400;
+}
+
+.sidebar_nav {
+  font-family: 'Georgia', cursive;
+  src: local('Georgia'), url("../../fonts/georgia.ttf") format('truetype');
+}
+
+.yatch {
+  background: var(--clr-white);
+  width: 350px;
+}
+
+.yatch img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.yatch h4 {
+  padding: 0 0.5rem;
+  color: green;
+}
+
+.yatch p {
+  padding: 0 0.5rem;
+  text-align: center;
+  font-size: 14px;
+}
+
+.card {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+}
+
+.splide__list {
+  margin: 3rem !important;
+}
+
+.yatch_name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+}
+
+.social {
+  text-align: center;
+  position: absolute;
+  bottom: 0.8rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.react-slideshow-container + ul.indicators {
+  display: none !important;
+}
+
+.react-slideshow-container .default-nav {
+  background: rgb(151 191 15 / 50%) !important;
+}
+
+.react-slideshow-container .default-nav svg {
+  fill: #fff;
+}
+
+.card > img {
+  height: 210px;
+  margin-bottom: 20px;
+}
+
+.card > p {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+}
+
+/* Media queries with width of 500px */
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    margin: 5rem 0;
+  }
+
+  .wrapper h2 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .wrapper h3 {
+    font-size: 2rem;
+    line-height: 0.8rem;
+  }
+
+  .yatch {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card {
+    height: 400px;
+    width: 300px;
+  }
+
+  .yatch img {
+    height: 200px;
+  }
+
+  .yatch h4 {
+    font-size: 1.5rem;
+  }
+
+  .house_name div {
+    justify-content: start !important;
+  }
+
+  .yatch p {
+    font-size: 0.9rem;
+  }
+
+  .yatch_name {
+    font-size: 1rem;
+  }
+
+  .carousel svg {
+    font-size: 1.3rem !important;
+  }
+
+  .dots svg {
+    font-size: 0.5rem !important;
+  }
+
+  .next-btn {
+    padding: 0;
+    margin-left: 0.7rem;
+  }
+
+  .prev-btn {
+    padding: 0;
+    margin-right: 0.7rem;
+  }
+}
