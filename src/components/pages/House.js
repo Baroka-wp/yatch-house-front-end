@@ -68,7 +68,7 @@ const House = () => {
                 style={{ textDecoration: 'none' }}
               >
                 <button type="button" className="reserve-btn">
-                  Book now
+                  Reserve
                 </button>
               </Link>
             </div>
