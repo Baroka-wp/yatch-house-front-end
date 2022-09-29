@@ -14,17 +14,13 @@ const MainPage = () => (
         <MobileNavbar />
       </div>
       <div className="clearfix" />
-      <h3> Select your desired destination ....</h3>
+      <h3> AVAILABLE HOUSES</h3>
+      <h6>Select your desired destination ....</h6>
       <div className="carousel">
         <Carousel />
       </div>
       <div className="main_page_footer">
-        <p>
-          ©
-          {new Date().getFullYear()}
-          {' '}
-          Yatch House
-        </p>
+        <p>©{new Date().getFullYear()} Yatch House</p>
       </div>
     </div>
   </div>
