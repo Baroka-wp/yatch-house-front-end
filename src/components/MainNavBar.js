@@ -24,22 +24,22 @@ const SideNavbar = () => {
     {
       id: 1,
       path: '/',
-      text: 'Home',
+      text: 'HOME',
     },
     {
       id: 2,
       path: '/my_reservation',
-      text: 'My Reservations',
+      text: 'MY RESERVATIONS',
     },
     {
       id: 3,
       path: '/houses',
-      text: 'Houses',
+      text: 'HOUSES',
     },
     {
       id: 4,
       path: '/houses_new',
-      text: 'Add House',
+      text: 'ADD HOUSE',
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ const SideNavbar = () => {
     {
       id: 7,
       path: '/houses_delete',
-      text: 'Delete House',
+      text: 'DELETE HOUSE',
     },
   ];
 
@@ -123,12 +123,7 @@ const SideNavbar = () => {
           </div>
         )}
         <div className="copyright">
-          <p>
-            ©
-            {new Date().getFullYear()}
-            {' '}
-            Yatch House
-          </p>
+          <p>©{new Date().getFullYear()} Yatch House</p>
         </div>
       </div>
     </nav>
